@@ -1,0 +1,10 @@
+﻿I'm sorry, but errors were detected in your script. Please correct the
+errors listed below, and try again.
+
+
+File "game/script.rpy", line 24: end of line expected.
+    show kai at leftCoordinates zoom 1.9
+                                ^
+
+Ren'Py Version: Ren'Py 8.0.3.22090809
+Sun Oct 23 17:42:53 2022
