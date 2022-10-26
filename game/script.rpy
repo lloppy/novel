@@ -1,10 +1,20 @@
 # Определение персонажей игры.
-define k = Character('Кай', color="#8803fc", image = "kai")
+define ki = Character('Кай', color="#8803fc", image = "kai")
+define a = Character('Элли', color="#8803fc", image = "ally")
+define v = Character('Виктор', color="#8803fc", image = "victor")
+define k = Character('Карен', color="#8803fc", image = "karen")
+define al = Character('Алан', color="#8803fc", image = "alan")
 
-define detective = 1
+define detective = 0
+define soleCompany = 0
+define developer = 0
 
 init:
     $ leftCoordinates = Position(xalign = 0.0, yalign = 0.6)
+    $ leftDownCoordinates = Position(xalign = 0.0, yalign = - 1.6)
+    $ rightCenterCoordinates = Position(xalign = 0.6, yalign = - 1.0)
+    $ leftCenterCoordinates = Position(xalign = 0.3, yalign = - 2.0)
+
 
 
 
@@ -25,9 +35,9 @@ label start:
     with dissolve
     #with easeinleft
 
-    k "{cps=30}Привет, я {i}Кай{/i}, твой новый колллега. Я отучился на разработчика...{/cps}"
-    k "{cps=30}... провалил несколько собеседований ...{/cps}"
-    k "{cps=30}... Hо однажды тим лид заметил меня и решил провести {i}личное собеседование{/i}, {w}и я {b}прошел{/b}! {w}Ляляля тополя, я прошел, и ты тоже пройдешь!{/cps}"
+    ki "{cps=30}Привет, я {i}Кай{/i}, твой новый колллега. Я отучился на разработчика...{/cps}"
+    ki "{cps=30}... провалил несколько собеседований ...{/cps}"
+    ki "{cps=30}... Hо однажды тим лид заметил меня и решил провести {i}личное собеседование{/i}, {w}и я {b}прошел{/b}! {w}Ляляля тополя, я прошел, и ты тоже пройдешь!{/cps}"
 
     hide kai with fade
 
@@ -36,7 +46,7 @@ label start:
     menu:
         "Что сделать?"
 
-        "Посмотреть" if detective > 0:
+        "Посмотреть" if detective > -1:
             jump newspaper
 
         "Игнорировать":
@@ -58,11 +68,89 @@ label newspaper:
     $ detective += 1
 
     hide newspaper with fade
-
     "kakoy zhe tut pizdec tvoritsa"
+
+    jump acquaintance
     return
     
-label dontwatchnewspaper:
+label dontwatchnewspaper:   
+
+    jump acquaintance
+    return
+
+label acquaintance:
+
+    scene bg office
+    with fade
+
+    show ally normal at right
+    with dissolve
+
+    a "{cps=30}Me, I died for him{/cps}"
+    a crazy "{cps=30}no , Я предам тебя)))...{/cps}"
 
 
+    show victor normal at leftDownCoordinates
+    with easeinleft
+    v "{cps=30}Me, {/cps}"
+    v closeyes "{cps=30}I trusted him{/cps}"
+
+
+    show karen smile at rightCenterCoordinates
+    with dissolve
+    k "{cps=30}Me, {w}I loved him{/cps}"
+
+    show alan angry at leftCenterCoordinates
+    with dissolve
+    al "{cps=35}And me, {w}I'm the damn fool that shot him (shot him, shot him){/cps}"
+
+
+    jump profession
+    return
+
+
+label profession:
+
+    "vremya ohuitelnih istoriy"
+
+    $ soleCompany += 1
+
+    jump askGame
+    return
+
+
+label askGame:
+
+    scene bg ofis with fade
+
+    show karen smile with dissolve
+
+    k "can i ask a question?"
+
+    menu:
+        "сколько зарабатывает программист???"
+
+        "1000000000000000000000000 млн долларов":
+            jump trueAnswer
+
+        "программисты бомжи":
+            jump falseAnswer
+
+    return
+
+label trueAnswer:
+    $ developer += 1
+
+    jump street
+    return
+
+label falseAnswer:
+    jump street
+    return
+
+
+label street:
+    scene bg cloudcity with fade
+
+    "LALISA LALISA LALISA LALISA LALALALLAL WHATS MY NAME?!"
     return
