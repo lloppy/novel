@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 87: Line is indented, but the preceding say statement statement does not expect a block. Please check this line's indentation.
-    scene bus5:
+File "game/script.rpy", line 41: Line is indented, but the preceding say statement statement does not expect a block. Please check this line's indentation.
+    show phone:
     ^
 
 Ren'Py Version: Ren'Py 8.0.3.22090809
-Tue Nov  8 17:35:19 2022
+Tue Nov  8 19:59:23 2022

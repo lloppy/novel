@@ -1422,6 +1422,49 @@ screen quick_menu():
             textbutton _("Авто") action Preference("auto-forward", "toggle")
             textbutton _("Меню") action ShowMenu()
 
+## NVL screen ##################################################################
+##
+## This screen is used for NVL-mode dialogue and menus.
+##
+## https://www.renpy.org/doc/html/screen_special.html#nvl
+
+
+screen nvl(dialogue, items=None):
+
+    #### ADD THIS TO MAKE THE PHONE WORK!! :) ###
+    if nvl_mode == "phone":
+        use PhoneDialogue(dialogue, items)
+    else:
+    ####
+    ## Indent the rest of the screen
+        window:
+            style "nvl_window"
+
+            has vbox:
+                spacing gui.nvl_spacing
+
+            ## Displays dialogue in either a vpgrid or the vbox.
+            if gui.nvl_height:
+
+                vpgrid:
+                    cols 1
+                    yinitial 1.0
+
+                    use nvl_dialogue(dialogue)
+
+            else:
+
+                use nvl_dialogue(dialogue)
+
+            ## Displays the menu, if given. The menu may be displayed incorrectly if
+            ## config.narrator_menu is set to True, as it is above.
+            for i in items:
+
+                textbutton i.caption:
+                    action i.action
+                    style "nvl_button"
+
+        add SideImage() xalign 0.0 yalign 1.0
 
 style window:
     variant "small"
