@@ -2,13 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 144: expected 'label_name' not found.
-    jump 
-        ^
-
-File "game/script.rpy", line 148: expected 'label_name' not found.
-    jump 
-        ^
+File "game/script.rpy", line 87: Line is indented, but the preceding say statement statement does not expect a block. Please check this line's indentation.
+    scene bus5:
+    ^
 
 Ren'Py Version: Ren'Py 8.0.3.22090809
-Wed Oct 26 18:12:16 2022
+Tue Nov  8 17:35:19 2022
