@@ -4,11 +4,7 @@ define a = Character('Элли', color="#8803fc", image = "ally")
 define v = Character('Виктор', color="#8803fc", image = "victor")
 define k = Character('Карен', color="#8803fc", image = "karen")
 define al = Character('Алан', color="#8803fc", image = "alan")
-<<<<<<< HEAD
 define news = Character('news', color="#8803fc", image = "news")
-=======
-define phone1 = Character('phone1', color="#8803fc", image = "phone1")
->>>>>>> f3157fc6bf4b8c3bccb2ddc6a4d9894aa651052d
 
 #для переписки по телефону
 #define m_nvl = Character("Me", kind=nvl, image="nighten", callback=Phone_SendSound)
@@ -27,11 +23,10 @@ init:
 
 # Игра начинается здесь:
 label start:
-    
+      
     scene bus3:
         zoom 2.0
     with fade
-<<<<<<< HEAD
    
     show news one
     call screen closebutton
@@ -81,9 +76,6 @@ label end:
     with fade
 
 
-=======
-    
->>>>>>> f3157fc6bf4b8c3bccb2ddc6a4d9894aa651052d
     """{size=-6}{cps=43}Прошло уже несколько дней, а я все никак не осознаю произошедшее.{w}
      Только заметив новое уведомление, я сразу принял сообщение за спам.
      Но как и любой человеческий интерес, мое желание ознакомиться с содержимым перевесило 
@@ -152,20 +144,9 @@ label end:
     {size=-6}{cps=43}Кажется, я могу успеть освежить в своей памяти, 
     как игровые корпорации стали одной из самых влиятельных частей экономики."""
 
-<<<<<<< HEAD
 
     
 
-=======
-    show phone1
-    #n_nvl "В Японии научились воздействовать на мозг человека напрямую с компьютера"
-
-
-    "{size=-6}{cps=43}Все началось в июле 2039 года, когда в Японии научились воздействовать на мозг человека 
-    напрямую с компьютера. Не сказать, что 6 числа это казалось грандиозным открытием. 
-    Где-то в научных кругах, конечно, многие считали технологию прорывной, но для обычного человека, 
-    погруженного в ежедневную рутину, это было просто “еще одно научное открытие”.{/cps}{/size}"
->>>>>>> f3157fc6bf4b8c3bccb2ddc6a4d9894aa651052d
 
 
     return
@@ -180,7 +161,6 @@ screen closebutton:
         hover "closebutton.png"
         action Jump("end")
 
-<<<<<<< HEAD
     imagebutton:
         xalign 0.258
         yalign 0.47
@@ -188,11 +168,3 @@ screen closebutton:
         hover "nextbutton.png"
         action Jump("next")
     
-=======
-    scene bus3:
-        zoom 2.0
-    with fade
-    
-
-    return
->>>>>>> f3157fc6bf4b8c3bccb2ddc6a4d9894aa651052d
