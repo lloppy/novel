@@ -2,53 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 7: expected statement.
-    <<<<<<< HEAD
-                ^
-
-File "game/script.rpy", line 9: expected statement.
-    =======
-          ^
-
-File "game/script.rpy", line 11: expected statement.
-    >>>>>>> f3157fc6bf4b8c3bccb2ddc6a4d9894aa651052d
-                                                    ^
-
-File "game/script.rpy", line 34: expected statement.
-    <<<<<<< HEAD
-                ^
-
-File "game/script.rpy", line 84: expected statement.
-    =======
-          ^
-
-File "game/script.rpy", line 86: expected statement.
-    >>>>>>> f3157fc6bf4b8c3bccb2ddc6a4d9894aa651052d
-                                                    ^
-
-File "game/script.rpy", line 155: expected statement.
-    <<<<<<< HEAD
-                ^
-
-File "game/script.rpy", line 159: expected statement.
-    =======
-          ^
-
-File "game/script.rpy", line 168: expected statement.
-    >>>>>>> f3157fc6bf4b8c3bccb2ddc6a4d9894aa651052d
-                                                    ^
-
-File "game/script.rpy", line 183: expected statement.
-    <<<<<<< HEAD
-                ^
-
-File "game/script.rpy", line 191: expected statement.
-    =======
-          ^
-
-File "game/script.rpy", line 198: expected statement.
-    >>>>>>> f3157fc6bf4b8c3bccb2ddc6a4d9894aa651052d
-                                                    ^
+File "game/scripts/script.rpy", line 50: Line is indented, but the preceding action statement does not expect a block. Please check this line's indentation.
+    Jump(news_array[point])
+    ^
 
 Ren'Py Version: Ren'Py 8.0.3.22090809
-Wed Nov  9 16:10:56 2022
+Sat Nov 12 19:11:38 2022

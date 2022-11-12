@@ -1,50 +1,28 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 32, in script
+  File "game/scripts/first_day_bus_news.rpy", line 80, in script
     call screen closebutton
-  File "renpy/common/000statements.rpy", line 609, in execute_call_screen
-    store._return = renpy.call_screen(name, *args, **kwargs)
-PermissionError: [WinError 32] Процесс не может получить доступ к файлу, так как этот файл занят другим процессом: 'C:\\Users\\Полина\\AppData\\Roaming/RenPy/DGame-1666383154\\persistent'
+ScriptError: could not find label 'thirg_news'.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 32, in script
+  File "C:\renpy-8.0.3-sdk\renpy\bootstrap.py", line 277, in bootstrap
+    renpy.main.main()
+  File "C:\renpy-8.0.3-sdk\renpy\main.py", line 660, in main
+    run(restart)
+  File "C:\renpy-8.0.3-sdk\renpy\main.py", line 146, in run
+    renpy.execution.run_context(True)
+  File "C:\renpy-8.0.3-sdk\renpy\execution.py", line 938, in run_context
+    context.run()
+  File "game/scripts/first_day_bus_news.rpy", line 80, in script
     call screen closebutton
-  File "C:\renpy-8.0.3-sdk\renpy\ast.py", line 2232, in execute
-    self.call("execute")
-  File "C:\renpy-8.0.3-sdk\renpy\ast.py", line 2220, in call
-    return renpy.statements.call(method, parsed, *args, **kwargs)
-  File "C:\renpy-8.0.3-sdk\renpy\statements.py", line 281, in call
-    return method(parsed, *args, **kwargs)
-  File "renpy/common/000statements.rpy", line 609, in execute_call_screen
-    store._return = renpy.call_screen(name, *args, **kwargs)
-  File "C:\renpy-8.0.3-sdk\renpy\exports.py", line 3181, in call_screen
-    rv = renpy.ui.interact(mouse="screen", type="screen", roll_forward=roll_forward)
-  File "C:\renpy-8.0.3-sdk\renpy\ui.py", line 299, in interact
-    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
-  File "C:\renpy-8.0.3-sdk\renpy\display\core.py", line 3377, in interact
-    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
-  File "C:\renpy-8.0.3-sdk\renpy\display\core.py", line 4040, in interact_core
-    self.idle_frame(can_block, expensive)
-  File "C:\renpy-8.0.3-sdk\renpy\display\core.py", line 3514, in idle_frame
-    renpy.persistent.check_update()
-  File "C:\renpy-8.0.3-sdk\renpy\persistent.py", line 360, in check_update
-    update()
-  File "C:\renpy-8.0.3-sdk\renpy\persistent.py", line 397, in update
-    save()
-  File "C:\renpy-8.0.3-sdk\renpy\persistent.py", line 413, in save
-    renpy.loadsave.location.save_persistent(data)
-  File "C:\renpy-8.0.3-sdk\renpy\savelocation.py", line 494, in save_persistent
-    l.save_persistent(data)
-  File "C:\renpy-8.0.3-sdk\renpy\savelocation.py", line 349, in save_persistent
-    safe_rename(fn_new, fn)
-  File "C:\renpy-8.0.3-sdk\renpy\loadsave.py", line 286, in safe_rename
-    os.unlink(new)
-PermissionError: [WinError 32] Процесс не может получить доступ к файлу, так как этот файл занят другим процессом: 'C:\\Users\\Полина\\AppData\\Roaming/RenPy/DGame-1666383154\\persistent'
+  File "C:\renpy-8.0.3-sdk\renpy\script.py", line 927, in lookup
+    raise ScriptError("could not find label '%s'." % str(original))
+ScriptError: could not find label 'thirg_news'.
 
 Windows-10-10.0.22000 AMD64
 Ren'Py 8.0.3.22090809
 DGame 1.0
-Wed Nov  9 15:42:02 2022
+Sat Nov 12 19:18:02 2022
