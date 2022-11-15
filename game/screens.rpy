@@ -286,7 +286,7 @@ style quick_button_text:
 ## другим меню и к началу игры.
 
 screen navigation():
-
+    
     vbox:
         style_prefix "navigation"
 

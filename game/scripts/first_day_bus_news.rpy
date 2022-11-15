@@ -1,8 +1,13 @@
 label first_day_bus_news:
 
-    scene bus3:
+    scene black:
         zoom 2.0
     with circlewipe
+
+
+    scene bus3:
+        zoom 2.0
+    with dissolve
 
     """{size=-6}{cps=43}Прошло уже несколько дней, а я все никак не осознаю произошедшее.
     {w}Только заметив новое уведомление, я сразу принял сообщение за спам.

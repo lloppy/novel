@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/screens.rpy", line 328: vbox expects a non-empty block.
-    if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
-                                                                                     ^
+File "game/screens.rpy", line 289: expected a keyword argument, colon, or end of line.
+    image blackIm = "intro/black.png"
+                  ^
 
 Ren'Py Version: Ren'Py 8.0.3.22090809
-Wed Nov 16 03:02:32 2022
+Wed Nov 16 04:08:03 2022

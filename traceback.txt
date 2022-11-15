@@ -1,37 +1,39 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/screens.rpy", line 358, in execute
-    screen main_menu():
-  File "game/screens.rpy", line 358, in execute
-    screen main_menu():
-  File "game/screens.rpy", line 372, in execute
-    use navigation
-  File "game/screens.rpy", line 288, in execute
-    screen navigation():
-  File "game/screens.rpy", line 288, in execute
-    screen navigation():
-  File "game/screens.rpy", line 290, in execute
-    vbox:
-  File "game/screens.rpy", line 308, in execute
-    imagebutton:
-  File "renpy/common/00defaults.rpy", line 139, in _imagemap_auto_function
-    rv = auto_param % variant
-TypeError: not all arguments converted during string formatting
+  File "renpy/common/00start.rpy", line 240, in script call
+    call _splashscreen from _call_splashscreen_1
+  File "game/scripts/script.rpy", line 40, in script
+    call screen test
+  File "renpy/common/000statements.rpy", line 609, in execute_call_screen
+    store._return = renpy.call_screen(name, *args, **kwargs)
+  File "game/scripts/script.rpy", line 44, in execute
+    screen test:
+  File "game/scripts/script.rpy", line 44, in execute
+    screen test:
+  File "game/scripts/script.rpy", line 45, in execute
+    add KeyRoll(enterPressed)
+  File "game/scripts/script.rpy", line 45, in <module>
+    add KeyRoll(enterPressed)
+NameError: name 'enterPressed' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "renpy/common/_layout/screen_main_menu.rpym", line 28, in script
-    python hide:
-  File "C:\renpy-8.0.3-sdk\renpy\ast.py", line 1131, in execute
-    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-  File "C:\renpy-8.0.3-sdk\renpy\python.py", line 1061, in py_exec_bytecode
-    exec(bytecode, globals, locals)
-  File "renpy/common/_layout/screen_main_menu.rpym", line 28, in <module>
-    python hide:
-  File "renpy/common/_layout/screen_main_menu.rpym", line 35, in _execute_python_hide
-    ui.interact()
+  File "renpy/common/00start.rpy", line 240, in script call
+    call _splashscreen from _call_splashscreen_1
+  File "game/scripts/script.rpy", line 40, in script
+    call screen test
+  File "C:\renpy-8.0.3-sdk\renpy\ast.py", line 2232, in execute
+    self.call("execute")
+  File "C:\renpy-8.0.3-sdk\renpy\ast.py", line 2220, in call
+    return renpy.statements.call(method, parsed, *args, **kwargs)
+  File "C:\renpy-8.0.3-sdk\renpy\statements.py", line 281, in call
+    return method(parsed, *args, **kwargs)
+  File "renpy/common/000statements.rpy", line 609, in execute_call_screen
+    store._return = renpy.call_screen(name, *args, **kwargs)
+  File "C:\renpy-8.0.3-sdk\renpy\exports.py", line 3181, in call_screen
+    rv = renpy.ui.interact(mouse="screen", type="screen", roll_forward=roll_forward)
   File "C:\renpy-8.0.3-sdk\renpy\ui.py", line 299, in interact
     rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
   File "C:\renpy-8.0.3-sdk\renpy\display\core.py", line 3377, in interact
@@ -52,29 +54,17 @@ Full traceback:
     self.update()
   File "C:\renpy-8.0.3-sdk\renpy\display\screen.py", line 653, in update
     self.screen.function(**self.scope)
-  File "game/screens.rpy", line 358, in execute
-    screen main_menu():
-  File "game/screens.rpy", line 358, in execute
-    screen main_menu():
-  File "game/screens.rpy", line 372, in execute
-    use navigation
-  File "game/screens.rpy", line 288, in execute
-    screen navigation():
-  File "game/screens.rpy", line 288, in execute
-    screen navigation():
-  File "game/screens.rpy", line 290, in execute
-    vbox:
-  File "game/screens.rpy", line 308, in execute
-    imagebutton:
-  File "C:\renpy-8.0.3-sdk\renpy\ui.py", line 952, in _imagebutton
-    idle = choice(idle, idle_image, "idle", required=True)
-  File "C:\renpy-8.0.3-sdk\renpy\ui.py", line 940, in choice
-    rv = renpy.config.imagemap_auto_function(auto, name)
-  File "renpy/common/00defaults.rpy", line 139, in _imagemap_auto_function
-    rv = auto_param % variant
-TypeError: not all arguments converted during string formatting
+  File "game/scripts/script.rpy", line 44, in execute
+    screen test:
+  File "game/scripts/script.rpy", line 44, in execute
+    screen test:
+  File "game/scripts/script.rpy", line 45, in execute
+    add KeyRoll(enterPressed)
+  File "game/scripts/script.rpy", line 45, in <module>
+    add KeyRoll(enterPressed)
+NameError: name 'enterPressed' is not defined
 
 Windows-10-10.0.22000 AMD64
 Ren'Py 8.0.3.22090809
 DGame 1.0
-Wed Nov 16 03:04:34 2022
+Wed Nov 16 03:42:11 2022
