@@ -296,18 +296,22 @@ screen navigation():
         spacing gui.navigation_spacing
 
         if main_menu:
-
-            textbutton _("Начать") action Start()
-
+            imagebutton:
+                auto "gui/newstyle/start_%s.png"
+                action Start()
         else:
 
             textbutton _("История") action ShowMenu("history")
 
             textbutton _("Сохранить") action ShowMenu("save")
 
-        textbutton _("Загрузить") action ShowMenu("load")
+        imagebutton:
+                auto "gui/newstyle/continue_%s.png"
+                action ShowMenu("load")
 
-        textbutton _("Настройки") action ShowMenu("preferences")
+        imagebutton:
+            auto "gui/newstyle/setting_%s.png"
+            action ShowMenu("preferences")
 
         if _in_replay:
 
@@ -317,18 +321,21 @@ screen navigation():
 
             textbutton _("Главное меню") action MainMenu()
 
-        textbutton _("Об игре") action ShowMenu("about")
+        imagebutton:
+            auto "gui/newstyle/about_%s.png"
+            action ShowMenu("about")
 
-        if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
-
+        #if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
             ## Помощь не необходима и не относится к мобильным устройствам.
-            textbutton _("Помощь") action ShowMenu("help")
+            #textbutton _("Помощь") action ShowMenu("help")
 
         if renpy.variant("pc"):
 
             ## Кнопка выхода блокирована в iOS и не нужна на Android и в веб-
             ## версии.
-            textbutton _("Выход") action Quit(confirm=not main_menu)
+            imagebutton:
+                auto "gui/newstyle/out_%s.png"
+                action Quit(confirm=not main_menu)
 
 
 style navigation_button is gui_button
@@ -386,7 +393,7 @@ style main_menu_frame:
     xsize 420
     yfill True
 
-    background "gui/overlay/main_menu.png"
+    # background "gui/overlay/main_menu.png"
 
 style main_menu_vbox:
     xalign 1.0

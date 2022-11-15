@@ -20,15 +20,35 @@ init:
     $ leftDownCoordinates = Position(xalign = 0.0, yalign = - 1.6)
     $ rightCenterCoordinates = Position(xalign = 0.6, yalign = - 1.0)
     $ leftCenterCoordinates = Position(xalign = 0.3, yalign = - 2.0)
+    $ phone_transition_speed = 0.05 #Using a variable to make testing different speeds easier.
+
 
 
     
 
 label splashscreen:
-    $ renpy.movie_cutscene("intro.ogv")
-    $ renpy.transition(dissolve)
+    image splash = "intro/first.png"
+    image blackIm = "intro/first (1).png"
+
+    show splash with dissolve
+    $ renpy.pause(3.0)
+
+    show blackIm with dissolve
+    $ renpy.pause(2.0)
+
+    image tab_hovered = Animation(
+    "images/intro/loader (0).png", phone_transition_speed, 
+    "images/intro/loader (1).png", phone_transition_speed, 
+    "images/intro/loader (2).png")
+    
     return
 
+# screen show tab_minimized:
+#     vbox xalign 0.995 yalign 0.98:
+#         imagebutton:
+#             idle "images/intro/loader (0).png"
+#             hover "tab_hovered" 
+#             action ui.callsinnewcontext("start")
 
 # Игра начинается здесь:
 label start:
@@ -56,5 +76,12 @@ screen closebutton:
         action [Jump(news_array[point]), SetVariable("point", point + 1)]
 
 
+# screen keymap_map():
+#     key "K_KP_ENTER" action Jump("showmap")
+#     # key "K_KP_ENTER" action Hide("nonexistent_screen")
 
- 
+# label showmap:
+#     image loader = "intro/loader (0).png"
+#     show loader
+
+

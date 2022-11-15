@@ -10,6 +10,15 @@ init offset = -2
 ## значениям, и задать высоту и ширину окна игры.
 init python:
     gui.init(1920, 1080)
+    # animation_from_folder('menu_newgame', 'gui/newstyle/about hover', wrapper=ResettableDisplayable)
+    # animation_from_folder('menu_savegame', 'gui/newstyle/about', wrapper=ResettableDisplayable)
+    # animation_from_folder('menu_savegame_back', 'gui/newstyle/continue hover', wrapper=ResettableDisplayable)
+    # animation_from_folder('menu_loadgame', 'gui/newstyle/out hover', wrapper=ResettableDisplayable)
+    # animation_from_folder('menu_loadgame_back', 'gui/newstyle/out', wrapper=ResettableDisplayable)
+    # animation_from_folder('menu_options', 'gui/newstyle/setting hover', wrapper=ResettableDisplayable)
+    # animation_from_folder('menu_options_back', 'gui/newstyle/setting', wrapper=ResettableDisplayable)
+    # animation_from_folder('menu_extras', 'gui/newstyle/start hover', wrapper=ResettableDisplayable)
+    # animation_from_folder('menu_extras_back', 'gui/newstyle/start', wrapper=ResettableDisplayable)
 
 
 
