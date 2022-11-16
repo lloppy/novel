@@ -1,10 +1,4 @@
 label first_day_bus_news:
-
-    scene black:
-        zoom 2.0
-    with circlewipe
-
-
     scene bus3:
         zoom 2.0
     with dissolve
