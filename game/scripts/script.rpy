@@ -35,7 +35,8 @@ define soleCompany = 0
 define developer = 0
 
 init:
-    $ leftCoordinates = Position(xalign = 0.0, yalign = 0.6)
+    $ leftCoordinates = Position(xalign = 0.0, yalign = 0.7)
+    $ rightCoordinates = Position(xalign = 0.5, yalign = 0.7)
     $ leftDownCoordinates = Position(xalign = 0.0, yalign = - 1.6)
     $ rightCenterCoordinates = Position(xalign = 0.6, yalign = - 1.0)
     $ leftCenterCoordinates = Position(xalign = 0.3, yalign = - 2.0)

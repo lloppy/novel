@@ -1,28 +1,30 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/scripts/script.rpy", line 124, in script
-    $ textC = newsText[currNews]
-  File "game/scripts/script.rpy", line 124, in <module>
-    $ textC = newsText[currNews]
-IndexError: list index out of range
+  File "game/scripts/first_day_survey.rpy", line 85, in script
+    show karen smile_ce_blush "Действительно, после того, как риггер подготовил модель к анимации, работа переходит к аниматору."
+Exception: Image 'karen smile_ce_blush' does not accept attributes '"Действительно, после того, как риггер подготовил модель к анимации, работа переходит к аниматору."'.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/scripts/script.rpy", line 124, in script
-    $ textC = newsText[currNews]
-  File "C:\renpy-8.0.3-sdk\renpy\ast.py", line 1131, in execute
-    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-  File "C:\renpy-8.0.3-sdk\renpy\python.py", line 1061, in py_exec_bytecode
-    exec(bytecode, globals, locals)
-  File "game/scripts/script.rpy", line 124, in <module>
-    $ textC = newsText[currNews]
-  File "C:\renpy-8.0.3-sdk\renpy\revertable.py", line 217, in __getitem__
-    rv = list.__getitem__(self, index)
-IndexError: list index out of range
+  File "game/scripts/first_day_survey.rpy", line 85, in script
+    show karen smile_ce_blush "Действительно, после того, как риггер подготовил модель к анимации, работа переходит к аниматору."
+  File "C:\renpy-8.0.3-sdk\renpy\ast.py", line 1408, in execute
+    show_imspec(self.imspec, atl=getattr(self, "atl", None))
+  File "C:\renpy-8.0.3-sdk\renpy\ast.py", line 1371, in show_imspec
+    renpy.config.show(name,
+  File "C:\renpy-8.0.3-sdk\renpy\exports.py", line 686, in show
+    if not base.find_target() and renpy.config.missing_show:
+  File "C:\renpy-8.0.3-sdk\renpy\display\image.py", line 414, in find_target
+    self.target = target._duplicate(a)
+  File "C:\renpy-8.0.3-sdk\renpy\display\core.py", line 397, in _duplicate
+    args.extraneous()
+  File "C:\renpy-8.0.3-sdk\renpy\display\core.py", line 265, in extraneous
+    raise Exception("Image '{}' does not accept attributes '{}'.".format(
+Exception: Image 'karen smile_ce_blush' does not accept attributes '"Действительно, после того, как риггер подготовил модель к анимации, работа переходит к аниматору."'.
 
 Windows-10-10.0.22000 AMD64
 Ren'Py 8.0.3.22090809
 DGame 1.0
-Wed Nov 16 05:51:55 2022
+Thu Nov 17 01:49:49 2022
