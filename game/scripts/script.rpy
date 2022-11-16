@@ -53,7 +53,7 @@ label splashscreen:
     show blackIm with dissolve
     $ renpy.pause(2.0)
 
-    show enterPressed at center
+    show enterPressed at truecenter
     with dissolve 
     
     call screen keypress
