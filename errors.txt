@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/scripts/script.rpy", line 52: Line is indented, but the preceding one-line python statement statement does not expect a block. Please check this line's indentation.
-    $ currLoad = loaders_array[i] 
+File "game/scripts/script.rpy", line 130: Line is indented, but the preceding one-line python statement statement does not expect a block. Please check this line's indentation.
+    jump end_bus
     ^
 
 Ren'Py Version: Ren'Py 8.0.3.22090809
-Wed Nov 16 04:56:42 2022
+Wed Nov 16 19:36:06 2022

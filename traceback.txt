@@ -1,70 +1,28 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "renpy/common/00start.rpy", line 240, in script call
-    call _splashscreen from _call_splashscreen_1
-  File "game/scripts/script.rpy", line 40, in script
-    call screen test
-  File "renpy/common/000statements.rpy", line 609, in execute_call_screen
-    store._return = renpy.call_screen(name, *args, **kwargs)
-  File "game/scripts/script.rpy", line 44, in execute
-    screen test:
-  File "game/scripts/script.rpy", line 44, in execute
-    screen test:
-  File "game/scripts/script.rpy", line 45, in execute
-    add KeyRoll(enterPressed)
-  File "game/scripts/script.rpy", line 45, in <module>
-    add KeyRoll(enterPressed)
-NameError: name 'enterPressed' is not defined
+  File "game/scripts/script.rpy", line 124, in script
+    $ textC = newsText[currNews]
+  File "game/scripts/script.rpy", line 124, in <module>
+    $ textC = newsText[currNews]
+IndexError: list index out of range
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "renpy/common/00start.rpy", line 240, in script call
-    call _splashscreen from _call_splashscreen_1
-  File "game/scripts/script.rpy", line 40, in script
-    call screen test
-  File "C:\renpy-8.0.3-sdk\renpy\ast.py", line 2232, in execute
-    self.call("execute")
-  File "C:\renpy-8.0.3-sdk\renpy\ast.py", line 2220, in call
-    return renpy.statements.call(method, parsed, *args, **kwargs)
-  File "C:\renpy-8.0.3-sdk\renpy\statements.py", line 281, in call
-    return method(parsed, *args, **kwargs)
-  File "renpy/common/000statements.rpy", line 609, in execute_call_screen
-    store._return = renpy.call_screen(name, *args, **kwargs)
-  File "C:\renpy-8.0.3-sdk\renpy\exports.py", line 3181, in call_screen
-    rv = renpy.ui.interact(mouse="screen", type="screen", roll_forward=roll_forward)
-  File "C:\renpy-8.0.3-sdk\renpy\ui.py", line 299, in interact
-    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
-  File "C:\renpy-8.0.3-sdk\renpy\display\core.py", line 3377, in interact
-    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
-  File "C:\renpy-8.0.3-sdk\renpy\display\core.py", line 3810, in interact_core
-    root_widget.visit_all(lambda i : i.per_interact())
-  File "C:\renpy-8.0.3-sdk\renpy\display\core.py", line 582, in visit_all
-    d.visit_all(callback, seen)
-  File "C:\renpy-8.0.3-sdk\renpy\display\core.py", line 582, in visit_all
-    d.visit_all(callback, seen)
-  File "C:\renpy-8.0.3-sdk\renpy\display\core.py", line 582, in visit_all
-    d.visit_all(callback, seen)
-  File "C:\renpy-8.0.3-sdk\renpy\display\screen.py", line 451, in visit_all
-    callback(self)
-  File "C:\renpy-8.0.3-sdk\renpy\display\core.py", line 3810, in <lambda>
-    root_widget.visit_all(lambda i : i.per_interact())
-  File "C:\renpy-8.0.3-sdk\renpy\display\screen.py", line 462, in per_interact
-    self.update()
-  File "C:\renpy-8.0.3-sdk\renpy\display\screen.py", line 653, in update
-    self.screen.function(**self.scope)
-  File "game/scripts/script.rpy", line 44, in execute
-    screen test:
-  File "game/scripts/script.rpy", line 44, in execute
-    screen test:
-  File "game/scripts/script.rpy", line 45, in execute
-    add KeyRoll(enterPressed)
-  File "game/scripts/script.rpy", line 45, in <module>
-    add KeyRoll(enterPressed)
-NameError: name 'enterPressed' is not defined
+  File "game/scripts/script.rpy", line 124, in script
+    $ textC = newsText[currNews]
+  File "C:\renpy-8.0.3-sdk\renpy\ast.py", line 1131, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "C:\renpy-8.0.3-sdk\renpy\python.py", line 1061, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+  File "game/scripts/script.rpy", line 124, in <module>
+    $ textC = newsText[currNews]
+  File "C:\renpy-8.0.3-sdk\renpy\revertable.py", line 217, in __getitem__
+    rv = list.__getitem__(self, index)
+IndexError: list index out of range
 
 Windows-10-10.0.22000 AMD64
 Ren'Py 8.0.3.22090809
 DGame 1.0
-Wed Nov 16 03:42:11 2022
+Wed Nov 16 05:51:55 2022
