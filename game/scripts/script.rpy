@@ -115,6 +115,11 @@ label start:
     jump first_day_bus_news
     
     jump first_day_moring
+
+    jump first_day_survey
+
+    jump second_day_home
+
     return
 
 
