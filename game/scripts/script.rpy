@@ -1,10 +1,12 @@
 # Определение персонажей игры.
-define kai = Character('Кай', color="#8803fc")
-define a = Character('Элли', color="#8803fc", image = "ally")
+define kai = Character('Кай', color="#0318fc")
+define a = Character('Элли', color="#fc038c", image = "ally")
 define v = Character('Виктор', color="#8803fc", image = "victor")
-define k = Character('Карэн', color="#8803fc", image = "karen")
-define al = Character('Алан', color="#8803fc", image = "alan")
-define news = Character('news', color="#8803fc", image = "news")
+define l = Character('ЛЛойд', color="#03fc45", image = "lloyd")
+define k = Character('Карэн', color="#640303", image = "karen")
+define al = Character('Алан', color="#0398fc", image = "alan")
+define news = Character('news', color="#0000007d", image = "news")
+
 define loaders_array = ["intro/loader (0).png", "intro/loader (1).png", "intro/loader (2).png",
 "intro/loader (3).png","intro/loader (4).png","intro/loader (5).png","intro/loader (6).png",
 "intro/loader (7).png","intro/loader (8).png","intro/loader (9).png","intro/loader (10).png","intro/loader (11).png"]
@@ -112,13 +114,16 @@ label succeeded:
 label start:
 
     $ point = 0
+
+    jump second_day
+
     jump first_day_bus_news
     
     jump first_day_moring
 
     jump first_day_survey
 
-    jump second_day_home
+    jump second_day
 
     return
 

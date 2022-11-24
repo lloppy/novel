@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/scripts/script.rpy", line 56: Line is indented, but the preceding one-line python statement statement does not expect a block. Please check this line's indentation.
-    show enterPressed at truecenter
+File "game/scripts/job_summary_script.rpy", line 9: expected statement.
+    at truecenter
     ^
 
 Ren'Py Version: Ren'Py 8.0.3.22090809
-Wed Nov 16 20:00:44 2022
+Wed Nov 23 20:49:40 2022

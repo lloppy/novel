@@ -1,30 +1,28 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/scripts/first_day_survey.rpy", line 85, in script
-    show karen smile_ce_blush "Действительно, после того, как риггер подготовил модель к анимации, работа переходит к аниматору."
-Exception: Image 'karen smile_ce_blush' does not accept attributes '"Действительно, после того, как риггер подготовил модель к анимации, работа переходит к аниматору."'.
+PermissionError: [WinError 32] Процесс не может получить доступ к файлу, так как этот файл занят другим процессом: 'C:\\DGame\\game\\saves\\persistent'
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/scripts/first_day_survey.rpy", line 85, in script
-    show karen smile_ce_blush "Действительно, после того, как риггер подготовил модель к анимации, работа переходит к аниматору."
-  File "C:\renpy-8.0.3-sdk\renpy\ast.py", line 1408, in execute
-    show_imspec(self.imspec, atl=getattr(self, "atl", None))
-  File "C:\renpy-8.0.3-sdk\renpy\ast.py", line 1371, in show_imspec
-    renpy.config.show(name,
-  File "C:\renpy-8.0.3-sdk\renpy\exports.py", line 686, in show
-    if not base.find_target() and renpy.config.missing_show:
-  File "C:\renpy-8.0.3-sdk\renpy\display\image.py", line 414, in find_target
-    self.target = target._duplicate(a)
-  File "C:\renpy-8.0.3-sdk\renpy\display\core.py", line 397, in _duplicate
-    args.extraneous()
-  File "C:\renpy-8.0.3-sdk\renpy\display\core.py", line 265, in extraneous
-    raise Exception("Image '{}' does not accept attributes '{}'.".format(
-Exception: Image 'karen smile_ce_blush' does not accept attributes '"Действительно, после того, как риггер подготовил модель к анимации, работа переходит к аниматору."'.
+  File "C:\renpy-8.0.3-sdk\renpy\bootstrap.py", line 277, in bootstrap
+    renpy.main.main()
+  File "C:\renpy-8.0.3-sdk\renpy\main.py", line 663, in main
+    renpy.persistent.update(True)
+  File "C:\renpy-8.0.3-sdk\renpy\persistent.py", line 397, in update
+    save()
+  File "C:\renpy-8.0.3-sdk\renpy\persistent.py", line 413, in save
+    renpy.loadsave.location.save_persistent(data)
+  File "C:\renpy-8.0.3-sdk\renpy\savelocation.py", line 494, in save_persistent
+    l.save_persistent(data)
+  File "C:\renpy-8.0.3-sdk\renpy\savelocation.py", line 349, in save_persistent
+    safe_rename(fn_new, fn)
+  File "C:\renpy-8.0.3-sdk\renpy\loadsave.py", line 286, in safe_rename
+    os.unlink(new)
+PermissionError: [WinError 32] Процесс не может получить доступ к файлу, так как этот файл занят другим процессом: 'C:\\DGame\\game\\saves\\persistent'
 
 Windows-10-10.0.22000 AMD64
 Ren'Py 8.0.3.22090809
 DGame 1.0
-Thu Nov 17 01:49:49 2022
+Wed Nov 23 20:40:05 2022
