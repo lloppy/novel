@@ -300,7 +300,7 @@ screen navigation():
                 auto "gui/newstyle/start_%s.png"
                 action Start()
         else:
-
+        
             textbutton _("История") action ShowMenu("history")
 
             textbutton _("Сохранить") action ShowMenu("save")

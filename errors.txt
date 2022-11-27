@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/scripts/job_summary_script.rpy", line 9: expected statement.
-    at truecenter
-    ^
+File "game/screens.rpy", line 303: imagebutton expects a non-empty block.
+    imagebutton:
+                ^
 
 Ren'Py Version: Ren'Py 8.0.3.22090809
-Wed Nov 23 20:49:40 2022
+Sun Nov 27 21:23:06 2022

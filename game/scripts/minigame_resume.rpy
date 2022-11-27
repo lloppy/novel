@@ -18,6 +18,10 @@ init python:
 label resumeGame:
     show resume
     call screen texts
+
+    jump second_day_contunue_after_game
+    return
+
     
 screen texts:
     for i in num:
@@ -30,5 +34,5 @@ screen texts:
             selected_idle "resume_minigame/resume mark" + str(i+1) + " cross.png"
             selected_hover "resume_minigame/resume mark" + str(i+1) + " cross.png"
             action ToggleMark(i)
-            hovered Cursor("pen")
-            unhovered Cursor(None)
+            #hovered Cursor("resume_minigame/pen")
+            #unhovered Cursor(None)

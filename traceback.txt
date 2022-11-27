@@ -1,28 +1,99 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-PermissionError: [WinError 32] Процесс не может получить доступ к файлу, так как этот файл занят другим процессом: 'C:\\DGame\\game\\saves\\persistent'
+  File "renpy/common/00gamemenu.rpy", line 170, in script
+    $ ui.interact()
+  File "renpy/common/00gamemenu.rpy", line 170, in <module>
+    $ ui.interact()
+  File "game/screens.rpy", line 721, in execute
+    screen preferences():
+  File "game/screens.rpy", line 721, in execute
+    screen preferences():
+  File "game/screens.rpy", line 725, in execute
+    use game_menu(_("Настройки"), scroll="viewport"):
+  File "game/screens.rpy", line 428, in execute
+    screen game_menu(title, scroll=None, yinitial=0.0):
+  File "game/screens.rpy", line 428, in execute
+    screen game_menu(title, scroll=None, yinitial=0.0):
+  File "game/screens.rpy", line 482, in execute
+    use navigation
+  File "game/screens.rpy", line 288, in execute
+    screen navigation():
+  File "game/screens.rpy", line 288, in execute
+    screen navigation():
+  File "game/screens.rpy", line 290, in execute
+    vbox:
+  File "game/screens.rpy", line 298, in execute
+    if main_menu:
+  File "game/screens.rpy", line 303, in execute
+    imagebutton:
+  File "renpy/common/00defaults.rpy", line 139, in _imagemap_auto_function
+    rv = auto_param % variant
+TypeError: not all arguments converted during string formatting
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "C:\renpy-8.0.3-sdk\renpy\bootstrap.py", line 277, in bootstrap
-    renpy.main.main()
-  File "C:\renpy-8.0.3-sdk\renpy\main.py", line 663, in main
-    renpy.persistent.update(True)
-  File "C:\renpy-8.0.3-sdk\renpy\persistent.py", line 397, in update
-    save()
-  File "C:\renpy-8.0.3-sdk\renpy\persistent.py", line 413, in save
-    renpy.loadsave.location.save_persistent(data)
-  File "C:\renpy-8.0.3-sdk\renpy\savelocation.py", line 494, in save_persistent
-    l.save_persistent(data)
-  File "C:\renpy-8.0.3-sdk\renpy\savelocation.py", line 349, in save_persistent
-    safe_rename(fn_new, fn)
-  File "C:\renpy-8.0.3-sdk\renpy\loadsave.py", line 286, in safe_rename
-    os.unlink(new)
-PermissionError: [WinError 32] Процесс не может получить доступ к файлу, так как этот файл занят другим процессом: 'C:\\DGame\\game\\saves\\persistent'
+  File "renpy/common/00gamemenu.rpy", line 170, in script
+    $ ui.interact()
+  File "C:\renpy-8.0.3-sdk\renpy\ast.py", line 1131, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "C:\renpy-8.0.3-sdk\renpy\python.py", line 1061, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+  File "renpy/common/00gamemenu.rpy", line 170, in <module>
+    $ ui.interact()
+  File "C:\renpy-8.0.3-sdk\renpy\ui.py", line 299, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "C:\renpy-8.0.3-sdk\renpy\display\core.py", line 3377, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
+  File "C:\renpy-8.0.3-sdk\renpy\display\core.py", line 3810, in interact_core
+    root_widget.visit_all(lambda i : i.per_interact())
+  File "C:\renpy-8.0.3-sdk\renpy\display\core.py", line 582, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\renpy-8.0.3-sdk\renpy\display\core.py", line 582, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\renpy-8.0.3-sdk\renpy\display\core.py", line 582, in visit_all
+    d.visit_all(callback, seen)
+  [Previous line repeated 1 more time]
+  File "C:\renpy-8.0.3-sdk\renpy\display\screen.py", line 451, in visit_all
+    callback(self)
+  File "C:\renpy-8.0.3-sdk\renpy\display\core.py", line 3810, in <lambda>
+    root_widget.visit_all(lambda i : i.per_interact())
+  File "C:\renpy-8.0.3-sdk\renpy\display\screen.py", line 462, in per_interact
+    self.update()
+  File "C:\renpy-8.0.3-sdk\renpy\display\screen.py", line 653, in update
+    self.screen.function(**self.scope)
+  File "game/screens.rpy", line 721, in execute
+    screen preferences():
+  File "game/screens.rpy", line 721, in execute
+    screen preferences():
+  File "game/screens.rpy", line 725, in execute
+    use game_menu(_("Настройки"), scroll="viewport"):
+  File "game/screens.rpy", line 428, in execute
+    screen game_menu(title, scroll=None, yinitial=0.0):
+  File "game/screens.rpy", line 428, in execute
+    screen game_menu(title, scroll=None, yinitial=0.0):
+  File "game/screens.rpy", line 482, in execute
+    use navigation
+  File "game/screens.rpy", line 288, in execute
+    screen navigation():
+  File "game/screens.rpy", line 288, in execute
+    screen navigation():
+  File "game/screens.rpy", line 290, in execute
+    vbox:
+  File "game/screens.rpy", line 298, in execute
+    if main_menu:
+  File "game/screens.rpy", line 303, in execute
+    imagebutton:
+  File "C:\renpy-8.0.3-sdk\renpy\ui.py", line 952, in _imagebutton
+    idle = choice(idle, idle_image, "idle", required=True)
+  File "C:\renpy-8.0.3-sdk\renpy\ui.py", line 940, in choice
+    rv = renpy.config.imagemap_auto_function(auto, name)
+  File "renpy/common/00defaults.rpy", line 139, in _imagemap_auto_function
+    rv = auto_param % variant
+TypeError: not all arguments converted during string formatting
 
 Windows-10-10.0.22000 AMD64
 Ren'Py 8.0.3.22090809
 DGame 1.0
-Wed Nov 23 20:40:05 2022
+Sun Nov 27 21:23:34 2022

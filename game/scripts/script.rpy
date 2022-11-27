@@ -35,6 +35,11 @@ define newsText = ["Все началось в июле 2039 года, когд�
 define detective = 0
 define soleCompany = 0
 define developer = 0
+define watch_kai = False
+define ans1 = ""
+define ans2 = ""
+define ans3 = ""
+
 
 init:
     $ leftCoordinates = Position(xalign = 0.0, yalign = 0.7)
@@ -114,12 +119,13 @@ label succeeded:
 label start:
 
     $ point = 0
+    jump second_day_office_continue2
 
-    jump second_day
 
-    jump first_day_bus_news
     
     jump first_day_moring
+
+    jump first_day_bus_news
 
     jump first_day_survey
 
@@ -146,13 +152,13 @@ screen closebutton:
     imagebutton:
         xalign 0.714
         yalign 0.259
-        idle "closebutton.png"
-        hover "closebutton.png"
+        idle "news/closebutton.png"
+        hover "news/closebutton.png"
         action Jump("end_bus")
 
     imagebutton:
         xalign 0.258
         yalign 0.47
-        idle "nextbutton.png"
-        hover "nextbutton.png"
+        idle "news/nextbutton.png"
+        hover "news/nextbutton.png"
         action Jump("news")
