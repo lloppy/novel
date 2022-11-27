@@ -1,7 +1,7 @@
-default mark = [True,False,False,False,False,False,False,False,False,False,False]
-default posX = [0.33541,0.16406,0.16875,0.16875,0.16875,0.16875,0.16875,0.16875,0.31562,0.50208,0.58489]
-default posY = [0.10185,0.19722,0.22037,0.28981,0.45462,0.50092,0.54722,0.66296,0.75833,0.75833,0.75833]
-default num = [0,1,2,3,4,5,6,7,8,9,10]
+default mark = [False,False,False,False,False,False,False,False,False,False,False, False, False]
+default posX = [0.33802,0.16875,0.16875,0.16875,0.16875,0.21041,0.16875,0.16875,0.16875,0.16875,0.31718 ,0.50208,0.58489]
+default posY = [0.10185,0.19722,0.22037,0.28981,0.45462,0.45462,0.50092,0.54722,0.59351,0.66296,0.75833,0.75833,0.75833]
+default num = [0,1,2,3,4,5,6,7,8,9,10,11,12]
 
 init python:
     def toggleMark(ind):
