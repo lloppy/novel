@@ -1,5 +1,4 @@
 label second_day:
-    jump job_summary_script
     show home morning
     with dissolve
 
@@ -14,8 +13,6 @@ label second_day:
     Все-таки им нужно погружать меня в детали разработки, а это темы гораздо более сложные, 
     чем просто описание профессий.{/cps}"
     
-
-    # readded
     show lane morning
     with dissolve
 
@@ -33,8 +30,7 @@ label second_day:
     return
 
 label track_kai:
-    # readded
-    show dark_mistery_street
+    scene lane morning
     with dissolve
 
     "{cps=40}Переулок, в который таинственно забрел Кай, совсем не похож на место, 
@@ -42,17 +38,13 @@ label track_kai:
 
     "{cps=40}Тут что-то не так. Нужно попытаться выяснить, куда он направляется.{/cps}"
 
-    show dark_mistery_man
-    with dissolve
     "{cps=40}Черт, надо же было так неудачно встать. Совсем не видно лицо этого незнакомца. И фразы их не разобрать. 
     И все же все это максимально подозрительно. К чему такая скрытность? Никаких ответов…{/cps}"
 
-    show street
-    with dissolve
     "{cps=40}Пора в офис… Не хватало мне опоздать во второй день своей стажировки. 
     А вот как Кай вовремя окажется там, я даже представить не могу…{/cps}"
 
-    show bg ofis
+    scene bg ofis
     with dissolve
 
     "{cps=43}Безлюдный холл напоминает, что все ответственные работники уже давно на своих рабочих местах.{/cps}"
@@ -67,15 +59,19 @@ label not_track_kai:
     он право вне рабочего времени ходить, куда его заблагорассудится. 
     Я же лучше дойду до кофейни, пока есть время до начала рабочего дня.{/cps}"
 
-    show scenes cafee
+    scene scenes cafee
     with dissolve
     "{cps=43}Можно один латте, ложка сахара, медовый сироп? Спасибо.{/cps}"
 
     show lloyd
-    l "{cps=43}Здравствуйте! Работящего человека видно сразу, эх! Кстати, ЛЛойд. 
+    l "{cps=43}Здравствуйте! Работящего человека видно сразу, эх! Кстати, Ллойд. 
     Это мое имя. Скажете, что за невнятный тип, а я скажу вам, 
     что я бывший разработчик одной корпорации. Почему бывший? ДА ПОТОМУ ЧТО..{/cps}"
-    show kai
+    show lloyd surprise at right
+    with dissolve
+
+    show kai at left
+    with dissolve
     kai "{cps=43}Привет, стажер. Давненько не виделись. Не обращай внимания на этого сумасшедшего, 
     он давненько в этой кофейне всем настроение портит.{/cps}"
     show kai angry
@@ -90,7 +86,7 @@ label not_track_kai:
     kai "{cps=43}Да, извини. Как-то само вырвалось. Отдыхать надо почаще, а то работа и работа.{/cps}"
 
 
-    show street
+    scene street
     with dissolve
 
     show kai smile
@@ -118,48 +114,50 @@ label not_track_kai:
     show kai smile_ce
     kai "{cps=43}Да ладно, чего уж там… Был бы ты не прав, я бы возразил, но я и правда не очень силен 
     в программировании. Но позволь тебе рассказать секрет успешной команды: не так важно, 
-    насколько профессиональны члены твоей команды.{/cps}" 
+    насколько профессиональны члены твоей команды.{/cps}"
+    
     show kai serious
     kai "{cps=43}Будь они хоть трижды специалистами мирового уровня, 
     если они плохо взаимодействуют между собой, хорошего продукта не сделать. А все почему? 
     Геймдев - одна из самых зависимых от общего видения команды областей разработки.{/cps}"
     show kai
 
-    "Получается, даже ничего не знающий вполне может попасть в команду?{/cps}"
+    "{cps=43}Получается, даже ничего не знающий вполне может попасть в команду?{/cps}"
 
     show kai serious
-    "{cps=43}Ну ты уж палку не перегибай, дружище. Разумеется, кроме командной работы важно, что из себя представляет каждый ее член. 
+    kai "{cps=43}Ну ты уж палку не перегибай, дружище. Разумеется, кроме командной работы важно, что из себя представляет каждый ее член. 
     Поэтому слушай и вникай во все, что я тебе сегодня буду рассказывать.{/cps}"
 
-    show street
+    scene street
     with dissolve
 
-    show bg ofic
+    scene bg ofic
     with dissolve
 
-    show elevator outside
+    scene elevator outside
     with dissolve
 
     show kai
     "{cps=43}Забыл кое-что сделать. Ты давай в лифт, а я следом. Подожди меня за рабочим местом.{/cps}"
 
     "{cps=43}Ну, как скажешь…{/cps}"
+
+    hide kai
     
     jump second_day_contunue
 
 
 label second_day_contunue:
-    #readded
-    show elevator inside
+    scene elevator inside
     with dissolve
 
     "{cps=43}Интересно, один лишь Кай в команде такой странный, или другим тоже есть, что скрывать? 
     Нужно постараться аккуратно разузн  ать что-нибудь у Карэн, при этом не забыть о главной цели 
     - показать себя как перспективного разработчика, чтобы заполучить место в компании.{/cps}"
 
-    "Ну, вперед…"
+    "Ну, вперед!    …"
 
-    show office
+    scene office
     with dissolve
 
     show karen
@@ -196,10 +194,14 @@ label say_lie_kai:
 
 
 label second_day_office_continue:
-    show hall
+    scene office
+
+    show karen at right
     with dissolve
 
-    show kai smile
+    show kai smile at left
+    with dissolve
+
     kai "{cps=43}А вот и я! Босс, извиняйте, были неотложные дела. Ты же не станешь делать выговор 
     самому важному сотруднику отдела?{/cps}"
 
@@ -213,7 +215,7 @@ label second_day_office_continue:
     show karen angry
     k "{cps=43}Но я же еще не успела даже ничего сказать…{/cps}"
 
-    show office2
+    scene office2
     with dissolve
 
     show kai
@@ -339,6 +341,12 @@ label second_day_office_continue:
     ориентируясь на свой опыт и знания.{/cps}"
     show kai
 
+    jump resumeGame_label
+    return
+
+label resumeGame_label:
+    scene office2
+    show kai
     jump resumeGame
     return
 
@@ -346,9 +354,12 @@ label second_day_office_continue:
 label second_day_contunue_after_game:
     show office2
     with dissolve
+
+    show kai
+
     "{cps=43}Ну, как я справился?{/cps}"
 
-    if developer >= 3:
+    if developer >= 2:
         show kai smile
         kai "{cps=43}Очень неплохо, получилось что-то действительно похожее на настоящее резюме, 
         теперь ты хотя бы представляешь, как оно должно выглядеть. На этом пока остановимся, 

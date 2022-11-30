@@ -1,10 +1,11 @@
 # Определение персонажей игры.
 define kai = Character('Кай', color="#0318fc")
-define a = Character('Элли', color="#fc038c", image = "ally")
+define e = Character('Элли', color="#fc038c", image = "elly")
+define g = Character('Девушка', color="#fc038c", image = "elly")
 define v = Character('Виктор', color="#8803fc", image = "victor")
-define l = Character('ЛЛойд', color="#03fc45", image = "lloyd")
+define l = Character('Ллойд', color="#03fc45", image = "lloyd")
 define k = Character('Карэн', color="#640303", image = "karen")
-define al = Character('Алан', color="#0398fc", image = "alan")
+define a = Character('Алан', color="#0398fc", image = "alan")
 define news = Character('news', color="#0000007d", image = "news")
 
 define loaders_array = ["intro/loader (0).png", "intro/loader (1).png", "intro/loader (2).png",
@@ -39,15 +40,17 @@ define watch_kai = False
 define ans1 = ""
 define ans2 = ""
 define ans3 = ""
+define ans = ""
 
 
-init:
-    $ leftCoordinates = Position(xalign = 0.0, yalign = 0.7)
-    $ rightCoordinates = Position(xalign = 0.5, yalign = 0.7)
-    $ leftDownCoordinates = Position(xalign = 0.0, yalign = - 1.6)
-    $ rightCenterCoordinates = Position(xalign = 0.6, yalign = - 1.0)
-    $ leftCenterCoordinates = Position(xalign = 0.3, yalign = - 2.0)
-    $ phone_transition_speed = 0.05 #Using a variable to make testing different speeds easier.
+init python:
+    leftCoordinates = Position(xalign = 0.0, yalign = 0.7)
+    rightCoordinates = Position(xalign = 0.5, yalign = 0.7)
+    leftDownCoordinates = Position(xalign = 0.0, yalign = - 1.6)
+    rightCenterCoordinates = Position(xalign = 0.6, yalign = - 1.0)
+    leftCenterCoordinates = Position(xalign = 0.3, yalign = - 2.0)
+    phone_transition_speed = 0.05 #Using a variable to make testing different speeds easier.
+
 
  
 label splashscreen:
@@ -110,8 +113,6 @@ label succeeded:
     pause 0.3
     show loader11 at right
     pause 4.0
-
-
     return
 
 
@@ -119,10 +120,10 @@ label succeeded:
 label start:
 
     $ point = 0
-    jump second_day_office_continue2
+    jump second_day
 
 
-    
+
     jump first_day_moring
 
     jump first_day_bus_news

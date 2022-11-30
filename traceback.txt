@@ -1,99 +1,65 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-While running game code:
-  File "renpy/common/00gamemenu.rpy", line 170, in script
-    $ ui.interact()
-  File "renpy/common/00gamemenu.rpy", line 170, in <module>
-    $ ui.interact()
-  File "game/screens.rpy", line 721, in execute
-    screen preferences():
-  File "game/screens.rpy", line 721, in execute
-    screen preferences():
-  File "game/screens.rpy", line 725, in execute
-    use game_menu(_("Настройки"), scroll="viewport"):
-  File "game/screens.rpy", line 428, in execute
-    screen game_menu(title, scroll=None, yinitial=0.0):
-  File "game/screens.rpy", line 428, in execute
-    screen game_menu(title, scroll=None, yinitial=0.0):
-  File "game/screens.rpy", line 482, in execute
-    use navigation
-  File "game/screens.rpy", line 288, in execute
-    screen navigation():
-  File "game/screens.rpy", line 288, in execute
-    screen navigation():
-  File "game/screens.rpy", line 290, in execute
-    vbox:
-  File "game/screens.rpy", line 298, in execute
-    if main_menu:
-  File "game/screens.rpy", line 303, in execute
-    imagebutton:
-  File "renpy/common/00defaults.rpy", line 139, in _imagemap_auto_function
-    rv = auto_param % variant
-TypeError: not all arguments converted during string formatting
+While loading <renpy.display.im.Image object ('tools/summary/resume.png') at 0x0000000005846160>:
+  File "game/scripts/job_summary_script.rpy", line 9, in <module>
+OSError: Couldn't find file 'tools/summary/resume.png'.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "renpy/common/00gamemenu.rpy", line 170, in script
-    $ ui.interact()
+  File "game/scripts/job_summary_script.rpyc", line 9, in script
   File "C:\renpy-8.0.3-sdk\renpy\ast.py", line 1131, in execute
     renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
   File "C:\renpy-8.0.3-sdk\renpy\python.py", line 1061, in py_exec_bytecode
     exec(bytecode, globals, locals)
-  File "renpy/common/00gamemenu.rpy", line 170, in <module>
-    $ ui.interact()
+  File "game/scripts/job_summary_script.rpy", line 9, in <module>
+  File "C:\renpy-8.0.3-sdk\renpy\exports.py", line 1537, in pause
+    rv = renpy.ui.interact(mouse='pause', type='pause', roll_forward=roll_forward, pause=delay, pause_modal=modal)
   File "C:\renpy-8.0.3-sdk\renpy\ui.py", line 299, in interact
     rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
   File "C:\renpy-8.0.3-sdk\renpy\display\core.py", line 3377, in interact
     repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
-  File "C:\renpy-8.0.3-sdk\renpy\display\core.py", line 3810, in interact_core
-    root_widget.visit_all(lambda i : i.per_interact())
-  File "C:\renpy-8.0.3-sdk\renpy\display\core.py", line 582, in visit_all
-    d.visit_all(callback, seen)
-  File "C:\renpy-8.0.3-sdk\renpy\display\core.py", line 582, in visit_all
-    d.visit_all(callback, seen)
-  File "C:\renpy-8.0.3-sdk\renpy\display\core.py", line 582, in visit_all
-    d.visit_all(callback, seen)
-  [Previous line repeated 1 more time]
-  File "C:\renpy-8.0.3-sdk\renpy\display\screen.py", line 451, in visit_all
-    callback(self)
-  File "C:\renpy-8.0.3-sdk\renpy\display\core.py", line 3810, in <lambda>
-    root_widget.visit_all(lambda i : i.per_interact())
-  File "C:\renpy-8.0.3-sdk\renpy\display\screen.py", line 462, in per_interact
-    self.update()
-  File "C:\renpy-8.0.3-sdk\renpy\display\screen.py", line 653, in update
-    self.screen.function(**self.scope)
-  File "game/screens.rpy", line 721, in execute
-    screen preferences():
-  File "game/screens.rpy", line 721, in execute
-    screen preferences():
-  File "game/screens.rpy", line 725, in execute
-    use game_menu(_("Настройки"), scroll="viewport"):
-  File "game/screens.rpy", line 428, in execute
-    screen game_menu(title, scroll=None, yinitial=0.0):
-  File "game/screens.rpy", line 428, in execute
-    screen game_menu(title, scroll=None, yinitial=0.0):
-  File "game/screens.rpy", line 482, in execute
-    use navigation
-  File "game/screens.rpy", line 288, in execute
-    screen navigation():
-  File "game/screens.rpy", line 288, in execute
-    screen navigation():
-  File "game/screens.rpy", line 290, in execute
-    vbox:
-  File "game/screens.rpy", line 298, in execute
-    if main_menu:
-  File "game/screens.rpy", line 303, in execute
-    imagebutton:
-  File "C:\renpy-8.0.3-sdk\renpy\ui.py", line 952, in _imagebutton
-    idle = choice(idle, idle_image, "idle", required=True)
-  File "C:\renpy-8.0.3-sdk\renpy\ui.py", line 940, in choice
-    rv = renpy.config.imagemap_auto_function(auto, name)
-  File "renpy/common/00defaults.rpy", line 139, in _imagemap_auto_function
-    rv = auto_param % variant
-TypeError: not all arguments converted during string formatting
+  File "C:\renpy-8.0.3-sdk\renpy\display\core.py", line 3912, in interact_core
+    self.draw_screen(root_widget, fullscreen_video, (not fullscreen_video) or video_frame_drawn)
+  File "C:\renpy-8.0.3-sdk\renpy\display\core.py", line 2602, in draw_screen
+    surftree = renpy.display.render.render_screen(
+  File "render.pyx", line 495, in renpy.display.render.render_screen
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "C:\renpy-8.0.3-sdk\renpy\display\layout.py", line 884, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "C:\renpy-8.0.3-sdk\renpy\display\layout.py", line 884, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "C:\renpy-8.0.3-sdk\renpy\display\layout.py", line 884, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "C:\renpy-8.0.3-sdk\renpy\display\transform.py", line 747, in render
+    return transform_render(self, width, height, st, at)
+  File "accelerator.pyx", line 187, in renpy.display.accelerator.transform_render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "C:\renpy-8.0.3-sdk\renpy\display\image.py", line 506, in render
+    return wrap_render(self.target, width, height, st, at)
+  File "C:\renpy-8.0.3-sdk\renpy\display\image.py", line 309, in wrap_render
+    rend = render(child, w, h, st, at)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "C:\renpy-8.0.3-sdk\renpy\display\im.py", line 627, in render
+    return cache.get(self, render=True)
+  File "C:\renpy-8.0.3-sdk\renpy\display\im.py", line 295, in get
+    surf = image.load()
+  File "C:\renpy-8.0.3-sdk\renpy\display\im.py", line 720, in load
+    raise e
+  File "C:\renpy-8.0.3-sdk\renpy\display\im.py", line 685, in load
+    filelike = renpy.loader.load(self.filename)
+  File "C:\renpy-8.0.3-sdk\renpy\loader.py", line 820, in load
+    raise IOError("Couldn't find file '%s'." % name)
+OSError: Couldn't find file 'tools/summary/resume.png'.
 
 Windows-10-10.0.22000 AMD64
 Ren'Py 8.0.3.22090809
 DGame 1.0
-Sun Nov 27 21:23:34 2022
+Wed Nov 30 20:48:02 2022

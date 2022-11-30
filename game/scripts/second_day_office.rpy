@@ -1,9 +1,9 @@
 label second_day_office:
-    show hall 
+    scene hall 
     with dissolve
     pause 1.0
 
-    show office2 
+    scene office2 
     with dissolve
 
     show kai
@@ -54,7 +54,7 @@ label second_day_office:
 
     kai "{cps=43}Наконец сюрприз. Встань и пройди к соседнему столу.{/cps}"
 
-    show office
+    scene office
     with dissolve
 
     show kai smile_with_disbelief at leftCoordinates
@@ -70,7 +70,7 @@ label second_day_office:
 
 
 label second_day_office_continue2:
-    show hall 
+    scene hall 
     with dissolve
 
     show karen smile
@@ -126,6 +126,9 @@ label second_day_office_continue2:
     show karen smile
     k "{cps=43}А теперь можешь идти домой. Увидимся завтра.{/cps}"
 
+    show cafee dark
+    with dissolve
+    
     if watch_kai:
         "{cps=43}То, что Кай сказал в лифте… Связано ли оно с тем, что я проследил за ним? 
         Мог ли он меня заметить? Мне кажется, я никак не мог себя выдать. 
@@ -142,7 +145,8 @@ label second_day_office_continue2:
         
         "{cps=43}А ведь еще пару дней назад я боялся, что буду казаться всем ничтожным из-за отсутствия опыта 
         создания игр. Я рад, что попал именно в эту команду, поскорее бы узнать еще больше людей в корпорации.{/cps}"
-
+    jump third_day
+    return
 
 
     
