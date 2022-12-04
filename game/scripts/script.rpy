@@ -120,7 +120,7 @@ label succeeded:
 label start:
 
     $ point = 0
-    jump second_day
+    jump third_day
 
 
 

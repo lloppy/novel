@@ -38,6 +38,9 @@ label third_day:
     show elly smile
     g "Ну почему же… Я очень даже способна проснуться вовремя, но я хватаюсь за столько утренних дел, что выйти вовремя не всегда получается… Извините, но мне пора бежать, хорошего вам дня!"
     show elly smile_ce
+    hide elly
+    with dissolve
+    
 
     "Какая милая девушка, а я даже имя ее не спросил… Правда, сейчас беспокоить меня должно совсем не это, а реакция Карэн на мое опоздание."
 
@@ -60,7 +63,7 @@ label third_day:
             return
 
 label third_day_say_true:
-    show office
+    scene office
 
     show karen angry
 
@@ -75,7 +78,7 @@ label third_day_say_true:
     постарайся предупредить меня сразу, ведь мне нужно планировать работу отдела на день. 
     Можешь идти на свое место, Кай объяснит тебе, что было на пропущенном тобой дейли."
 
-    show office2
+    scene office2
     with dissolve
 
     show kai
@@ -127,7 +130,7 @@ label third_day_say_true:
     она расскажет тебе о твоих задачах как программиста на сегодня."
     show kai
 
-    show office
+    scene office
     with dissolve
 
     show karen
@@ -172,7 +175,9 @@ label third_day_say_true:
     scene office2
     with dissolve
 
-    # rewrite scene computer(появляется экран компьютера)
+    image office_computer = "scene/office computer.png"
+    scene office_computer
+    with dissolve
 
     show karen say 
     k "На самом деле, в большинстве случаев тебе совсем не нужно указывать тип данных. 
@@ -241,7 +246,7 @@ label third_day_say_true:
     k "На этом у меня все. Теперь Кай добавит немного об оформлении игры, и ты можешь приступать. 
     Удачи тебе, если возникнут трудности, обращайся!"
 
-    show office
+    scene office
     with dissolve
 
     show kai smile
@@ -291,7 +296,7 @@ label third_day_say_true:
 
 
 label third_day_say_false:
-    show office
+    scene office
 
     show karen angry
 
@@ -375,7 +380,7 @@ label second_options_romantic_branch:
     "Раз уж утром мне не удалось познакомиться с этой милой девушкой, то хотя бы сейчас я сделаю это. 
     К тому же, у меня есть чувство, что ей требуется моя помощь."
 
-    # rewrite scene office elly 
+    scene elles  office day
     
     "Извини, что так без предупреждения, просто проходил по коридору и увидел, 
     что ты пытаешься что-то сделать с компьютером. Может тебе помочь?"
@@ -411,9 +416,12 @@ label second_options_romantic_branch:
     
     g "Возможно, если заслужишь доверие твоего тимлида, то она тоже станет более лояльна к тебе."
  
+    scene elly office surprise
+    with dissolve
     g "Как я могла забыть?! У меня же созвон прямо сейчас. Как вовремя включился компьютер! 
     Пожалуйста, оставь меня, я просто обязана присоединиться. Еще увидимся…"
 
+    scene elly office smash
     "Ну, тогда удачной работы…"
 
     scene hall
@@ -440,7 +448,8 @@ label third_option_no_action:
     "Не могу я отвлекаться, рискуя не справится со своим первым крупным заданием. 
     Нужно идти прямиком в конец коридора."
 
-    #  rewrite scene interactive desk
+    scene board
+    with fade
     # Большой кабинет наполняют несколько стажеров, собравшиеся у интерактивной доски.
 
     "Всем добрый день."
@@ -531,4 +540,4 @@ label third_day_end:
     # задание: в ходе работы над проектом вам нужно будет реализовать функцию для поиска нужного угла, подобрать правильную цветовую палитру, а также сохранить все в git репозитории)
     # 
 
-    $ ans_angry_birds = renpy.input("(Задание 1: реализуйте функцию расчета угла прицеливания, в зависимости от начальной скорости снаряда и дальности до цели")
+    $ ans_angry_birds = renpy.input("Задание 1: реализуйте функцию расчета угла прицеливания, в зависимости от начальной скорости снаряда и дальности до цели")

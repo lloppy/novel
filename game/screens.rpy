@@ -1201,15 +1201,11 @@ screen skip_indicator():
     style_prefix "skip"
 
     frame:
-
-        hbox:
-            spacing 9
-
-            text _("Пропускаю")
-
-            text "▸" at delayed_blink(0.0, 1.0) style "skip_triangle"
-            text "▸" at delayed_blink(0.2, 1.0) style "skip_triangle"
-            text "▸" at delayed_blink(0.4, 1.0) style "skip_triangle"
+        image "tools/tool/skip 1.png" at delayed_blink(0.0, 1.0) 
+        image "tools/tool/skip 3.png" at delayed_blink(0.2, 1.0) 
+        image "tools/tool/skip 2.png" at delayed_blink(0.4, 1.0)
+       
+            
 
 
 ## Эта трансформация используется, чтобы мигать стрелками одна за другой.

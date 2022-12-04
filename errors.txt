@@ -2,8 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/scripts/minigame_resume.rpy", line 28: is not terminated with a newline. (Check strings and parenthesis.)
-            for i in range(0, len(mark):
+File "game/screens.rpy", line 1208: 'style' is not a keyword argument or valid child for the image statement.
+    image "tools/tool/skip 1.png" at delayed_blink(0.0, 1.0) style "skip_triangle"
+                                                                  ^
 
 Ren'Py Version: Ren'Py 8.0.3.22090809
-Wed Nov 30 19:56:48 2022
+Mon Dec  5 03:44:00 2022
