@@ -1,95 +1,32 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "renpy/common/00gamemenu.rpy", line 170, in script
-    $ ui.interact()
-  File "renpy/common/00gamemenu.rpy", line 170, in <module>
-    $ ui.interact()
-  File "game/screens.rpy", line 720, in execute
-    screen preferences():
-  File "game/screens.rpy", line 720, in execute
-    screen preferences():
-  File "game/screens.rpy", line 724, in execute
-    use game_menu(_(""), scroll="viewport"):
-  File "game/screens.rpy", line 427, in execute
-    screen game_menu(title, scroll=None, yinitial=0.0):
-  File "game/screens.rpy", line 427, in execute
-    screen game_menu(title, scroll=None, yinitial=0.0):
-  File "game/screens.rpy", line 481, in execute
-    use navigation
-  File "game/screens.rpy", line 288, in execute
-    screen navigation():
-  File "game/screens.rpy", line 288, in execute
-    screen navigation():
-  File "game/screens.rpy", line 290, in execute
-    vbox:
-  File "game/screens.rpy", line 298, in execute
-    if main_menu:
-  File "game/screens.rpy", line 307, in execute
-    imagebutton:
-Exception: Imagebutton does not have a idle image. (auto='gui/newstyle/save_%s.png').
+  File "game/scripts/third_day.rpy", line 576, in script
+    show bird1 at truecenter_custom
+  File "game/scripts/third_day.rpy", line 576, in <module>
+    show bird1 at truecenter_custom
+NameError: name 'truecenter_custom' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "renpy/common/00gamemenu.rpy", line 170, in script
-    $ ui.interact()
-  File "C:\renpy-8.0.3-sdk\renpy\ast.py", line 1131, in execute
-    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-  File "C:\renpy-8.0.3-sdk\renpy\python.py", line 1061, in py_exec_bytecode
-    exec(bytecode, globals, locals)
-  File "renpy/common/00gamemenu.rpy", line 170, in <module>
-    $ ui.interact()
-  File "C:\renpy-8.0.3-sdk\renpy\ui.py", line 299, in interact
-    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
-  File "C:\renpy-8.0.3-sdk\renpy\display\core.py", line 3377, in interact
-    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
-  File "C:\renpy-8.0.3-sdk\renpy\display\core.py", line 3810, in interact_core
-    root_widget.visit_all(lambda i : i.per_interact())
-  File "C:\renpy-8.0.3-sdk\renpy\display\core.py", line 582, in visit_all
-    d.visit_all(callback, seen)
-  File "C:\renpy-8.0.3-sdk\renpy\display\core.py", line 582, in visit_all
-    d.visit_all(callback, seen)
-  File "C:\renpy-8.0.3-sdk\renpy\display\core.py", line 582, in visit_all
-    d.visit_all(callback, seen)
-  [Previous line repeated 1 more time]
-  File "C:\renpy-8.0.3-sdk\renpy\display\screen.py", line 451, in visit_all
-    callback(self)
-  File "C:\renpy-8.0.3-sdk\renpy\display\core.py", line 3810, in <lambda>
-    root_widget.visit_all(lambda i : i.per_interact())
-  File "C:\renpy-8.0.3-sdk\renpy\display\screen.py", line 462, in per_interact
-    self.update()
-  File "C:\renpy-8.0.3-sdk\renpy\display\screen.py", line 653, in update
-    self.screen.function(**self.scope)
-  File "game/screens.rpy", line 720, in execute
-    screen preferences():
-  File "game/screens.rpy", line 720, in execute
-    screen preferences():
-  File "game/screens.rpy", line 724, in execute
-    use game_menu(_(""), scroll="viewport"):
-  File "game/screens.rpy", line 427, in execute
-    screen game_menu(title, scroll=None, yinitial=0.0):
-  File "game/screens.rpy", line 427, in execute
-    screen game_menu(title, scroll=None, yinitial=0.0):
-  File "game/screens.rpy", line 481, in execute
-    use navigation
-  File "game/screens.rpy", line 288, in execute
-    screen navigation():
-  File "game/screens.rpy", line 288, in execute
-    screen navigation():
-  File "game/screens.rpy", line 290, in execute
-    vbox:
-  File "game/screens.rpy", line 298, in execute
-    if main_menu:
-  File "game/screens.rpy", line 307, in execute
-    imagebutton:
-  File "C:\renpy-8.0.3-sdk\renpy\ui.py", line 952, in _imagebutton
-    idle = choice(idle, idle_image, "idle", required=True)
-  File "C:\renpy-8.0.3-sdk\renpy\ui.py", line 946, in choice
-    raise Exception("Imagebutton does not have a %s image. (auto=%r)." % (name, auto))
-Exception: Imagebutton does not have a idle image. (auto='gui/newstyle/save_%s.png').
+  File "game/scripts/third_day.rpy", line 576, in script
+    show bird1 at truecenter_custom
+  File "C:\renpy-8.0.3-sdk\renpy\ast.py", line 1408, in execute
+    show_imspec(self.imspec, atl=getattr(self, "atl", None))
+  File "C:\renpy-8.0.3-sdk\renpy\ast.py", line 1367, in show_imspec
+    at_list = [ renpy.python.py_eval(i) for i in at_list ]
+  File "C:\renpy-8.0.3-sdk\renpy\ast.py", line 1367, in <listcomp>
+    at_list = [ renpy.python.py_eval(i) for i in at_list ]
+  File "C:\renpy-8.0.3-sdk\renpy\python.py", line 1092, in py_eval
+    return py_eval_bytecode(code, globals, locals)
+  File "C:\renpy-8.0.3-sdk\renpy\python.py", line 1085, in py_eval_bytecode
+    return eval(bytecode, globals, locals)
+  File "game/scripts/third_day.rpy", line 576, in <module>
+    show bird1 at truecenter_custom
+NameError: name 'truecenter_custom' is not defined
 
 Windows-10-10.0.22000 AMD64
 Ren'Py 8.0.3.22090809
 DGame 1.0
-Mon Dec  5 04:02:49 2022
+Wed Dec  7 12:32:17 2022

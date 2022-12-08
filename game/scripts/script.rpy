@@ -49,6 +49,8 @@ init python:
     leftDownCoordinates = Position(xalign = 0.0, yalign = - 1.6)
     rightCenterCoordinates = Position(xalign = 0.6, yalign = - 1.0)
     leftCenterCoordinates = Position(xalign = 0.3, yalign = - 2.0)
+
+    truecenter_custom = Position(xalign = 0.5, yalign = 0.162)
     phone_transition_speed = 0.05 #Using a variable to make testing different speeds easier.
 
 
@@ -120,7 +122,7 @@ label succeeded:
 label start:
 
     $ point = 0
-    jump third_day
+    jump third_day_end
 
 
 

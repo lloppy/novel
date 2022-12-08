@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/screens.rpy", line 1091: imagebutton expects a non-empty block.
-    imagebutton:
-                ^
+File "game/scripts/third_day.rpy", line 566: 'computer' is not a keyword argument or valid child for the screen statement.
+    screen office computer
+                          ^
 
 Ren'Py Version: Ren'Py 8.0.3.22090809
-Mon Dec  5 04:54:31 2022
+Wed Dec  7 12:30:10 2022
