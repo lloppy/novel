@@ -130,6 +130,7 @@ style namebox is default
 style namebox_label is say_label
 
 
+
 style window:
     xalign 0.5
     xfill True
@@ -137,6 +138,8 @@ style window:
     ysize gui.textbox_height
 
     background Image("gui/textbox.png", xalign=0.5, yalign=1.0)
+
+
 
 style namebox:
     xpos gui.name_xpos
@@ -1083,25 +1086,23 @@ screen confirm(message, yes_action, no_action):
     add "gui/overlay/confirm.png"
 
     frame:
-        background "tools/yesno/bg.webp"
-
-        xpadding 1.0
-        ypadding 1.0
+        background "tools/menu_options/pause background.png"
+        
            
         imagebutton:
             idle "tools/yesno/yes.webp"
             hover "tools/yesno/yes_hover.webp"
             focus_mask True
-            xoffset 455
-            yoffset 181
+            xoffset 815
+            yoffset 721
             action yes_action
 
         imagebutton:
             idle "tools/yesno/no.webp"
             hover "tools/yesno/no_hover.webp"
             focus_mask True
-            xoffset 588
-            yoffset 180
+            xoffset 948
+            yoffset 720
             action no_action
 
     ## Правый клик и esc, как ответ "Нет".

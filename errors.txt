@@ -2,9 +2,17 @@
 errors listed below, and try again.
 
 
-File "game/scripts/third_day.rpy", line 566: 'computer' is not a keyword argument or valid child for the screen statement.
-    screen office computer
-                          ^
+File "game/scripts/third_day_third_task.rpy", line 97: expected ':' not found.
+    else if ( score[0] + score[1] + score[2] == 3 and !(score[3]) ):
+         ^
+
+File "game/scripts/third_day_third_task.rpy", line 113: expected statement.
+    else if ( score[0] + score[1] + score[2] == 2 and score[4] ):
+         ^
+
+File "game/scripts/third_day_third_task.rpy", line 128: expected statement.
+    else:
+        ^
 
 Ren'Py Version: Ren'Py 8.0.3.22090809
-Wed Dec  7 12:30:10 2022
+Sun Dec 11 05:04:10 2022

@@ -5,7 +5,7 @@ define g = Character('Девушка', color="#fc038c", image = "elly")
 define v = Character('Виктор', color="#8803fc", image = "victor")
 define l = Character('Ллойд', color="#03fc45", image = "lloyd")
 define k = Character('Карэн', color="#640303", image = "karen")
-define a = Character('Алан', color="#0398fc", image = "alan")
+define a = Character('Алан', color="#23282b00", image = "alan")
 define news = Character('news', color="#0000007d", image = "news")
 
 define loaders_array = ["intro/loader (0).png", "intro/loader (1).png", "intro/loader (2).png",
@@ -15,7 +15,6 @@ define loaders_array = ["intro/loader (0).png", "intro/loader (1).png", "intro/l
 #для переписки по телефону
 #define m_nvl = Character("Me", kind=nvl, image="nighten", callback=Phone_SendSound)
 #define n_nvl = Character("News", kind=nvl, callback=Phone_ReceiveSound)
-
 define currNews = -1
 define newsImage = ["one" , "two", "three", "three", "four", "four", "four", "four", "four", "five"]
 define newsText = ["Все началось в июле 2039 года, когда в Японии научились воздействовать на мозг человека напрямую с компьютера. Не сказать, что 6 числа это казалось грандиозным открытием. Где-то в научных кругах, конечно, многие считали технологию прорывной, но для обычного человека, погруженного в ежедневную рутину, это было просто “еще одно научное открытие”.",
@@ -41,7 +40,11 @@ define ans1 = ""
 define ans2 = ""
 define ans3 = ""
 define ans = ""
-
+define computerWrongAns = 0
+define computerWrongAnsSecond = 0
+define tap = 1
+define score = [0, 0, 0, False, False] # 1 2 3 задания + воспользовался ли помощью + посетил ли Элли
+define totalScore = 0
 
 init python:
     leftCoordinates = Position(xalign = 0.0, yalign = 0.7)
@@ -49,8 +52,9 @@ init python:
     leftDownCoordinates = Position(xalign = 0.0, yalign = - 1.6)
     rightCenterCoordinates = Position(xalign = 0.6, yalign = - 1.0)
     leftCenterCoordinates = Position(xalign = 0.3, yalign = - 2.0)
-
-    truecenter_custom = Position(xalign = 0.5, yalign = 0.162)
+    
+    # truecenter_custom = Position(xalign = 0.5, yalign = 0.162)
+    truecenter_custom = Position(xalign = 0.5, yalign = 0.262)
     phone_transition_speed = 0.05 #Using a variable to make testing different speeds easier.
 
 
@@ -122,7 +126,7 @@ label succeeded:
 label start:
 
     $ point = 0
-    jump third_day_end
+    jump third_day_third_task
 
 
 

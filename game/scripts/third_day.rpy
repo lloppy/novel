@@ -386,7 +386,8 @@ label first_option_empty_office:
 
 label second_options_romantic_branch:
     scene bg office
-
+    $ score[4] = True
+    
     "Раз уж утром мне не удалось познакомиться с этой милой девушкой, то хотя бы сейчас я сделаю это. 
     К тому же, у меня есть чувство, что ей требуется моя помощь."
 
@@ -560,44 +561,4 @@ label third_option_no_action:
     в конце концов это же стажировка, а не полноценная работа."
 
     jump third_day_end
-    return
-
-label third_day_end:
-    scene office computer
-    with fade
-    # rewrite  может сюда вставить картинкой((((
-        
-    # задание: в ходе работы над проектом вам нужно будет реализовать функцию для поиска нужного угла, подобрать правильную цветовую палитру, а также сохранить все в git репозитории)
-    # 
-
-    $ ans_angry_birds = renpy.input("Задание 1: реализуйте функцию расчета угла прицеливания, в зависимости от начальной скорости снаряда и дальности до цели")
-    
-    if (ans_angry_birds == "0.5 * Math.Asin(distance * 9.8 / (v * v));" or ans_angry_birds == "0.5 * Math.Asin(distance * 9.8 / (v * v))"):
-        show bird1 at truecenter_custom:
-            zoom 0.85
-        $ renpy.pause(0.15)
-        show bird2 at truecenter_custom:
-            zoom 0.85
-        $ renpy.pause(0.15)
-        show bird3 at truecenter_custom:
-            zoom 0.85
-        $ renpy.pause(0.15)
-        show bird4 at truecenter_custom:
-            zoom 0.85
-        $ renpy.pause(0.15)
-        show bird5 at truecenter_custom:
-            zoom 0.85
-        $ renpy.pause(0.15)
-        "С первого раза! Как же я хорош… Если следующие задания такие же простые, то я зря волновался."
-    else:
-        "Не работает… И где я мог ошибиться?"
-
-        menu:
-            "попросить помощи у Карэн":
-                jump ask_help_Karen
-            
-            "поискать ответ самостоятельно":
-                return
-
-label ask_help_Karen:
     return

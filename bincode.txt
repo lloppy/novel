@@ -111,7 +111,7 @@ label acquaintance:
 
 label profession:
 
-    "vremya ohuitelnih istoriy"
+    "vremya istoriy"
 
     $ soleCompany += 1
 
