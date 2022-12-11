@@ -14,7 +14,7 @@ label third_day_end:
     jump check_answer
     
 label checked_answer:
-    if (ans_angry_birds == "0.5 * Math.Asin(distance * 9.8 / (v * v));" or ans_angry_birds == "0.5 * Math.Asin(distance * 9.8 / (v * v))"):
+    if (ans_angry_birds == "0.5 * Math.Asin(distance * 9.8 / (v * v));" or ans_angry_birds == "0.5 * Math.Asin(distance * 9.8 / (v * v))" or "1/2 * asin(g * distance / v^2)" or "1/2 * asin(g * distance / v^2);" or "0.5 * Math.Asin(distance * 9.8 / (v^2));" or ans_angry_birds == "0.5 * Math.Asin(distance * 9.8 / (v^2))" ):
         show computer _screen first_task right
         with dissolve
         

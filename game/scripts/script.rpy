@@ -126,7 +126,7 @@ label succeeded:
 label start:
 
     $ point = 0
-    jump third_day_third_task
+    jump third_day
 
 
 
@@ -137,6 +137,10 @@ label start:
     jump first_day_survey
 
     jump second_day
+
+    jump third_day
+
+    # jump fourth day
 
     return
 

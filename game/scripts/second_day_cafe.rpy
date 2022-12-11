@@ -65,6 +65,7 @@ label second_day_cafe:
     kai "{cps=43}Да ладно, чего уж там… Лучше поспеши, нам уже нужно быть в отделе, а мы все еще тут сидим.{/cps}"
 
     jump second_day_office
+    return
 
 
 

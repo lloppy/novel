@@ -2,6 +2,7 @@ label third_day_third_task:
     scene computer one three_task
     with fade    
 
+    
     pause 1.0
 
     show computer screen1 three_task
@@ -171,4 +172,5 @@ label end_second_game:
     Теперь во мне осталось лишь желание совершенствоваться, которое никак не зависит от неудач на моем пути."
     
     "Я буду работать, чтобы стать лучше, чтобы вернуться в команду."
+
     return
