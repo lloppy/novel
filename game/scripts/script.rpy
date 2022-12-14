@@ -6,6 +6,7 @@ define v = Character('Виктор', color="#8803fc", image = "victor")
 define l = Character('Ллойд', color="#03fc45", image = "lloyd")
 define k = Character('Карэн', color="#640303", image = "karen")
 define a = Character('Алан', color="#23282b00", image = "alan")
+define m = Character('Алан', color="#23282b00", image = "alan")
 define news = Character('news', color="#0000007d", image = "news")
 
 define loaders_array = ["intro/loader (0).png", "intro/loader (1).png", "intro/loader (2).png",
@@ -43,6 +44,7 @@ define ans = ""
 define computerWrongAns = 0
 define computerWrongAnsSecond = 0
 define tap = 1
+define em
 define score = [0, 0, 0, False, False] # 1 2 3 задания + воспользовался ли помощью + посетил ли Элли
 define totalScore = 0
 
@@ -140,7 +142,7 @@ label start:
 
     jump third_day
 
-    # jump fourth day
+    jump fourth_day
 
     return
 
