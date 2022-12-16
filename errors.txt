@@ -2,17 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/scripts/third_day_third_task.rpy", line 97: expected ':' not found.
-    else if ( score[0] + score[1] + score[2] == 3 and !(score[3]) ):
-         ^
-
-File "game/scripts/third_day_third_task.rpy", line 113: expected statement.
-    else if ( score[0] + score[1] + score[2] == 2 and score[4] ):
-         ^
-
-File "game/scripts/third_day_third_task.rpy", line 128: expected statement.
-    else:
-        ^
+File "game/scripts/script.rpy", line 48: expected '=' not found.
+    define em
+             ^
 
 Ren'Py Version: Ren'Py 8.0.3.22090809
-Sun Dec 11 05:04:10 2022
+Fri Dec 16 12:38:40 2022

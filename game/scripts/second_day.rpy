@@ -26,6 +26,7 @@ label second_day:
             $ watch_kai = True
             jump track_kai
         "Не следить за Каем":
+            $ soleCompany += 1
             jump not_track_kai
     return
 
@@ -179,6 +180,7 @@ label second_day_contunue:
     menu:
         "Сказать правду":
             jump say_true_kai
+            $ soleCompany += 1
         "Соврать":
             jump say_lie_kai
             
@@ -359,7 +361,7 @@ label second_day_contunue_after_game:
 
     "{cps=43}Ну, как я справился?{/cps}"
 
-    if developer >= 2:
+    if developer >= 3:
         show kai smile
         kai "{cps=43}Очень неплохо, получилось что-то действительно похожее на настоящее резюме, 
         теперь ты хотя бы представляешь, как оно должно выглядеть. На этом пока остановимся, 

@@ -23,6 +23,7 @@ label first_day_survey:
 label trueAnswerProfession:
     show karen smile_ce_blush 
     k "Верно, именно я занимаюсь организацией рабочего процесса нашей команды и согласовываю различные аспекты наших проектов."
+    $ developer += 0.5
     jump questionSecond
 
 label falseAnswerProfession:
@@ -54,6 +55,7 @@ label questionSecond:
 label trueAnswerPlot:
     show karen smile
     k "Правильно, именно он внедряет нарратив в игру с помощью различных механик и геймплейных элементов."
+    $ developer += 0.5
     jump questionThird
 
 label falseAnswerPlot:
@@ -84,6 +86,7 @@ label questionThird:
 label trueAnswerChain:
     show karen smile_ce_blush 
     k "Действительно, после того, как риггер подготовил модель к анимации, работа переходит к аниматору."
+    $ developer += 0.5
     jump first_day_survey_continue
 
 label falseAnswerChain:

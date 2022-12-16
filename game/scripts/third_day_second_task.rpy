@@ -15,12 +15,14 @@ label third_day_second_task:
 label third_day_second_task_correct:
     if computerWrongAnsSecond == 0:
         "Это было очевидно…"
+        $ developer += 1
         $ score[1] = 1
         jump third_day_third_task
 
     else:
         "Ну, хотя бы со второго раза…"
         jump third_day_third_task
+        $ developer += 0.5
         $ score[1] = 1
     return
 

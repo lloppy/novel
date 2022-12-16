@@ -32,21 +32,21 @@ label resumeGame:
         $ developer += 1
 
     if (mark[2] == True and developer >= 0):
-        $ developer -= 1 
+        $ developer -= 0.5
     if (mark[3] == True and developer >= 0):
-        $ developer -= 1 
+        $ developer -= 0.5
     if (mark[4] == True and developer >= 0):
-        $ developer -= 1 
+        $ developer -= 0.5
     if (mark[5] == True and developer >= 0):
-        $ developer -= 1 
+        $ developer -= 0.5
     if (mark[6] == True and developer >= 0):
-        $ developer -= 1 
+        $ developer -= 0.5
     if (mark[7] == True and developer >= 0):
-        $ developer -= 1 
+        $ developer -= 0.5
     if (mark[9] == True and developer >= 0):
-        $ developer -= 1 
+        $ developer -= 0.5
     if (mark[10] == True and developer >= 0):
-        $ developer -= 1 
+        $ developer -= 0.5
 
     jump second_day_contunue_after_game
 

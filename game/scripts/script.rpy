@@ -36,6 +36,7 @@ define newsText = ["Все началось в июле 2039 года, когд�
 define detective = 0
 define soleCompany = 0
 define developer = 0
+define loveLine = 0
 define watch_kai = False
 define ans1 = ""
 define ans2 = ""
@@ -44,7 +45,6 @@ define ans = ""
 define computerWrongAns = 0
 define computerWrongAnsSecond = 0
 define tap = 1
-define em
 define score = [0, 0, 0, False, False] # 1 2 3 задания + воспользовался ли помощью + посетил ли Элли
 define totalScore = 0
 
@@ -128,7 +128,7 @@ label succeeded:
 label start:
 
     $ point = 0
-    jump third_day
+    jump help_girl
 
 
 
