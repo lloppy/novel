@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/scripts/script.rpy", line 48: expected '=' not found.
-    define em
-             ^
+File "game/scripts/fourth_day_part2.rpy", line 586: else clause expects a non-empty block.
+    else:
+         ^
 
 Ren'Py Version: Ren'Py 8.0.3.22090809
-Fri Dec 16 12:38:40 2022
+Sun Dec 18 02:22:24 2022
