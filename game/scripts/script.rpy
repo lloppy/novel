@@ -2,12 +2,20 @@
 define kai = Character('Кай', color="#0318fc")
 define e = Character('Элли', color="#fc038c", image = "elly")
 define g = Character('Девушка', color="#fc038c", image = "elly")
-define v = Character('Виктор', color="#8803fc", image = "victor")
 define l = Character('Ллойд', color="#03fc45", image = "lloyd")
 define ar = Character('Арон', color="#03fc45", image = "lloyd")
 define k = Character('Карэн', color="#640303", image = "karen")
+define g = Character('Грейс', color="#94002300", image = "grace")
+
 define a = Character('Алан', color="#23282b00", image = "alan")
-define m = Character('Алан', color="#23282b00", image = "alan")
+define m = Character('Мужчина', color="#23282b00", image = "alan")
+
+define unm = Character('Мужчина', color="#23282b00", image = "unknown") # unknown man
+define v = Character('Виктор', color="#23282b00", image = "unknown") # unknown man
+
+define gd = Character('Охрана', color="#00000000", image = "guard")
+
+
 define news = Character('news', color="#0000007d", image = "news")
 
 define loaders_array = ["intro/loader (0).png", "intro/loader (1).png", "intro/loader (2).png",
@@ -138,7 +146,7 @@ label succeeded:
 label start:
 
     $ point = 0
-    jump day_along
+    jump worst_root
 
 
 

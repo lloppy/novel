@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/scripts/fourth_day_part2.rpy", line 586: else clause expects a non-empty block.
-    else:
-         ^
+File "game/scripts/fifth_day.rpy", line 585: expected statement.
+    soleCompany / 7 <= loveLine / 4
+                ^
 
 Ren'Py Version: Ren'Py 8.0.3.22090809
-Sun Dec 18 02:22:24 2022
+Tue Dec 20 02:04:19 2022
