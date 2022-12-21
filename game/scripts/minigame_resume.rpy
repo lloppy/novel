@@ -15,9 +15,45 @@ init python:
 
     ToggleMark = renpy.curry(toggleMark)
 
+
 label resumeGame:
     show resume
-    call screen texts
+    show screen texts
+    $ renpy.pause ()
+
+    hide screen texts
+    hide resume
+
+    if (mark[0] == True):
+        $ developer += 1
+    if (mark[1] == True):
+        $ developer += 1
+    if (mark[8] == True):
+        $ developer += 1
+
+    if (mark[2] == True and developer >= 0):
+        $ developer -= 0.5
+    if (mark[3] == True and developer >= 0):
+        $ developer -= 0.5
+    if (mark[4] == True and developer >= 0):
+        $ developer -= 0.5
+    if (mark[5] == True and developer >= 0):
+        $ developer -= 0.5
+    if (mark[6] == True and developer >= 0):
+        $ developer -= 0.5
+    if (mark[7] == True and developer >= 0):
+        $ developer -= 0.5
+    if (mark[9] == True and developer >= 0):
+        $ developer -= 0.5
+    if (mark[10] == True and developer >= 0):
+        $ developer -= 0.5
+
+    jump second_day_contunue_after_game
+
+    
+
+    return
+
     
 screen texts:
     for i in num:
@@ -30,5 +66,8 @@ screen texts:
             selected_idle "resume_minigame/resume mark" + str(i+1) + " cross.png"
             selected_hover "resume_minigame/resume mark" + str(i+1) + " cross.png"
             action ToggleMark(i)
-            hovered Cursor("pen")
-            unhovered Cursor(None)
+            #hovered Cursor("resume_minigame/pen")
+            #unhovered Cursor(None)
+            # focus_mask True
+
+

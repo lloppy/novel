@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/scripts/script.rpy", line 56: Line is indented, but the preceding one-line python statement statement does not expect a block. Please check this line's indentation.
-    show enterPressed at truecenter
-    ^
+File "game/scripts/fifth_day.rpy", line 585: expected statement.
+    soleCompany / 7 <= loveLine / 4
+                ^
 
 Ren'Py Version: Ren'Py 8.0.3.22090809
-Wed Nov 16 20:00:44 2022
+Tue Dec 20 02:04:19 2022

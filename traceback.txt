@@ -1,30 +1,22 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/scripts/first_day_survey.rpy", line 85, in script
-    show karen smile_ce_blush "Действительно, после того, как риггер подготовил модель к анимации, работа переходит к аниматору."
-Exception: Image 'karen smile_ce_blush' does not accept attributes '"Действительно, после того, как риггер подготовил модель к анимации, работа переходит к аниматору."'.
+  File "game/scripts/fourth_day_part2.rpy", line 664, in script
+    arr "Я работал в игровой корпорации больше десяти лет."
+Exception: Sayer 'arr' is not defined.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/scripts/first_day_survey.rpy", line 85, in script
-    show karen smile_ce_blush "Действительно, после того, как риггер подготовил модель к анимации, работа переходит к аниматору."
-  File "C:\renpy-8.0.3-sdk\renpy\ast.py", line 1408, in execute
-    show_imspec(self.imspec, atl=getattr(self, "atl", None))
-  File "C:\renpy-8.0.3-sdk\renpy\ast.py", line 1371, in show_imspec
-    renpy.config.show(name,
-  File "C:\renpy-8.0.3-sdk\renpy\exports.py", line 686, in show
-    if not base.find_target() and renpy.config.missing_show:
-  File "C:\renpy-8.0.3-sdk\renpy\display\image.py", line 414, in find_target
-    self.target = target._duplicate(a)
-  File "C:\renpy-8.0.3-sdk\renpy\display\core.py", line 397, in _duplicate
-    args.extraneous()
-  File "C:\renpy-8.0.3-sdk\renpy\display\core.py", line 265, in extraneous
-    raise Exception("Image '{}' does not accept attributes '{}'.".format(
-Exception: Image 'karen smile_ce_blush' does not accept attributes '"Действительно, после того, как риггер подготовил модель к анимации, работа переходит к аниматору."'.
+  File "game/scripts/fourth_day_part2.rpy", line 664, in script
+    arr "Я работал в игровой корпорации больше десяти лет."
+  File "C:\renpy-8.0.3-sdk\renpy\ast.py", line 881, in execute
+    who = eval_who(self.who, self.who_fast)
+  File "C:\renpy-8.0.3-sdk\renpy\ast.py", line 774, in eval_who
+    raise Exception("Sayer '%s' is not defined." % who)
+Exception: Sayer 'arr' is not defined.
 
 Windows-10-10.0.22000 AMD64
 Ren'Py 8.0.3.22090809
 DGame 1.0
-Thu Nov 17 01:49:49 2022
+Sun Dec 18 02:52:07 2022

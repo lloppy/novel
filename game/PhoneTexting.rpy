@@ -4,8 +4,9 @@ define nvl_mode = "phone"  ##Allow the NVL mode to become a phone conversation
 define MC_Name = "Me" ##The name of the main character, used to place them on the screen
 
 init -1 python:
-    phone_position_x = 0.3
+    phone_position_x = 0.5
     phone_position_y = 0.5
+    var = 204
 
     def Phone_ReceiveSound(event, interact=True, **kwargs):
         if event == "show_done":
@@ -67,7 +68,7 @@ screen PhoneDialogue(dialogue, items=None):
             vbox:
                 null height 20
                 use nvl_phonetext(dialogue)
-                null height 100
+                null height 1000
 
 
 screen nvl_phonetext(dialogue):
@@ -77,11 +78,10 @@ screen nvl_phonetext(dialogue):
     for id_d, d in enumerate(dialogue):
         if d.who == None: # Narrator
             text d.what:
-                    xpos -335
-                    ypos 0.0
-                    xsize 350
+                    xpos 0.0
+                    ypos 0.7
+                    xsize 9350
                     text_align 0.5
-                    italic True
                     size 28
                     slow_cps False
                     id d.what_id
@@ -118,10 +118,10 @@ screen nvl_phonetext(dialogue):
                         text d.who
 
                     frame:
-                        padding (20,20)
+                        padding (var,var)
                         
 
-                        background Frame(message_frame, 23,23,23,23)
+                        background Frame(message_frame, var,var,var,var)
                         xsize 350
 
                         if d.current:
@@ -147,14 +147,14 @@ screen nvl_phonetext(dialogue):
                             id d.what_id
         $ previous_d_who = d.who
                     
-style phoneFrame is default
+# style phoneFrame is default
 
 style phoneFrame_frame:
-    background Transform("phone_background.png", xcenter=0.5,yalign=0.5)
-    foreground Transform("phone_foreground.png", xcenter=0.5,yalign=0.5)
+    background Transform("tools/tool/none.png", xcenter=0.5,yalign=0.5)
+    foreground Transform("tools/tool/none.png", xcenter=0.5,yalign=0.5)
     
-    ysize 815
-    xsize 495
+    ysize 1750
+    xsize 800
 
 style phoneFrame_viewport:
     yfill True

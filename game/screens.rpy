@@ -130,6 +130,7 @@ style namebox is default
 style namebox_label is say_label
 
 
+
 style window:
     xalign 0.5
     xfill True
@@ -137,6 +138,8 @@ style window:
     ysize gui.textbox_height
 
     background Image("gui/textbox.png", xalign=0.5, yalign=1.0)
+
+
 
 style namebox:
     xpos gui.name_xpos
@@ -256,7 +259,7 @@ screen quick_menu():
             textbutton _("Сохранить") action ShowMenu('save')
             textbutton _("Б.Сохр") action QuickSave()
             textbutton _("Б.Загр") action QuickLoad()
-            textbutton _("Опции") action ShowMenu('preferences')
+            textbutton _("Опции") action ShowMenu('oprionsWindowVolume')
 
 
 ## Данный код гарантирует, что экран быстрого меню будет показан в игре в любое
@@ -300,10 +303,13 @@ screen navigation():
                 auto "gui/newstyle/start_%s.png"
                 action Start()
         else:
-
-            textbutton _("История") action ShowMenu("history")
+        
+            #textbutton _("История") action ShowMenu("history")
 
             textbutton _("Сохранить") action ShowMenu("save")
+            #imagebutton:
+                #auto "gui/newstyle/save_%s.png"
+                #action ShowMenu("save")
 
         imagebutton:
                 auto "gui/newstyle/continue_%s.png"
@@ -311,19 +317,19 @@ screen navigation():
 
         imagebutton:
             auto "gui/newstyle/setting_%s.png"
-            action ShowMenu("preferences")
+            action ShowMenu("oprionsWindowVolume")
 
         if _in_replay:
 
             textbutton _("Завершить повтор") action EndReplay(confirm=True)
 
-        elif not main_menu:
+        #elif not main_menu:
 
-            textbutton _("Главное меню") action MainMenu()
+        #    textbutton _("Главное меню") action MainMenu()
 
-        imagebutton:
-            auto "gui/newstyle/about_%s.png"
-            action ShowMenu("about")
+        #imagebutton:
+        #    auto "gui/newstyle/about_%s.png"
+        #    action ShowMenu("about")
 
         #if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
             ## Помощь не необходима и не относится к мобильным устройствам.
@@ -364,8 +370,8 @@ screen main_menu():
     add gui.main_menu_background
 
     ## Эта пустая рамка затеняет главное меню.
-    frame:
-        style "main_menu_frame"
+    #frame:
+        #style "main_menu_frame"
 
     ## Оператор use включает отображение другого экрана в данном. Актуальное
     ## содержание главного меню находится на экране навигации.
@@ -477,10 +483,10 @@ screen game_menu(title, scroll=None, yinitial=0.0):
 
     use navigation
 
-    textbutton _("Вернуться"):
-        style "return_button"
+    #textbutton _("Вернуться"):
+    #    style "return_button"
 
-        action Return()
+    #    action Return()
 
     label title
 
@@ -505,7 +511,7 @@ style game_menu_outer_frame:
     bottom_padding 45
     top_padding 180
 
-    background "gui/overlay/game_menu.png"
+    #background "gui/overlay/game_menu.png"
 
 style game_menu_navigation_frame:
     xsize 420
@@ -718,82 +724,18 @@ screen preferences():
 
     tag menu
 
-    use game_menu(_("Настройки"), scroll="viewport"):
+    use game_menu(_(""), scroll="viewport"):
 
         vbox:
 
             hbox:
                 box_wrap True
 
-                if renpy.variant("pc") or renpy.variant("web"):
 
-                    vbox:
-                        style_prefix "radio"
-                        label _("Режим экрана")
-                        textbutton _("Оконный") action Preference("display", "window")
-                        textbutton _("Полный") action Preference("display", "fullscreen")
+screen oprionsWindowVolume():
+    use game_menu(_(""), scroll="viewport")
 
-                vbox:
-                    style_prefix "check"
-                    label _("Пропуск")
-                    textbutton _("Всего текста") action Preference("skip", "toggle")
-                    textbutton _("После выборов") action Preference("after choices", "toggle")
-                    textbutton _("Переходов") action InvertSelected(Preference("transitions", "toggle"))
-
-                ## Дополнительные vbox'ы типа "radio_pref" или "check_pref"
-                ## могут быть добавлены сюда для добавления новых настроек.
-
-            null height (4 * gui.pref_spacing)
-
-            hbox:
-                style_prefix "slider"
-                box_wrap True
-
-                vbox:
-
-                    label _("Скорость текста")
-
-                    bar value Preference("text speed")
-
-                    label _("Скорость авточтения")
-
-                    bar value Preference("auto-forward time")
-
-                vbox:
-
-                    if config.has_music:
-                        label _("Громкость музыки")
-
-                        hbox:
-                            bar value Preference("music volume")
-
-                    if config.has_sound:
-
-                        label _("Громкость звуков")
-
-                        hbox:
-                            bar value Preference("sound volume")
-
-                            if config.sample_sound:
-                                textbutton _("Тест") action Play("sound", config.sample_sound)
-
-
-                    if config.has_voice:
-                        label _("Громкость голоса")
-
-                        hbox:
-                            bar value Preference("voice volume")
-
-                            if config.sample_voice:
-                                textbutton _("Тест") action Play("voice", config.sample_voice)
-
-                    if config.has_music or config.has_sound or config.has_voice:
-                        null height gui.pref_spacing
-
-                        textbutton _("Без звука"):
-                            action Preference("all mute", "toggle")
-                            style "mute_all_button"
-
+        
 
 style pref_label is gui_label
 style pref_label_text is gui_label_text
@@ -1144,22 +1086,24 @@ screen confirm(message, yes_action, no_action):
     add "gui/overlay/confirm.png"
 
     frame:
+        background "tools/menu_options/pause background.png"
+        
+           
+        imagebutton:
+            idle "tools/yesno/yes.webp"
+            hover "tools/yesno/yes_hover.webp"
+            focus_mask True
+            xoffset 815
+            yoffset 721
+            action yes_action
 
-        vbox:
-            xalign .5
-            yalign .5
-            spacing 45
-
-            label _(message):
-                style "confirm_prompt"
-                xalign 0.5
-
-            hbox:
-                xalign 0.5
-                spacing 150
-
-                textbutton _("Да") action yes_action
-                textbutton _("Нет") action no_action
+        imagebutton:
+            idle "tools/yesno/no.webp"
+            hover "tools/yesno/no_hover.webp"
+            focus_mask True
+            xoffset 948
+            yoffset 720
+            action no_action
 
     ## Правый клик и esc, как ответ "Нет".
     key "game_menu" action no_action
@@ -1201,15 +1145,11 @@ screen skip_indicator():
     style_prefix "skip"
 
     frame:
-
-        hbox:
-            spacing 9
-
-            text _("Пропускаю")
-
-            text "▸" at delayed_blink(0.0, 1.0) style "skip_triangle"
-            text "▸" at delayed_blink(0.2, 1.0) style "skip_triangle"
-            text "▸" at delayed_blink(0.4, 1.0) style "skip_triangle"
+        image "tools/tool/skip 1.png" at delayed_blink(0.0, 1.0) 
+        image "tools/tool/skip 3.png" at delayed_blink(0.2, 1.0) 
+        image "tools/tool/skip 2.png" at delayed_blink(0.4, 1.0)
+       
+            
 
 
 ## Эта трансформация используется, чтобы мигать стрелками одна за другой.

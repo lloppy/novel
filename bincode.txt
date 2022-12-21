@@ -69,7 +69,6 @@ label newspaper:
     $ detective += 1
 
     hide newspaper with fade
-    "kakoy zhe tut pizdec tvoritsa"
 
     jump acquaintance
     return
@@ -112,7 +111,7 @@ label acquaintance:
 
 label profession:
 
-    "vremya ohuitelnih istoriy"
+    "vremya istoriy"
 
     $ soleCompany += 1
 
