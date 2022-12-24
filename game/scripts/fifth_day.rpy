@@ -521,8 +521,12 @@ label fifth_day:
 
                 scene street way home evening
                 with dissolve
+                play sound "music/music good.mp3" fadein fadein volume volume
+
 
                 "Сегодняшний день перевернул все с ног на голову. Но судьба человека определяется его способностью сопротивляться внешним угрозам. Я преодолею препятствия и сделаю тайное явным."
+                stop sound fadeout 3.0
+
                 return
 
     scene black:

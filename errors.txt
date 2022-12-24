@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/scripts/fifth_day.rpy", line 585: expected statement.
-    soleCompany / 7 <= loveLine / 4
-                ^
+File "game/scripts/third_day_third_task.rpy", line 170: expected end of line
+    play sound "music/autobus.mp3" fadein fadein 0.1 volume
+                                                 ^
 
 Ren'Py Version: Ren'Py 8.0.3.22090809
-Tue Dec 20 02:04:19 2022
+Sun Dec 25 02:59:41 2022

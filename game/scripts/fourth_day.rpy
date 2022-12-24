@@ -1,14 +1,16 @@
 label fourth_day:
     scene home morning
     with fade
+    play sound "music/music good.mp3" fadein fadein volume volume
+
 
     show blog one
     with dissolve
-    pause 3.0
+    pause 5.0
 
     show blog two
     with dissolve
-    pause 4.0
+    pause 5.0
 
     show blog three
     with dissolve
@@ -26,17 +28,18 @@ label fourth_day:
 
     show home pc _screen desktop
     with dissolve
-    pause 2.0
+    pause 2.5
 
     show home pc _screen search
     with dissolve
-    pause 2.0
+    pause 2.5
 
     show home pc _screen cityzen
     with dissolve
-    pause 2.0
+    pause 2.5
     "Эх, все еще не вышла…"
     hide home pc _screen cityzen
+    stop sound fadeout 2.5
 
     show job invitation
     with dissolve    
@@ -292,12 +295,14 @@ label girl_ignore:
 
     scene street way home evening
     with fade
+    play sound "music/music good.mp3" fadein fadein volume volume
 
     "Кажется, я хоть немного понравился Алану. А он достаточно важный человек, чтобы понравиться ему было не просто. 
     Его слова о специальном отделе… К чему он это сказал? Чтобы я не лез не в свои дела - что-то вроде предупреждения? 
     Или все-таки он хочет видеть меня его частью? Что-то вроде создания у меня цели попасть туда?" 
     
     "А что, может быть и стоит постараться…"
+    stop sound fadeout 3.0
 
     jump fourth_day_morning
     return

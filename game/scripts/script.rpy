@@ -149,7 +149,7 @@ label start:
 
     $ point = 0
 
-    jump second_day_elevator
+    jump end_second_game
 
 
     jump first_day_moring

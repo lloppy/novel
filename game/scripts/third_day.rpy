@@ -1,6 +1,8 @@
 label third_day:
     scene home morning
     with fade
+    
+    play sound "music/music good.mp3" fadein fadein volume volume
 
     "Черт. Я снова отключил будильник…"
 
@@ -10,6 +12,7 @@ label third_day:
     Если потороплюсь, возможно Карэн не сильно разозлится. Я же сам просил у Кая больше ответственности,
     и сам же всем своим видом показываю, что не готов к ней…"
 
+    stop sound fadeout 3.0
 
     show bg ofis
     with dissolve

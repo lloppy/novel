@@ -1,19 +1,19 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/scripts/first_day_bus_news.rpy", line 2, in script
-    play sound "music/autobus.mp3" fadein 0.1 volume volume
+  File "game/scripts/third_day_third_task.rpy", line 70, in script
+    play sound "music/keyboard.mp3" fadein fadein volume volume2
   File "renpy/common/000statements.rpy", line 305, in execute_play_sound
     relative_volume=eval(p.get("volume", "1.0")))
-  File "game/scripts/first_day_bus_news.rpy", line 2, in <module>
-    play sound "music/autobus.mp3" fadein 0.1 volume volume
-NameError: name 'volume' is not defined
+  File "game/scripts/third_day_third_task.rpy", line 70, in <module>
+    play sound "music/keyboard.mp3" fadein fadein volume volume2
+NameError: name 'volume2' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/scripts/first_day_bus_news.rpy", line 2, in script
-    play sound "music/autobus.mp3" fadein 0.1 volume volume
+  File "game/scripts/third_day_third_task.rpy", line 70, in script
+    play sound "music/keyboard.mp3" fadein fadein volume volume2
   File "C:\renpy-8.0.3-sdk\renpy\ast.py", line 2232, in execute
     self.call("execute")
   File "C:\renpy-8.0.3-sdk\renpy\ast.py", line 2220, in call
@@ -26,11 +26,11 @@ Full traceback:
     return py_eval_bytecode(code, globals, locals)
   File "C:\renpy-8.0.3-sdk\renpy\python.py", line 1085, in py_eval_bytecode
     return eval(bytecode, globals, locals)
-  File "game/scripts/first_day_bus_news.rpy", line 2, in <module>
-    play sound "music/autobus.mp3" fadein 0.1 volume volume
-NameError: name 'volume' is not defined
+  File "game/scripts/third_day_third_task.rpy", line 70, in <module>
+    play sound "music/keyboard.mp3" fadein fadein volume volume2
+NameError: name 'volume2' is not defined
 
 Windows-10-10.0.22000 AMD64
 Ren'Py 8.0.3.22090809
 DGame 1.0
-Sun Dec 25 02:04:38 2022
+Sun Dec 25 03:01:06 2022

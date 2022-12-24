@@ -1,6 +1,7 @@
 label fourth_day_morning:
     scene home morning
     with fade
+    play sound "music/music good.mp3" fadein fadein volume volume
 
     "Хотя бы сегодня я встал вовремя… Я даже успею проверить сообщения за ночь."
 
@@ -13,6 +14,7 @@ label fourth_day_morning:
     with dissolve
     
     "Вечер в компании Кая, Карэн и других? Звучит неплохо, но я пока не знаю наверняка, свободен ли вечером. Наверное, отвечу немного позже, когда точно буду уверен в том, чем займусь в завершение дня."
+    stop sound fadeout 3.0
 
     scene street
     with fade
@@ -460,6 +462,8 @@ label day_with_elly:
     scene roof cafe view evening
     with dissolve
     pause 1.0
+    play sound "music/music good.mp3" fadein fadein volume volume
+
     "Элли была права… Вид отсюда и без того шикарный, но ночью все кажется еще более завораживающим."
 
     show elly
@@ -503,6 +507,7 @@ label day_with_elly:
     "Представь себе, как я удивился, когда получил приглашение. В первый день переживал, смогу ли стать частью этой индустрии, 
     получится ли у меня заинтересовать руководство и быть полезным. Но я встретил тут много открытых людей, 
     которые переживают за мою судьбу, поэтому я счастлив учиться и работать в этой компании."
+    stop sound fadeout 3.0
 
     scene roof cafe view evening
     with dissolve
@@ -521,6 +526,7 @@ label day_with_elly:
     pause 1.0
 
     show elly smirk
+    play sound "music/music good.mp3" fadein fadein volume volume
 
     "Спасибо, что показала это место в такое время. Было приятно узнать тебя получше, да еще и наслаждаясь таким видом на ночной город."
 
@@ -529,6 +535,8 @@ label day_with_elly:
     "Уже поздно, наверное пора отправляться по домам?"
 
     e "И правда, не заметила, как пролетело время. Вызови лифт, пожалуйста."
+    stop sound fadeout 3.0
+
 
     scene elevator outside
     with dissolve
@@ -582,6 +590,8 @@ label day_with_elly:
         "Хорошо, тогда завтра мы начнем наше расследование."
 
     else:
+        play sound "music/music good.mp3" fadein fadein volume volume
+
         scene night town
         with dissolve
 
@@ -598,6 +608,8 @@ label day_with_elly:
         "Хорошей дороги и спокойной ночи."
 
         "А мне нужно вернуться в отдел…"
+        stop sound fadeout 3.0
+
 
         jump secrect_label
 
@@ -636,6 +648,8 @@ label day_along:
 
     scene night town
     with dissolve
+    play sound "music/music good.mp3" fadein fadein volume volume
+
 
     "Как-то одиноко… Зайти что-ли в кафе на крыше?"
     scene roof cafe night
@@ -654,6 +668,8 @@ label day_along:
 
     show lloyd at right
     ar "Добрый вечер. Извините, что прерываю явно глубокие размышления, но позвольте представиться: Арон."
+
+    stop sound fadeout 3.0
 
     if (see_lloyd == True):
         "Арон? Но я уверен, что тебя не так зовут."

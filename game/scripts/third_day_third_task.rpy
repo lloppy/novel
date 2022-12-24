@@ -67,7 +67,7 @@ label computer_screen4_three_task:
 label end_second_game:
     scene office2
     with fade
-    play sound "music/keyboard.mp3" fadein fadein volume volume2
+    play sound "music/keyboard.mp3" fadein fadein volume volume
 
     show kai 
     "Кай, я вроде как закончил. Кто-то должен меня оценить?"
@@ -167,12 +167,13 @@ label end_second_game:
         zoom 2.0
     with fade
 
-    play sound "music/autobus.mp3" fadein fadein volume volume
+    play sound "music/autobus.mp3" fadein fadein fadeout 3.0 volume 0.1
 
     "Кажется, что столько всего произошло, хотя прошло всего три дня. 
     Все еще свежи воспоминания о всех моих страхах в автобусе по пути в корпорацию. 
     А теперь я уже знаком с некоторыми ее работниками, которые прежде казались какими-то особенными, лучшими из лучших."
-    
+    play sound "music/music good.mp3" fadein 3.0 volume 0.2
+
     scene bus1:
         zoom 2.0
      
