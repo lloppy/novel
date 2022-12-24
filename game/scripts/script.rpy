@@ -146,13 +146,10 @@ label succeeded:
 label start:
 
     $ point = 0
-    jump worst_root
-
-
-
-    jump first_day_moring
 
     jump first_day_bus_news
+
+    jump first_day_moring
 
     jump first_day_survey
 
