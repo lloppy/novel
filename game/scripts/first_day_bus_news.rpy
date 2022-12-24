@@ -1,7 +1,11 @@
 label first_day_bus_news:
+
     scene bus3:
         zoom 2.0
-    with dissolve
+    with dissolve   
+
+    play sound "music/autobus.mp3" fadein fadein volume volume
+
 
     """{cps=43}Прошло уже несколько дней, а я все никак не осознаю произошедшее.
     {w}Только заметив новое уведомление, я сразу принял сообщение за спам.
@@ -77,6 +81,8 @@ label end_bus:
     scene black with circlewipe
 
     "{cps=43}Еле успел выскочить… Ну, вперед, в счастливое будущее!{/cps}"
+    stop sound fadeout 0.1
+
     jump first_day_moring
     return
 

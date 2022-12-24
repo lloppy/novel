@@ -58,6 +58,8 @@ label fourth_day:
     scene elevator inside
     with dissolve
     pause 1.0
+    play sound "music/elevator.mp3" fadein fadein volume volume
+
     
     
     scene elly smile box
@@ -82,6 +84,7 @@ label fourth_day:
         что помощь ей не нужна, но мне кажется, что одна из коробок вот-вот упадет."
         "Стоит ли мне рисковать упустить время и помогать этой хрупкой девушке, или стоит закрыть на нее глаза, 
         раз все равно сама о помощи она не просит?"
+        stop sound fadeout 4.0
 
         menu:
             "Помочь девушке":
@@ -91,9 +94,6 @@ label fourth_day:
 
             "Проигнорировать":
                 jump girl_ignore
-
-
-
     return
 
 

@@ -65,6 +65,8 @@ define tap = 1
 define score = [0, 0, 0, False, False] # 1 2 3 задания + воспользовался ли помощью + посетил ли Элли
 define totalScore = 0
 define see_lloyd = False
+define volume = 0.2
+define fadein = 5.0
 
 init python:
     leftCoordinates = Position(xalign = 0.0, yalign = 0.7)
@@ -147,7 +149,8 @@ label start:
 
     $ point = 0
 
-    jump first_day_bus_news
+    jump second_day_elevator
+
 
     jump first_day_moring
 

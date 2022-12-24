@@ -56,6 +56,7 @@ label second_day_office:
 
     scene office
     with dissolve
+    play sound "music/keyboard.mp3" fadein fadein volume volume
 
     show kai smile_with_disbelief at leftCoordinates
     kai "{cps=43}Теперь он твой. Конечно, все еще недалеко от меня, но теперь у тебя немного больше личного пространства. Неплохо, правда?{/cps}"
@@ -65,6 +66,7 @@ label second_day_office:
     show kai smile
     kai "{cps=43}Успеешь еще наработаться… А теперь иди к Карэн и ответь на все ее вопросы. 
     Увидимся завтра, удачи.{/cps}"
+    stop sound fadeout 2.0
 
     jump second_day_office_continue2
 

@@ -5,6 +5,9 @@ label second_day_elevator:
     scene elevator inside
     with fade
 
+    play sound "music/elevator.mp3" fadein fadein volume volume
+
+
     show kai
     
     kai "{cps=43}Я, конечно, обещал тебе отвлеченный от работы диалог, но пойми меня правильно, 
@@ -26,6 +29,9 @@ label second_day_elevator:
     "{cps=43}Конечно, я все понимаю. Спасибо за твое предупреждение.{/cps}"
 
     "Почему он упомянул это именно сейчас? Вдруг…"
+
+    stop sound fadeout 2.0
+
 
     show kai smile
     "{cps=43}Прибыли. Наше прекрасное кафе с видом на весь город.{/cps}"

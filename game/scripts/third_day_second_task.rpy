@@ -41,9 +41,11 @@ label third_day_second_task_wrong:
 
     scene office2
     with fade
+    play sound "music/keyboard.mp3" fadein fadein volume volume
 
     "Кай, ты не мог бы мне помочь?"
     show kai serious
+    stop sound fadeout 2.0
 
     if soleCompany >= 1:
         kai "Ну, сказать ответ я тебе не могу, ты уж извини. Но могу дать подсказку: обрати внимание на то, с чем взаимодействует данная птица. Уверен, ты догадаешься, какой цвет стоит применить."

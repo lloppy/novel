@@ -106,6 +106,7 @@ label not_check_answer:
 label ask_help_Karen:
     scene office
     with fade
+    play sound "music/keyboard.mp3" fadein fadein volume volume 
 
     show karen
 
@@ -114,6 +115,8 @@ label ask_help_Karen:
     if soleCompany >= 1:
         k "Ну, на тебя немного времени выделю. Что именно тебе подсказать?"
         "Я не могу написать формулу. Не могла бы ты мне ее напомнить?"
+        stop sound fadeout 2.0
+
 
         show karen smile
         k "Конечно. Если тебе нужна формула для угла прицеливания, то это одна вторая на арксинус частного произведения ускорения свободного падения на дистанцию и начальной скорости в квадрате"
@@ -133,6 +136,7 @@ label ask_help_Karen:
 
     else:
         k "Прости, я очень занята сейчас. Попробуй посидеть и подумать еще, уверена, все получится. А теперь возвращайся к своему месту. "
+        stop sound fadeout 2.0
         jump check_answer
     return
 

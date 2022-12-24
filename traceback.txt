@@ -1,22 +1,36 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/scripts/fourth_day_part2.rpy", line 664, in script
-    arr "Я работал в игровой корпорации больше десяти лет."
-Exception: Sayer 'arr' is not defined.
+  File "game/scripts/first_day_bus_news.rpy", line 2, in script
+    play sound "music/autobus.mp3" fadein 0.1 volume volume
+  File "renpy/common/000statements.rpy", line 305, in execute_play_sound
+    relative_volume=eval(p.get("volume", "1.0")))
+  File "game/scripts/first_day_bus_news.rpy", line 2, in <module>
+    play sound "music/autobus.mp3" fadein 0.1 volume volume
+NameError: name 'volume' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/scripts/fourth_day_part2.rpy", line 664, in script
-    arr "Я работал в игровой корпорации больше десяти лет."
-  File "C:\renpy-8.0.3-sdk\renpy\ast.py", line 881, in execute
-    who = eval_who(self.who, self.who_fast)
-  File "C:\renpy-8.0.3-sdk\renpy\ast.py", line 774, in eval_who
-    raise Exception("Sayer '%s' is not defined." % who)
-Exception: Sayer 'arr' is not defined.
+  File "game/scripts/first_day_bus_news.rpy", line 2, in script
+    play sound "music/autobus.mp3" fadein 0.1 volume volume
+  File "C:\renpy-8.0.3-sdk\renpy\ast.py", line 2232, in execute
+    self.call("execute")
+  File "C:\renpy-8.0.3-sdk\renpy\ast.py", line 2220, in call
+    return renpy.statements.call(method, parsed, *args, **kwargs)
+  File "C:\renpy-8.0.3-sdk\renpy\statements.py", line 281, in call
+    return method(parsed, *args, **kwargs)
+  File "renpy/common/000statements.rpy", line 305, in execute_play_sound
+    relative_volume=eval(p.get("volume", "1.0")))
+  File "C:\renpy-8.0.3-sdk\renpy\python.py", line 1092, in py_eval
+    return py_eval_bytecode(code, globals, locals)
+  File "C:\renpy-8.0.3-sdk\renpy\python.py", line 1085, in py_eval_bytecode
+    return eval(bytecode, globals, locals)
+  File "game/scripts/first_day_bus_news.rpy", line 2, in <module>
+    play sound "music/autobus.mp3" fadein 0.1 volume volume
+NameError: name 'volume' is not defined
 
 Windows-10-10.0.22000 AMD64
 Ren'Py 8.0.3.22090809
 DGame 1.0
-Sun Dec 18 02:52:07 2022
+Sun Dec 25 02:04:38 2022

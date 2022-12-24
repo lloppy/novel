@@ -2,7 +2,6 @@ label third_day_third_task:
     scene computer one three_task
     with fade    
 
-    
     pause 1.0
 
     show computer screen1 three_task
@@ -68,12 +67,14 @@ label computer_screen4_three_task:
 label end_second_game:
     scene office2
     with fade
+    play sound "music/keyboard.mp3" fadein fadein volume volume2
 
     show kai 
     "Кай, я вроде как закончил. Кто-то должен меня оценить?"
 
     kai "Да, сейчас я подойду к Карэн, и мы посмотрим, как ты справился."
-    
+    stop sound fadeout 2.0
+
     "Страшновато…"
 
     show kai  serious
@@ -81,10 +82,13 @@ label end_second_game:
 
     scene office
     with fade
+    play sound "music/keyboard.mp3" fadein fadein volume volume
+     
 
     show karen at right
     show kai at left
     $ totalScore  = score[0] + score[1] + score[2]
+    stop sound fadeout 2.0
 
     if (totalScore == 3 and score[3] == True ):
         k "Ты приятно удивил нас результатом работы над проектом. Все задания решены верно. 
@@ -163,6 +167,8 @@ label end_second_game:
         zoom 2.0
     with fade
 
+    play sound "music/autobus.mp3" fadein fadein volume volume
+
     "Кажется, что столько всего произошло, хотя прошло всего три дня. 
     Все еще свежи воспоминания о всех моих страхах в автобусе по пути в корпорацию. 
     А теперь я уже знаком с некоторыми ее работниками, которые прежде казались какими-то особенными, лучшими из лучших."
@@ -175,5 +181,6 @@ label end_second_game:
     Теперь во мне осталось лишь желание совершенствоваться, которое никак не зависит от неудач на моем пути."
     
     "Я буду работать, чтобы стать лучше, чтобы вернуться в команду."
+    stop sound fadeout 0.1
 
     return

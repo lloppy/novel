@@ -41,6 +41,7 @@ label fifth_day:
 
     scene office
     with dissolve
+    play sound "music/keyboard.mp3" fadein fadein volume volume
 
     show karen
 
@@ -49,14 +50,17 @@ label fifth_day:
     Но нужно, чтобы кто-то прямо сейчас встретил их у входа."
 
     k "Я спущусь, но будьте готовы, что нужно будет спуститься и помочь. "
+    stop sound fadeout 2.0
 
-    scene office2
+    scene office
     with fade
+    play sound "music/keyboard.mp3" fadein fadein volume volume
 
     show kai
     with dissolve
 
     kai @ serious "<>, не мог бы ты спуститься и проверить, где там застряла Карэн? Она уже должна быть здесь."
+    stop sound fadeout 2.0
 
     "Хорошо, я посмотрю, что там происходит."
 

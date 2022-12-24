@@ -29,6 +29,8 @@ label third_day:
 
     scene elevator outside
     with fade
+    play sound "music/elevator.mp3" fadein fadein volume volume
+
     
 
     "Значит, в этом мире идеальных сотрудников все же есть такие как я, не способные просыпаться вовремя?"
@@ -41,17 +43,21 @@ label third_day:
     hide elly
     with dissolve
     
+    stop sound fadeout 4.0
 
     "Какая милая девушка, а я даже имя ее не спросил… Правда, сейчас беспокоить меня должно совсем не это, а реакция Карэн на мое опоздание."
 
-    show office
+    scene office
     with dissolve
+    play sound "music/keyboard.mp3" fadein fadein volume volume
+
     show karen
     "Привет, Карэн…"
     "Я все могу объяснить!"    
     
     show karen angry
     k "Ну попробуй."
+    stop sound fadeout 2.0
 
     menu:
         "Признаться":
@@ -81,6 +87,7 @@ label third_day_say_true:
 
     scene office2
     with dissolve
+    play sound "music/keyboard.mp3" fadein fadein volume volume
 
     show kai
     kai "Да нет же, отдел тестирования ничего нам не присылал! Да, мы отправили свежую сборку вчера, 
@@ -95,6 +102,8 @@ label third_day_say_true:
 
     show kai serious
     kai "Доброе утро? Я бы сказал “добрый день”. Ты где пропадал?"
+    stop sound fadeout 2.0
+
 
     "Извини, не спрашивай как, но я иногда отключаю по утрам будильники, и получаются такие вот ситуации. 
     Я уже поговорил с Карэн, так что пожалуйста, не нужно нравоучений еще и от тебя."
@@ -133,6 +142,7 @@ label third_day_say_true:
 
     scene office
     with dissolve
+    play sound "music/keyboard.mp3" fadein fadein volume volume
 
     show karen
 
@@ -149,7 +159,8 @@ label third_day_say_true:
     k "В процессе создания любой игры разработчик использует константы. 
     Это значения, которые устанавливаются во время компиляции программы и не меняются. 
     Будем говорить о реализации на языке C#, так как именно его тебе нужно будет использовать в проекте."
- 
+    stop sound fadeout 2.0
+
     show karen
     k "Чтобы создать на этом языке константу, тебе нужно написать const, а затем указать тип данной переменной. 
     Если вдруг забыл, переменная - это своеобразный контейнер, используемый для хранения данных 

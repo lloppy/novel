@@ -1,5 +1,5 @@
 label second_day:
-    show home morning
+    scene home morning
     with dissolve
 
     "{cps=43}Человечество обречено, если в мире прогресса люди должны вставать рано утром… 
