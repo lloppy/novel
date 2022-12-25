@@ -5,6 +5,8 @@ label second_day_elevator:
     scene elevator inside
     with fade
 
+    stop sound fadeout 2.0
+
     play sound "music/elevator.mp3" fadein fadein volume volume
 
 

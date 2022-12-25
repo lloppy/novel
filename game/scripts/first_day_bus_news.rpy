@@ -78,10 +78,12 @@ label first_day_bus_news:
 
 label end_bus:
    
-    scene black with circlewipe
+    scene black:
+        zoom 2.0
+    with dissolve
+    stop sound fadeout 0.1
 
     "{cps=43}Еле успел выскочить… Ну, вперед, в счастливое будущее!{/cps}"
-    stop sound fadeout 0.1
 
     jump first_day_moring
     return

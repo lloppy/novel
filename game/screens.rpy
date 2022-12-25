@@ -308,10 +308,6 @@ screen navigation():
                 auto "gui/newstyle/save_%s.png"
                 action ShowMenu("save")
 
-            imagebutton:
-                auto "gui/newstyle/out_%s.png"
-                action Quit(confirm=not main_menu )
-            # action Quit(confirm=not main_menu )
         
         imagebutton:
             auto "gui/newstyle/continue_%s.png"
@@ -397,7 +393,7 @@ style main_menu_frame:
     xsize 420
     yfill True
 
-    background "gui/overlay/main_menu.png"
+    # background "gui/overlay/main_menu.png"
 
 style main_menu_vbox:
     xalign 1.0
@@ -1459,7 +1455,7 @@ style game_menu_outer_frame:
 
 style game_menu_navigation_frame:
     variant "small"
-    xsize 1
+    xsize 510
 
 style game_menu_content_frame:
     variant "small"

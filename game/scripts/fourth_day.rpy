@@ -1,4 +1,8 @@
 label fourth_day:
+    scene black:
+        zoom 2.0
+    with dissolve 
+
     scene home morning
     with fade
     play sound "music/music good.mp3" fadein fadein volume volume
@@ -156,13 +160,14 @@ label help_girl:
     "И кто бы это мог быть… Ладно, не похоже, что я сегодня что-то смогу разузнать, пора возвращаться, хоть я уже и опоздал…"
 
 
-    scene office morning
+    scene office
     with fade
 
-    show alan at right
+    show alan at left:
+        linear 0.0 xzoom -1.0 yzoom 1.0
     with dissolve
 
-    show karen at left
+    show karen at right
     with dissolve
 
     "Простите, я не…"

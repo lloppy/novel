@@ -10,7 +10,7 @@ define g = Character('Грейс', color="#94002300", image = "grace")
 define a = Character('Алан', color="#23282b00", image = "alan")
 define m = Character('Мужчина', color="#23282b00", image = "alan")
 
-define unm = Character('Мужчина', color="#23282b00", image = "unknown") # unknown man
+define unknown = Character('Мужчина', color="#23282b00", image = "unknown") # unknown man
 define v = Character('Виктор', color="#23282b00", image = "unknown") # unknown man
 
 define gd = Character('Охрана', color="#00000000", image = "guard")
@@ -151,14 +151,11 @@ label succeeded:
 label start:
 
     $ point = 0
+    jump fifth_day
 
-    jump first_day_moring
+    jump first_day_bus_news
 
-    jump first_day_survey
 
-    jump second_day
-
-    jump third_day
 
     jump fourth_day
     

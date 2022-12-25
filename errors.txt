@@ -1,0 +1,12 @@
+﻿I'm sorry, but errors were detected in your script. Please correct the
+errors listed below, and try again.
+
+
+The label succeeded2 is defined twice, at File "game/scripts/fifth_day.rpy", line 235:
+label succeeded2:
+and File "game/scripts/fifth_day.rpy", line 465:
+label succeeded2:
+
+
+Ren'Py Version: Ren'Py 8.0.3.22090809
+Mon Dec 26 02:46:34 2022

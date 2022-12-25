@@ -12,6 +12,7 @@ label third_day_end:
     # style.window.background = Image("images/tools/tool/black.png", xalign=0.5, yalign=1.0)
 
     jump check_answer
+    return
     
 label checked_answer:
     if (ans_angry_birds == "0.5 * Math.Asin(distance * 9.8 / (v * v));" or ans_angry_birds == "0.5 * Math.Asin(distance * 9.8 / (v * v))" or  ans_angry_birds == "1/2 * asin(g * distance / v^2)" or ans_angry_birds == "1/2 * asin(g * distance / v^2);" or ans_angry_birds == "0.5 * Math.Asin(distance * 9.8 / (v^2));" or ans_angry_birds == "0.5 * Math.Asin(distance * 9.8 / (v^2))" ):
