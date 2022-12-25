@@ -81,7 +81,7 @@ label first_day_moring:
 
     scene office
     with fade
-    play sound "music/keyboard.mp3" fadein fadein volume volume2
+    play sound "music/keyboard.mp3" fadein fadein volume volume
 
     show kai
     "Ты, кажется, говорил что-то про дружелюбную атмосферу. Как-то мне не показалось, что Карэн к нам дружелюбна."

@@ -150,9 +150,6 @@ label start:
 
     $ point = 0
 
-    jump end_second_game
-
-
     jump first_day_moring
 
     jump first_day_survey

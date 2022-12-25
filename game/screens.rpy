@@ -130,7 +130,6 @@ style namebox is default
 style namebox_label is say_label
 
 
-
 style window:
     xalign 0.5
     xfill True
@@ -138,8 +137,6 @@ style window:
     ysize gui.textbox_height
 
     background Image("gui/textbox.png", xalign=0.5, yalign=1.0)
-
-
 
 style namebox:
     xpos gui.name_xpos
@@ -259,7 +256,7 @@ screen quick_menu():
             textbutton _("Сохранить") action ShowMenu('save')
             textbutton _("Б.Сохр") action QuickSave()
             textbutton _("Б.Загр") action QuickLoad()
-            textbutton _("Опции") action ShowMenu('oprionsWindowVolume')
+            textbutton _("Опции") action ShowMenu('preferences')
 
 
 ## Данный код гарантирует, что экран быстрого меню будет показан в игре в любое
@@ -289,7 +286,7 @@ style quick_button_text:
 ## другим меню и к началу игры.
 
 screen navigation():
-    
+
     vbox:
         style_prefix "navigation"
 
@@ -298,50 +295,51 @@ screen navigation():
 
         spacing gui.navigation_spacing
 
+        # revrive safe button
         if main_menu:
             imagebutton:
                 auto "gui/newstyle/start_%s.png"
                 action Start()
         else:
+
+            # textbutton _("История") action ShowMenu("history")
+
+            imagebutton:
+                auto "gui/newstyle/save_%s.png"
+                action ShowMenu("save")
+
+            imagebutton:
+                auto "gui/newstyle/out_%s.png"
+                action Quit(confirm=not main_menu )
+            # action Quit(confirm=not main_menu )
         
-            #textbutton _("История") action ShowMenu("history")
-
-            textbutton _("Сохранить") action ShowMenu("save")
-            #imagebutton:
-                #auto "gui/newstyle/save_%s.png"
-                #action ShowMenu("save")
-
         imagebutton:
-                auto "gui/newstyle/continue_%s.png"
-                action ShowMenu("load")
+            auto "gui/newstyle/continue_%s.png"
+            action Return()
 
         imagebutton:
             auto "gui/newstyle/setting_%s.png"
-            action ShowMenu("oprionsWindowVolume")
+            action ShowMenu("preferences")
 
         if _in_replay:
 
             textbutton _("Завершить повтор") action EndReplay(confirm=True)
 
-        #elif not main_menu:
+        # elif not main_menu:
 
-        #    textbutton _("Главное меню") action MainMenu()
+        #     textbutton _("Главное меню") action MainMenu()
 
-        #imagebutton:
-        #    auto "gui/newstyle/about_%s.png"
-        #    action ShowMenu("about")
-
-        #if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
-            ## Помощь не необходима и не относится к мобильным устройствам.
-            #textbutton _("Помощь") action ShowMenu("help")
-
+        #  textbutton _("Об игре") action ShowMenu("about")
         if renpy.variant("pc"):
 
             ## Кнопка выхода блокирована в iOS и не нужна на Android и в веб-
             ## версии.
             imagebutton:
                 auto "gui/newstyle/out_%s.png"
-                action Quit(confirm=not main_menu)
+                action Quit(confirm=not main_menu )
+       
+
+
 
 
 style navigation_button is gui_button
@@ -370,8 +368,8 @@ screen main_menu():
     add gui.main_menu_background
 
     ## Эта пустая рамка затеняет главное меню.
-    #frame:
-        #style "main_menu_frame"
+    frame:
+        style "main_menu_frame"
 
     ## Оператор use включает отображение другого экрана в данном. Актуальное
     ## содержание главного меню находится на экране навигации.
@@ -399,7 +397,7 @@ style main_menu_frame:
     xsize 420
     yfill True
 
-    # background "gui/overlay/main_menu.png"
+    background "gui/overlay/main_menu.png"
 
 style main_menu_vbox:
     xalign 1.0
@@ -483,10 +481,10 @@ screen game_menu(title, scroll=None, yinitial=0.0):
 
     use navigation
 
-    #textbutton _("Вернуться"):
-    #    style "return_button"
+    # textbutton _("Вернуться"):
+    #     style "return_button"
 
-    #    action Return()
+    #     action Return()
 
     label title
 
@@ -511,7 +509,6 @@ style game_menu_outer_frame:
     bottom_padding 45
     top_padding 180
 
-    #background "gui/overlay/game_menu.png"
 
 style game_menu_navigation_frame:
     xsize 420
@@ -559,7 +556,7 @@ screen about():
 
     ## Этот оператор включает игровое меню внутрь этого экрана. Дочерний vbox
     ## включён в порт просмотра внутри экрана игрового меню.
-    use game_menu(_("Об игре"), scroll="viewport"):
+    use game_menu(_(""), scroll="viewport"):
 
         style_prefix "about"
 
@@ -595,7 +592,7 @@ screen save():
 
     tag menu
 
-    use file_slots(_("Сохранить"))
+    use file_slots(_(""))
 
 
 screen load():
@@ -731,11 +728,75 @@ screen preferences():
             hbox:
                 box_wrap True
 
+                if renpy.variant("pc") or renpy.variant("web"):
 
-screen oprionsWindowVolume():
-    use game_menu(_(""), scroll="viewport")
+                    vbox:
+                        style_prefix "radio"
+                        label _("Режим экрана")
+                        textbutton _("Оконный") action Preference("display", "window")
+                        textbutton _("Полный") action Preference("display", "fullscreen")
 
-        
+                vbox:
+                    style_prefix "check"
+                    label _("Пропуск")
+                    textbutton _("Всего текста") action Preference("skip", "toggle")
+                    textbutton _("После выборов") action Preference("after choices", "toggle")
+                    textbutton _("Переходов") action InvertSelected(Preference("transitions", "toggle"))
+
+                ## Дополнительные vbox'ы типа "radio_pref" или "check_pref"
+                ## могут быть добавлены сюда для добавления новых настроек.
+
+            null height (4 * gui.pref_spacing)
+
+            hbox:
+                style_prefix "slider"
+                box_wrap True
+
+                vbox:
+
+                    label _("Скорость текста")
+
+                    bar value Preference("text speed")
+
+                    label _("Скорость авточтения")
+
+                    bar value Preference("auto-forward time")
+
+                vbox:
+
+                    if config.has_music:
+                        label _("Громкость музыки")
+
+                        hbox:
+                            bar value Preference("music volume")
+
+                    if config.has_sound:
+
+                        label _("Громкость звуков")
+
+                        hbox:
+                            bar value Preference("sound volume")
+
+                            if config.sample_sound:
+                                textbutton _("Тест") action Play("sound", config.sample_sound)
+
+
+                    if config.has_voice:
+                        label _("Громкость голоса")
+
+                        hbox:
+                            bar value Preference("voice volume")
+
+                            if config.sample_voice:
+                                textbutton _("Тест") action Play("voice", config.sample_voice)
+
+                    if config.has_music or config.has_sound or config.has_voice:
+                        null height gui.pref_spacing
+
+                        textbutton _("Без звука"):
+                            action Preference("all mute", "toggle")
+                            style "mute_all_button"
+
 
 style pref_label is gui_label
 style pref_label_text is gui_label_text
@@ -823,7 +884,7 @@ screen history():
     ## массивным.
     predict False
 
-    use game_menu(_("История"), scroll=("vpgrid" if gui.history_height else "viewport"), yinitial=1.0):
+    use game_menu(_(""), scroll=("vpgrid" if gui.history_height else "viewport"), yinitial=1.0):
 
         style_prefix "history"
 
@@ -911,7 +972,7 @@ screen help():
 
     default device = "keyboard"
 
-    use game_menu(_("Помощь"), scroll="viewport"):
+    use game_menu(_(""), scroll="viewport"):
 
         style_prefix "help"
 
@@ -1086,28 +1147,26 @@ screen confirm(message, yes_action, no_action):
     add "gui/overlay/confirm.png"
 
     frame:
-        background "tools/menu_options/pause background.png"
-        
-           
+        background "gui/game_menu2.png"
+                   
         imagebutton:
             idle "tools/yesno/yes.webp"
             hover "tools/yesno/yes_hover.webp"
             focus_mask True
-            xoffset 815
-            yoffset 721
+            xoffset 760
+            yoffset 551
             action yes_action
 
         imagebutton:
             idle "tools/yesno/no.webp"
             hover "tools/yesno/no_hover.webp"
             focus_mask True
-            xoffset 948
-            yoffset 720
+            xoffset 893
+            yoffset 550
             action no_action
 
     ## Правый клик и esc, как ответ "Нет".
     key "game_menu" action no_action
-
 
 style confirm_frame is gui_frame
 style confirm_prompt is gui_prompt
@@ -1145,11 +1204,15 @@ screen skip_indicator():
     style_prefix "skip"
 
     frame:
-        image "tools/tool/skip 1.png" at delayed_blink(0.0, 1.0) 
-        image "tools/tool/skip 3.png" at delayed_blink(0.2, 1.0) 
-        image "tools/tool/skip 2.png" at delayed_blink(0.4, 1.0)
-       
-            
+
+        hbox:
+            spacing 9
+
+            text _("Пропускаю")
+
+            text "▸" at delayed_blink(0.0, 1.0) style "skip_triangle"
+            text "▸" at delayed_blink(0.2, 1.0) style "skip_triangle"
+            text "▸" at delayed_blink(0.4, 1.0) style "skip_triangle"
 
 
 ## Эта трансформация используется, чтобы мигать стрелками одна за другой.
@@ -1369,49 +1432,6 @@ screen quick_menu():
             textbutton _("Авто") action Preference("auto-forward", "toggle")
             textbutton _("Меню") action ShowMenu()
 
-## NVL screen ##################################################################
-##
-## This screen is used for NVL-mode dialogue and menus.
-##
-## https://www.renpy.org/doc/html/screen_special.html#nvl
-
-
-screen nvl(dialogue, items=None):
-
-    #### ADD THIS TO MAKE THE PHONE WORK!! :) ###
-    if nvl_mode == "phone":
-        use PhoneDialogue(dialogue, items)
-    else:
-    ####
-    ## Indent the rest of the screen
-        window:
-            style "nvl_window"
-
-            has vbox:
-                spacing gui.nvl_spacing
-
-            ## Displays dialogue in either a vpgrid or the vbox.
-            if gui.nvl_height:
-
-                vpgrid:
-                    cols 1
-                    yinitial 1.0
-
-                    use nvl_dialogue(dialogue)
-
-            else:
-
-                use nvl_dialogue(dialogue)
-
-            ## Displays the menu, if given. The menu may be displayed incorrectly if
-            ## config.narrator_menu is set to True, as it is above.
-            for i in items:
-
-                textbutton i.caption:
-                    action i.action
-                    style "nvl_button"
-
-        add SideImage() xalign 0.0 yalign 1.0
 
 style window:
     variant "small"
@@ -1439,7 +1459,7 @@ style game_menu_outer_frame:
 
 style game_menu_navigation_frame:
     variant "small"
-    xsize 510
+    xsize 1
 
 style game_menu_content_frame:
     variant "small"
