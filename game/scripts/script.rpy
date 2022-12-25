@@ -25,6 +25,7 @@ define loaders_array = ["intro/loader (0).png", "intro/loader (1).png", "intro/l
 #для переписки по телефону
 #define m_nvl = Character("Me", kind=nvl, image="nighten", callback=Phone_SendSound)
 #define n_nvl = Character("News", kind=nvl, callback=Phone_ReceiveSound)
+define nameM = "Макс"
 define currNews = -1
 define newsImage = ["one" , "two", "three", "three", "four", "four", "four", "four", "four", "five"]
 define newsText = ["Все началось в июле 2039 года, когда в Японии научились воздействовать на мозг человека напрямую с компьютера. Не сказать, что 6 числа это казалось грандиозным открытием. Где-то в научных кругах, конечно, многие считали технологию прорывной, но для обычного человека, погруженного в ежедневную рутину, это было просто “еще одно научное открытие”.",
