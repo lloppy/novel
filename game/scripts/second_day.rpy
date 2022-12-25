@@ -1,8 +1,6 @@
 label second_day:
     scene home morning
-    with dissolve
-
-    play sound "music/music good.mp3" fadein fadein volume volume
+    with fade
 
     "{cps=43}Человечество обречено, если в мире прогресса люди должны вставать рано утром… 
     В такие моменты даже мысли о предстоящем дне в компании не греют мою душу. 
@@ -14,7 +12,7 @@ label second_day:
     "{cps=40}Интересно, что приготовил Кай для меня сегодня. Вряд ли будет так просто, как было вчера. 
     Все-таки им нужно погружать меня в детали разработки, а это темы гораздо более сложные, 
     чем просто описание профессий.{/cps}"
-    stop sound fadeout 3.0
+    stop music fadeout 3.0
 
     show lane morning
     with dissolve
@@ -28,6 +26,7 @@ label second_day:
             $ detective += 1
             $ watch_kai = True
             jump track_kai
+            return
         "Не следить за Каем":
             $ soleCompany += 1
             jump not_track_kai
@@ -36,6 +35,8 @@ label second_day:
 label track_kai:
     scene lane morning
     with dissolve
+
+    play music "music/music bad.mp3" fadein fadein volume volume
 
     "{cps=40}Переулок, в который таинственно забрел Кай, совсем не похож на место, 
     где происходит что-то легальное и благонамеренное.{/cps}"
@@ -57,8 +58,11 @@ label track_kai:
     "{cps=43}Так пусто тут… Теперь я действительно начинаю волноваться за свое опоздание.{/cps}"
 
     jump second_day_contunue
+    return
 
 label not_track_kai:
+    play music "music/music good.mp3" fadein fadein volume volume
+
     "{cps=43}Не думаю, что дела Кая как-либо меня касаются. В конце концов, имеет же 
     он право вне рабочего времени ходить, куда его заблагорассудится. 
     Я же лучше дойду до кофейни, пока есть время до начала рабочего дня.{/cps}"
@@ -150,11 +154,16 @@ label not_track_kai:
     hide kai
     
     jump second_day_contunue
+    return
 
 
 label second_day_contunue:
     scene elevator inside
     with dissolve
+
+    stop music fadeout fadeout
+    pause fadeout
+    play music "music/music good.mp3" fadein fadein volume volume
 
     "{cps=43}Интересно, один лишь Кай в команде такой странный, или другим тоже есть, что скрывать? 
     Нужно постараться аккуратно разузн  ать что-нибудь у Карэн, при этом не забыть о главной цели 
@@ -389,3 +398,4 @@ label second_day_contunue_after_game:
         "{cps=43}Ну, тогда идем.{/cps}"
 
     jump second_day_elevator
+    return

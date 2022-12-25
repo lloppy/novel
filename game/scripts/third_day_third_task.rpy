@@ -184,4 +184,5 @@ label end_second_game:
     "Я буду работать, чтобы стать лучше, чтобы вернуться в команду."
     stop sound fadeout 0.1
 
+    jump fourth_day
     return
