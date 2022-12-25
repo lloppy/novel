@@ -68,6 +68,8 @@ define totalScore = 0
 define see_lloyd = False
 define volume = 0.2
 define fadein = 5.0
+define fadeout = 0.5
+define long_fadeout = 2.0
 
 init python:
     leftCoordinates = Position(xalign = 0.0, yalign = 0.7)

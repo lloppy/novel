@@ -158,6 +158,7 @@ label second_day_office_continue2:
         создания игр. Я рад, что попал именно в эту команду, поскорее бы узнать еще больше людей в корпорации.{/cps}"
         stop sound fadeout 3.0
 
+    jump third_day
     return
 
 

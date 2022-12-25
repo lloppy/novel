@@ -1,4 +1,5 @@
 label first_day_moring:
+    play music "music/music good.mp3" fadein fadein volume volume
     scene street
     with fade
 
@@ -31,7 +32,9 @@ label first_day_moring:
 
     scene elevator inside
     with fade
-    play sound "music/elevator.mp3" fadein fadein volume volume
+    stop music fadeout fadeout
+    pause fadeout
+    play music "music/elevator.mp3" fadein fadein volume volume
 
     show kai smile
 
@@ -52,10 +55,12 @@ label first_day_moring:
     kai "Не переживай, если что-то и будут спрашивать, то по уже рассказанному тебе за время стажировки, ничего такого, что ты бы не услышал или не увидел в стенах офиса. В конце концов, мы все тут понимаем, что ты только закончил первый курс."
     "Спасибо, я переживаю уже гораздо меньше."
     kai "Для этого я и курирую тебя. А теперь нам пора в отдел."
-    stop sound fadeout 4.0
+    stop music fadeout fadeout
+    pause fadeout
 
     scene office
     with fade
+    play music "music/music good.mp3" fadein fadein volume volume
     play sound "music/keyboard.mp3" fadein fadein volume volume
     
     show karen 
@@ -64,7 +69,6 @@ label first_day_moring:
     kai "Ну Карэн, ты же знаешь, сколько всего нужно спросить новичку у опытного наставника"
     "{cps=50}Но я не спраш…{/cps}{nw}"
     show kai smile  at right
-    stop sound fadeout 2.0
 
     kai "Да-да, ты не знал много всего о работе в крупной компании, но я всегда рад прийти на помощь."
     "Ага, спасибо большое…"
@@ -79,9 +83,9 @@ label first_day_moring:
     show karen
     k "А теперь отправляйся на рабочее место и впитывай так много информации, как только сможешь."
 
-    scene office
+    scene office2
     with fade
-    play sound "music/keyboard.mp3" fadein fadein volume volume
+    #play sound "music/keyboard.mp3" fadein fadein volume volume
 
     show kai
     "Ты, кажется, говорил что-то про дружелюбную атмосферу. Как-то мне не показалось, что Карэн к нам дружелюбна."
@@ -91,7 +95,6 @@ label first_day_moring:
     show kai smile
     kai "И не напишем. Ты то думал, придешь и сразу игры кодить? Спешишь, друг, очень спешишь. Сегодня твой первый день в компании, а потому говорить будем только об основах геймдева. Кстати, ты вообще знаешь, что это такое?"
     "Ну ты уж совсем за дурака меня не принимай… Геймдев переводится как"
-    stop sound fadeout 2.0
 
     menu:
         "Тестирование игр":
@@ -206,4 +209,5 @@ label first_day_moring:
     k "Но перед тем, как ты уйдешь, я бы хотела немного побеседовать с тобой о том, что ты за сегодня успел усвоить. Не волнуйся, это не зачет и не контрольная, просто небольшой опрос для того, чтобы я понимала, как идет твое обучение."
     "Хорошо..."
 
+    jump first_day_survey
     return

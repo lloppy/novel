@@ -112,8 +112,7 @@ label first_day_survey_continue:
 
     scene night office _on
     with fade
-    play sound "music/music good.mp3" fadein fadein volume volume
-
+    stop sound fadeout 4.0
 
     "{cps=43}День пролетел так быстро. Кажется, что ничего толком и не происходило, 
     а ощущения все равно, словно активно что-то разрабатывал. 
@@ -130,6 +129,6 @@ label first_day_survey_continue:
     {cps=43}Кажется, нужно столько времени, чтобы узнать их всех получше. 
     Но будет ли оно у меня? Смогу ли я себя показать с лучшей стороны? 
     И как показал сегодня? Боюсь, узнать это можно только спустя время…{/cps}"""
-    stop sound fadeout 3.0
 
+    jump second_day
     return
