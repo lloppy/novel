@@ -152,7 +152,7 @@ label start:
 
     $ point = 0
     
-    jump first_day_morning
+    jump first_day_bus_news
 
     return
 

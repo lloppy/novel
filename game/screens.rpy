@@ -317,6 +317,9 @@ screen navigation():
             auto "gui/newstyle/setting_%s.png"
             action ShowMenu("preferences")
 
+        imagebutton:
+                auto "gui/newstyle/out_%s.png"
+                action Quit(confirm=not main_menu )
         if _in_replay:
 
             textbutton _("Завершить повтор") action EndReplay(confirm=True)
@@ -326,13 +329,7 @@ screen navigation():
         #     textbutton _("Главное меню") action MainMenu()
 
         #  textbutton _("Об игре") action ShowMenu("about")
-        if renpy.variant("pc"):
-
-            ## Кнопка выхода блокирована в iOS и не нужна на Android и в веб-
-            ## версии.
-            imagebutton:
-                auto "gui/newstyle/out_%s.png"
-                action Quit(confirm=not main_menu )
+        
        
 
 
