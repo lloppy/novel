@@ -12,7 +12,22 @@ label third_day_third_task:
     "Так, это должно быть нетрудно."
     call screen git_commands
 
-    
+
+init python:
+    def clickGit(ind):
+        global mark
+
+        if(ind-1 == tap): 
+            renpy.jump("computer_screen"+str(ind)+"_three_task")
+        else:
+            score[2] = 0
+            renpy.jump("end_second_game")
+
+        renpy.restart_interaction()
+
+    ClickGit = renpy.curry(clickGit)
+
+
 screen git_commands:
     imagebutton:
         xalign 0.93
@@ -22,7 +37,7 @@ screen git_commands:
             hover "tools/game angry birds/3 задание/btn push right three_task.png"
         else:
             hover "tools/game angry birds/3 задание/btn push wrong three_task.png"
-        action Jump("computer_screen4_three_task")
+        action ClickGit(4)
 
     imagebutton:
         xalign 0.93
@@ -32,7 +47,7 @@ screen git_commands:
             hover "tools/game angry birds/3 задание/btn add right three_task.png"
         else:
             hover "tools/game angry birds/3 задание/btn add wrong three_task.png"
-        action Jump("computer_screen2_three_task")
+        action ClickGit(2)
 
     imagebutton:
         xalign 0.93
@@ -42,7 +57,7 @@ screen git_commands:
             hover "tools/game angry birds/3 задание/btn commit right three_task.png"
         else:
             hover "tools/game angry birds/3 задание/btn commit wrong three_task.png"
-        action Jump("computer_screen3_three_task")
+        action ClickGit(3)
 
 label computer_screen2_three_task:
     scene computer_screen2_three_task
@@ -67,13 +82,12 @@ label computer_screen4_three_task:
 label end_second_game:
     scene office2
     with fade
-    play sound "music/keyboard.mp3" fadein fadein volume volume
 
     show kai 
+    with dissolve
     "Кай, я вроде как закончил. Кто-то должен меня оценить?"
 
     kai "Да, сейчас я подойду к Карэн, и мы посмотрим, как ты справился."
-    stop sound fadeout 2.0
 
     "Страшновато…"
 
@@ -82,13 +96,14 @@ label end_second_game:
 
     scene office
     with fade
-    play sound "music/keyboard.mp3" fadein fadein volume volume
-     
 
     show karen at right
+    with OffsetRightToRightSide
+
     show kai at left
+    with dissolve
+
     $ totalScore  = score[0] + score[1] + score[2]
-    stop sound fadeout 2.0
 
     if (totalScore == 3 and score[3] == True ):
         k "Ты приятно удивил нас результатом работы над проектом. Все задания решены верно. 

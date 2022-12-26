@@ -1,7 +1,6 @@
 label fourth_day_morning:
     scene home morning
     with fade
-    play sound "music/music good.mp3" fadein fadein volume volume
 
     "Хотя бы сегодня я встал вовремя… Я даже успею проверить сообщения за ночь."
 
@@ -21,7 +20,7 @@ label fourth_day_morning:
 
     if score[4]==True:
         show elly
-        with dissolve
+        with OffsetRightToCenterSide
 
         "А не Элли ли это идет?"
 
@@ -53,10 +52,11 @@ label fourth_day_morning:
             
                 "Но Элли, подожди! Я совсем не хотел…"
                 hide elly
+                with OffsetLeftToCenterSide
 
                 "Ну и зачем я так прямо… Теперь точно будет меня избегать. До работы еще есть время. Может в кофейню заскочить?"
 
-                scene scenes cafee
+                scene coffee house
                 with fade
 
                 show karen at right
@@ -93,6 +93,7 @@ label fourth_day_morning:
 
                 show karen smile_ce_blush
                 show lloyd at left
+                with move
 
                 k "О, [nameM], приятная встреча! А я тут теорию господина Эрнеста выслушивала. Вернее, историю, никакую не теорию, прости за ошибочку, Эрнест."
                 
@@ -177,11 +178,11 @@ label fourth_day_morning:
 
                 "Почему бы и нет."
 
-                scene scenes cafee
+                scene coffee house
                 with fade
 
                 show elly at right
-                with dissolv
+                with dissolve
 
                 show lloyd at left
                 with dissolve
@@ -247,6 +248,9 @@ label fourth_day_morning:
                 show elly 
                 e "Что ты, вовсе нет… Правда, все хорошо. Ну, я побегу тогда. Пока-пока."
 
+                hide elly 
+                with OffsetLeftToCenterSide
+
                 "Снова все испортил…"
                 jump fourth_day_office_morning
                 return
@@ -258,7 +262,7 @@ label fourth_day_office_morning:
     # with dissolve
     # pause 1.0 
     
-    scene bg ofis
+    scene hall
     with dissolve
     pause 1.0 
 
@@ -311,7 +315,7 @@ label fourth_day_office_morning:
     Это такие алгоритмы, как:"
 
     scene office computer
-    show text "•Алгоритм бинарного поиска \n •Алгоритм поиска в ширину (BFS) \n •Алгоритм поиска в глубину (DFS) \n •Сортировка вставками, Сортировка выбором, Сортировка слиянием, \n Быстрая сортировка, Сортировка подсчетом, Сортировка кучей\n •Алгоритм Крускала\n •Алгоритм Флойда Уоршелла\n •Алгоритм Дейкстры\n •Алгоритм Беллмана Форда\n •Алгоритм Кадане\n •Алгоритм Ли\n •Алгоритм заливки \n •Алгоритм обнаружения цикла Флойда\n•Топологическая сортировка в DAG \n •Алгоритм поиска союза \n \n \n \n \n \n \n"
+    show text "{color=#fff}•Алгоритм бинарного поиска \n •Алгоритм поиска в ширину (BFS) \n •Алгоритм поиска в глубину (DFS) \n •Сортировка вставками, Сортировка выбором, Сортировка слиянием, \n Быстрая сортировка, Сортировка подсчетом, Сортировка кучей\n •Алгоритм Крускала\n •Алгоритм Флойда Уоршелла\n •Алгоритм Дейкстры\n •Алгоритм Беллмана Форда\n •Алгоритм Кадане\n •Алгоритм Ли\n •Алгоритм заливки \n •Алгоритм обнаружения цикла Флойда\n•Топологическая сортировка в DAG \n •Алгоритм поиска союза \n \n \n \n \n \n \n{/color}"
     with dissolve   
     pause 40.0
 
@@ -351,12 +355,8 @@ label day_with_command:
     show kai ce
     kai "Знал, что ты захочешь провести с нами время! Тогда собирайся, через несколько минут выдвигаемся в кафе недалеко от офиса."
 
-    scene roof cafe view evening
+    scene cafe_with team morning
     with fade
-    pause 1.0
-
-    scene roof cafe evening
-    with dissolve
     pause 1.0
 
     show karen at right
@@ -399,15 +399,7 @@ label day_with_command:
 
     "Да чего вы, ребят…"
 
-    scene roof cafe view evening
-    with dissolve
-    pause 1.0
-
-    scene roof cafe view night
-    with fade
-    pause 1.0
-
-    scene roof cafe night
+    scene cafe_with team evening
     with dissolve
     pause 1.0
 
@@ -436,8 +428,7 @@ label day_with_command:
 
     "Пока…"
 
-
-    scene roof cafe view night
+    scene street way home evening
     with fade
 
     "И чего это он так распереживался? Словно Карэн ляпнула действительно что-то важное, что-то, 

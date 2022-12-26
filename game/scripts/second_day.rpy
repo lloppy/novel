@@ -7,7 +7,7 @@ label second_day:
     Ничего не поделать, нужно собираться.{/cps}"
 
     show street
-    with dissolve
+    with fade
     
     "{cps=40}Интересно, что приготовил Кай для меня сегодня. Вряд ли будет так просто, как было вчера. 
     Все-таки им нужно погружать меня в детали разработки, а это темы гораздо более сложные, 
@@ -15,7 +15,7 @@ label second_day:
     stop music fadeout 3.0
 
     show lane morning
-    with dissolve
+    with fade
 
     "{cps=40}А не Кай ли это? И чего он так подозрительно выглядит? Ну точно он! 
     Стоп, а почему он идет не в сторону офиса? Слишком рано? 
@@ -49,12 +49,10 @@ label track_kai:
     "{cps=40}Пора в офис… Не хватало мне опоздать во второй день своей стажировки. 
     А вот как Кай вовремя окажется там, я даже представить не могу…{/cps}"
 
-    scene bg ofis
-    with dissolve
+    scene hall
+    with fade
 
     "{cps=43}Безлюдный холл напоминает, что все ответственные работники уже давно на своих рабочих местах.{/cps}"
-    
-    show office2
     "{cps=43}Так пусто тут… Теперь я действительно начинаю волноваться за свое опоздание.{/cps}"
 
     jump second_day_contunue
@@ -67,20 +65,21 @@ label not_track_kai:
     он право вне рабочего времени ходить, куда его заблагорассудится. 
     Я же лучше дойду до кофейни, пока есть время до начала рабочего дня.{/cps}"
 
-    scene scenes cafee
-    with dissolve
+    scene coffee house
+    with fade
     "{cps=43}Можно один латте, ложка сахара, медовый сироп? Спасибо.{/cps}"
 
     show lloyd
+    with OffsetRightToCenterSide
     l "{cps=43}Здравствуйте! Работящего человека видно сразу, эх! Кстати, Ллойд. 
     Это мое имя. Скажете, что за невнятный тип, а я скажу вам, 
     что я бывший разработчик одной корпорации. Почему бывший? ДА ПОТОМУ ЧТО..{/cps}"
     $ see_lloyd = True
     show lloyd surprise at right
-    with dissolve
+    with move
 
     show kai at left
-    with dissolve
+    with OffsetLeftToLeftSide
     kai "{cps=43}Привет, стажер. Давненько не виделись. Не обращай внимания на этого сумасшедшего, 
     он давненько в этой кофейне всем настроение портит.{/cps}"
     show kai angry
@@ -99,6 +98,7 @@ label not_track_kai:
     with dissolve
 
     show kai smile
+    with dissolve
     kai "{cps=43}Помнится, я обещал тебе рассказать, как попал в компанию.{/cps}" 
     
     show kai
@@ -140,8 +140,8 @@ label not_track_kai:
     scene street
     with dissolve
 
-    scene bg ofic
-    with dissolve
+    scene hall
+    with fade
 
     scene elevator outside
     with dissolve
@@ -152,18 +152,20 @@ label not_track_kai:
     "{cps=43}Ну, как скажешь…{/cps}"
 
     hide kai
+    with OffsetLeftToCenterSide
     
     jump second_day_contunue
     return
 
 
 label second_day_contunue:
-    scene elevator inside
-    with dissolve
-
     stop music fadeout fadeout
     pause fadeout
-    play music "music/music good.mp3" fadein fadein volume volume
+
+    scene elevator inside
+    with dissolve
+    
+    play music "music/elevator.mp3" fadein fadein volume volume
 
     "{cps=43}Интересно, один лишь Кай в команде такой странный, или другим тоже есть, что скрывать? 
     Нужно постараться аккуратно разузн  ать что-нибудь у Карэн, при этом не забыть о главной цели 
@@ -171,10 +173,15 @@ label second_day_contunue:
 
     "Ну, вперед!    …"
 
+    stop music fadeout fadeout
+    pause fadeout
+    play music "music/music good.mp3" fadein fadein volume volume
+
     scene office
     with dissolve
 
     show karen
+    with dissolve
     "{cps=43}Доброе утро, Карэн… Я опоздал?{/cps}"
 
     show karen say
@@ -212,10 +219,10 @@ label second_day_office_continue:
     scene office
 
     show karen at right
-    with dissolve
+    with move
 
     show kai smile at left
-    with dissolve
+    with OffsetLeftToLeftSide
 
     kai "{cps=43}А вот и я! Босс, извиняйте, были неотложные дела. Ты же не станешь делать выговор 
     самому важному сотруднику отдела?{/cps}"
@@ -371,6 +378,7 @@ label second_day_contunue_after_game:
     with dissolve
 
     show kai
+    with dissolve
 
     "{cps=43}Ну, как я справился?{/cps}"
 

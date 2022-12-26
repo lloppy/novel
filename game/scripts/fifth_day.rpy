@@ -3,14 +3,14 @@ label fifth_day:
         zoom 2.0
     with fade
 
-    scene bg ofis
+    scene hall
     with dissolve
      
     "Сегодня я должен выяснить много информации о компании, и при этом не вызвать подозрения службы безопасности. 
     Наверняка у огромной корпорации есть такая, а может и что похуже, учитывая масштаб происходящего…"
 
-    scene project office
-    with dissolve
+    scene office
+    with fade
 
     show alan at left:
         linear 0.0 xzoom -1.0 yzoom 1.0
@@ -63,11 +63,7 @@ label fifth_day:
     kai @ serious "[nameM], не мог бы ты спуститься и проверить, где там застряла Карэн? Она уже должна быть здесь."
     stop sound fadeout 2.0
 
-    "Хорошо, я посмотрю, что там происходит."
-
-
-    scene hall
-    with dissolve
+    "Хорошо, я посмотрю, что там происходит." 
 
     "Не думал, что удастся поработать с нейрочипами так скоро. Все-таки я рассчитывал пока учиться создавать простые игры, 
     но тут такой шанс погрузиться в по-настоящему популярное направление. Ведь сегодня практически каждый часы проводит в онлайн-играх нейронного типа. "
@@ -79,7 +75,7 @@ label fifth_day:
     with dissolve
     pause 1.0
 
-    scene bg office
+    scene hall
     with dissolve
 
     if (soleCompany %  7 > loveLine %  4):
@@ -145,9 +141,7 @@ label fifth_day:
     scene testing department
     with dissolve 
 
-    show unknown at left
-    with dissolve
-    show karen at right
+    show karen
     with dissolve
 
     k @ say "Это Виктор. Упрямый тип. Но нам без него действительно никуда, слишком уж редкий у него нейрочип. Пока таких ни у кого нет, ранний прототип. Но если хотим играть на опережение, то нужно адаптировать игру и для следующего поколения чипов. Так что придется потерпеть. Кажется, тестирование начинается."
@@ -168,10 +162,10 @@ label fifth_day:
     show karen at right
     k @ smile "Ну, что скажете? Какие первые эмоции, хорошее ли было соединение?"
 
-    show unknown at left
+    show unknown happy at left
     with dissolve
 
-    v @ happy "Просто восхитительно! По-другому сложно описать те невероятные ощущения, что я испытывал эти несколько часов."
+    v "Просто восхитительно! По-другому сложно описать те невероятные ощущения, что я испытывал эти несколько часов."
 
     k @ say "Может, какие-то претензии есть? Недочеты?"
 
@@ -179,22 +173,25 @@ label fifth_day:
 
     k "Я все-таки имела ввиду игру…"
 
-    v @ happy "Игру? А, с игрой все просто замечательно. Никаких претензий, я с радостью приеду на еще один сеанс тестирования."
+    v "Игру? А, с игрой все просто замечательно. Никаких претензий, я с радостью приеду на еще один сеанс тестирования."
 
     k @ say "Хорошо, будем знать. Тогда пройдемте к выходу, нужно будет заполнить несколько бумаг."
+    hide karen
+    with dissolve
+    hide unknown
+    with dissolve
 
     "Что это с ним вообще? Это совсем другой человек! Где тот грубый человек, что готов был в драку полезть на пустом месте?"
 
     if (soleCompany %  7 <= loveLine % 4):
         "У меня есть кое-какая догадка, связанная с новым проектом и тайной деятельностью корпорации. Напишу Элли, чтобы пришла в отдел тестирования после окончания рабочего дня"
-       
-        scene secret office empty
+
+        scene black
         with dissolve
-        pause 1.0
+        pause 0.5
 
         scene testing department
-        with dissolve 
-
+        with dissolve
         show elly
         e @ disbelief "Так что ты хотел рассказать?"
 
@@ -207,8 +204,15 @@ label fifth_day:
         # rewrite (про себя)
         "Я должен сконцентрироваться на отрицательных эмоциях. Как он кричал на Элли. Ее испуганное лицо. Слезы."
 
+        stop music fadeout fadeout
+        pause fadeout
+        play music "music/music bad.mp3" volume volume
+
         jump splashscreen2
         return
+    
+    jump fifth_day_continue
+    return
 
 label splashscreen2:
     image splash = "intro/first.png"
@@ -270,49 +274,49 @@ label succeeded2:
     pause 0.3
     show loader11 at right
     pause 4.0
-    jump fifth_day_cont
+    jump fifth_day_cont2
     return
 
-label fifth_day_cont:
-    if (soleCompany %  7 <= loveLine % 4):
-        scene black:
-            zoom 2.0
-        with dissolve 
-        pause 1.0
+label fifth_day_cont2:
+    scene black:
+        zoom 2.0
+    with dissolve 
+    pause 1.0
 
-        scene testing department
-        with dissolve 
+    scene testing department
+    with dissolve 
 
-        show elly
-        e @ sad "[nameM], ты как? Все закончилось."
+    show elly
+    e @ sad "[nameM], ты как? Все закончилось."
 
-        "Эмоции. {w}Отрицательные эмоции. {w}Виктор. {w}Элли. {w}Но что? {w}Что я чувствовал?"
+    "Эмоции. {w}Отрицательные эмоции. {w}Виктор. {w}Элли. {w}Но что? {w}Что я чувствовал?"
 
-        e @ sad "Ты в порядке? Выглядишь странно."
+    e @ sad "Ты в порядке? Выглядишь странно."
 
-        "Элли, я не могу почувствовать гнев!"
+    "Элли, я не могу почувствовать гнев!"
 
-        e "Но это же хорошо?"
+    e "Но это же хорошо?"
 
-        "Если бы только это не было эффектом от использования нейрочипа для игр. Ты понимаешь, что это означает?"
+    "Если бы только это не было эффектом от использования нейрочипа для игр. Ты понимаешь, что это означает?"
 
-        e  "Кажется, картинка начинает складываться… Правительственное финансирование, подавление негативных эмоций. Но это игра по-крупному! Что же нам делать?" 
+    e  "Кажется, картинка начинает складываться… Правительственное финансирование, подавление негативных эмоций. Но это игра по-крупному! Что же нам делать?" 
         
-        e @ surprised "Что ТЫ собираешься делать?"
+    e @ surprised "Что ТЫ собираешься делать?"
 
-        menu:
-            "Мы должны рассказать всем правду":
-                jump fifth_day_continue
-                return
+    menu:
+        "Мы должны рассказать всем правду":
+            jump fifth_day_continue
+            return
 
-            "Слишком опасно продолжать, мы рискуем всем":
-                jump fifth_day_continue
-                return
+        "Слишком опасно продолжать, мы рискуем всем":
+            jump fifth_day_continue
+            return
 
 label fifth_day_continue:
     if (soleCompany %  7 <= loveLine % 4):
 
         show elly at right 
+        with move
 
         show alan at left:
             linear 0.0 xzoom -1.0 yzoom 1.0
@@ -362,9 +366,9 @@ label fifth_day_continue:
      
         "Хорошо… Похоже, другого выхода нет."
 
-        scene cafee2:
-            zoom 2.0
+        scene coffee house
         with dissolve
+
         show elly
         with dissolve
 
@@ -373,6 +377,7 @@ label fifth_day_continue:
         e @ sad "У меня так много мыслей, что ни одну я не могу сформулировать. Думаешь, мы сильно влипли? Теперь они от нас не отстанут?"
 
         show elly at right
+        with move
 
         show lloyd at left:
             linear 0.0 xzoom -1.0 yzoom 1.0
@@ -435,6 +440,9 @@ label fifth_day_continue:
 
         "Другого способа получить ответы просто нет. Я должен сконцентрироваться на отрицательных эмоциях. Как Виктор кричал на Карэн. Ее испуганное лицо. Его рука, едва не ударившая Карэн."
 
+        stop music fadeout fadeout
+        pause fadeout
+        play music "music/music bad.mp3" volume volume
         jump splashscreen3
 
         return
@@ -454,7 +462,7 @@ label splashscreen3:
     show enterPressed at truecenter
     with dissolve 
     
-    call screen keypress2
+    call screen keypress3
 
     return
 
@@ -632,7 +640,7 @@ label splashscreen3_cont:
         "Я не могу впутывать Карэн в это опасное расследование":
             "Все-таки я не имею права подвергать Карэн такому риску. Я сам сделал выбор между идеалами и спокойной жизнью, у нее же такого выбора не было. Отправлюсь в кофейню и решу, как поступить."
 
-            scene cafee2
+            scene coffee house
             with dissolve
 
             show lloyd
@@ -676,7 +684,7 @@ label results_label:
         zoom 2.0
     with fade
 
-    scene bg ofis
+    scene hall
     with dissolve
 
     show alan

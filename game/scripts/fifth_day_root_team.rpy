@@ -55,11 +55,11 @@ label team_root_plus:
 
     scene hall
     with dissolve
-    pause 1.0
+    pause 0.6
 
     scene elevator outside 
     with dissolve
-    pause 1.0
+    pause 0.6
 
     scene elevator inside
     with dissolve
@@ -75,22 +75,12 @@ label team_root_plus:
 
     pause 2.0
 
-    scene black:
-        zoom 2.0
-    pause 2.0
+    jump end
 
     return
 
 label worst_root:
     scene testing department
-
-    scene hall
-    with dissolve
-    pause 1.0
-
-    scene elevator outside 
-    with dissolve
-    pause 1.0
 
     scene elevator inside
     with dissolve
@@ -99,46 +89,21 @@ label worst_root:
     with dissolve
 
     "Вот и все.{w} Я не был готов уходить так рано, но судьба распорядилась иначе."
-    scene black:
-        zoom 2.0
-    pause 1.0
+    
     scene elevator inside
     show guard at right
+    pause 0.5
 
     "Кто бы знал, что такое событие, как стажировка, в конце концов приведет меня к гибели."
-    scene black:
-        zoom 2.0
-    pause 1.0
-    scene elevator inside
-    show guard at right
+
     "Я о многом жалею: я не смог никого спасти.{w} Мир не изменился."
-    scene black:
-        zoom 2.0
-    pause 1.0
-    scene elevator inside
-    show guard at right
     
     "Люди сами сделали предательства и ложь частью своих жизней. {w}
     Может и не стоит жалеть об упущенных возможностях в таком мире?"
-    scene black:
-        zoom 2.0
-    pause 1.0
-    scene elevator inside
-    show guard at right
     
     "Но я не оставил о себе никакой памяти."
-    scene black:
-        zoom 2.0
-    pause 1.0
-    scene elevator inside
-    show guard at right
 
-    "Вроде и не было никогда никакого <>." 
-    scene black:
-        zoom 2.0
-    pause 1.0
-    scene elevator inside
-    show guard at right
+    "Вроде и не было никогда никакого Макса." 
     
     "Страшно."
 
@@ -147,9 +112,6 @@ label worst_root:
 
     pause 2.0
 
-    scene black:
-        zoom 2.0
-    pause 2.0
-
+    jump end
     
     return

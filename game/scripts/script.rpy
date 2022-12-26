@@ -1,19 +1,19 @@
 # Определение персонажей игры.
-define kai = Character('Кай', color="#0318fc")
-define e = Character('Элли', color="#fc038c", image = "elly")
-define g = Character('Девушка', color="#fc038c", image = "elly")
-define l = Character('Ллойд', color="#03fc45", image = "lloyd")
-define ar = Character('Арон', color="#03fc45", image = "lloyd")
-define k = Character('Карэн', color="#640303", image = "karen")
-define g = Character('Грейс', color="#94002300", image = "grace")
+define kai = Character('Кай', color="#BCAB7F", who_outlines=[ (2, "#4A4642")])
+define e = Character('Элли', color="#FAF9D1", image = "elly", who_outlines=[ (1, "#4A4642")])
+define girl = Character('Девушка', color="#FAF9D1", image = "elly", who_outlines=[ (1, "#4A4642")])
+define l = Character('Ллойд', color="#6E9AA2", image = "lloyd", who_outlines=[ (1, "#4A4642")])
+define ar = Character('Арон', color="#6E9AA2", image = "lloyd", who_outlines=[ (1, "#4A4642")])
+define k = Character('Карэн', color="#EEF0F1", image = "karen", who_outlines=[ (1, "#4A4642")])
+define g = Character('Грейс', color="#BA5A4D", image = "grace", who_outlines=[ (1, "#4A4642")])
 
-define a = Character('Алан', color="#23282b00", image = "alan")
-define m = Character('Мужчина', color="#23282b00", image = "alan")
+define a = Character('Алан', color="#E17144", image = "alan", who_outlines=[ (1, "#4A4642")])
+define m = Character('Мужчина', color="#E17144", image = "alan", who_outlines=[ (1, "#4A4642")])
 
-define unknown = Character('Мужчина', color="#23282b00", image = "unknown") # unknown man
-define v = Character('Виктор', color="#23282b00", image = "unknown") # unknown man
+define unknown = Character('Мужчина', color="#A08EB8", image = "unknown", who_outlines=[ (1, "#4A4642")]) # unknown man
+define v = Character('Виктор', color="#A08EB8", image = "unknown", who_outlines=[ (1, "#4A4642")]) # unknown man
 
-define gd = Character('Охрана', color="#00000000", image = "guard")
+define gd = Character('Охрана', color="#A08EB8", image = "guard", who_outlines=[ (1, "#4A4642")])
 
 
 define news = Character('news', color="#0000007d", image = "news")
@@ -151,16 +151,8 @@ label succeeded:
 label start:
 
     $ point = 0
-    jump fifth_day
-
-    jump first_day_bus_news
-
-
-
-    jump fourth_day
     
-    jump fifth_day
-
+    jump first_day_morning
 
     return
 

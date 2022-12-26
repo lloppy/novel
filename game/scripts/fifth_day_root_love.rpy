@@ -40,6 +40,8 @@ label fifth_day_root_love:
 
 
 label detective_root_plus:
+
+    jump end
     return
 
 label love_root_plus:
@@ -47,14 +49,6 @@ label love_root_plus:
 
     show guard
     with dissolve
-
-    scene hall
-    with dissolve
-    pause 1.0
-
-    scene elevator outside 
-    with dissolve
-    pause 1.0
 
     scene elevator inside
     with dissolve
@@ -77,6 +71,8 @@ label love_root_plus:
 
     e @ angry "После твоих слов я задумалась о том, кем хочу быть в этом мире. Уж точно не убийцей! Скорее жми кнопку первого этажа, мы должны бежать."
 
+    jump end
+
     return
 
 label love_root_minus:
@@ -84,14 +80,6 @@ label love_root_minus:
 
     show guard
     with dissolve
-
-    scene hall
-    with dissolve
-    pause 1.0
-
-    scene elevator outside 
-    with dissolve
-    pause 1.0
 
     scene elevator inside
     with dissolve
@@ -109,8 +97,6 @@ label love_root_minus:
 
     pause 2.0
 
-    scene black:
-        zoom 2.0
-    pause 2.0
+    jump end
 
     return
