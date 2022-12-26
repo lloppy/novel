@@ -2,11 +2,9 @@
 errors listed below, and try again.
 
 
-The label succeeded2 is defined twice, at File "game/scripts/fifth_day.rpy", line 235:
-label succeeded2:
-and File "game/scripts/fifth_day.rpy", line 465:
-label succeeded2:
-
+File "game/screens.rpy", line 253: 'xtextbutton' is not a keyword argument or valid child for the hbox statement.
+    xtextbutton _("История") action ShowMenu('history')
+               ^
 
 Ren'Py Version: Ren'Py 8.0.3.22090809
-Mon Dec 26 02:46:34 2022
+Mon Dec 26 23:30:21 2022

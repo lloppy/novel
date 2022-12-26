@@ -1,36 +1,69 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/scripts/fifth_day.rpy", line 409, in script
-    show elly
-Exception: Image 'elly' does not accept attributes 'say'.
+  File "game/screens.rpy", line 584, in execute
+    screen save():
+  File "game/screens.rpy", line 584, in execute
+    screen save():
+  File "game/screens.rpy", line 588, in execute
+    use file_slots(_(""))
+  File "game/screens.rpy", line 598, in execute
+    screen file_slots(title):
+  File "game/screens.rpy", line 598, in execute
+    screen file_slots(title):
+  File "game/screens.rpy", line 602, in execute
+    use main_menu(title):
+TypeError: Too many arguments in call (expected 0, got 1).
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/scripts/fifth_day.rpy", line 409, in script
-    show elly
-  File "C:\renpy-8.0.3-sdk\renpy\ast.py", line 921, in execute
-    renpy.exports.say(who, what, *args, **kwargs)
-  File "C:\renpy-8.0.3-sdk\renpy\exports.py", line 1373, in say
-    who(what, *args, **kwargs)
-  File "C:\renpy-8.0.3-sdk\renpy\character.py", line 1206, in __call__
-    old_attr_state = self.handle_say_attributes(False, interact)
-  File "C:\renpy-8.0.3-sdk\renpy\character.py", line 1041, in handle_say_attributes
-    if self.resolve_say_attributes(predicting, temporary_attrs):
-  File "C:\renpy-8.0.3-sdk\renpy\character.py", line 986, in resolve_say_attributes
-    renpy.exports.show(show_image)
-  File "C:\renpy-8.0.3-sdk\renpy\exports.py", line 686, in show
-    if not base.find_target() and renpy.config.missing_show:
-  File "C:\renpy-8.0.3-sdk\renpy\display\image.py", line 414, in find_target
-    self.target = target._duplicate(a)
-  File "C:\renpy-8.0.3-sdk\renpy\display\core.py", line 397, in _duplicate
-    args.extraneous()
-  File "C:\renpy-8.0.3-sdk\renpy\display\core.py", line 265, in extraneous
-    raise Exception("Image '{}' does not accept attributes '{}'.".format(
-Exception: Image 'elly' does not accept attributes 'say'.
+  File "renpy/common/_layout/screen_load_save.rpym", line 35, in script
+    $ ui.interact()
+  File "C:\renpy-8.0.3-sdk\renpy\ast.py", line 1131, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "C:\renpy-8.0.3-sdk\renpy\python.py", line 1061, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+  File "renpy/common/_layout/screen_load_save.rpym", line 35, in <module>
+    $ ui.interact()
+  File "C:\renpy-8.0.3-sdk\renpy\ui.py", line 299, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "C:\renpy-8.0.3-sdk\renpy\display\core.py", line 3377, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
+  File "C:\renpy-8.0.3-sdk\renpy\display\core.py", line 3810, in interact_core
+    root_widget.visit_all(lambda i : i.per_interact())
+  File "C:\renpy-8.0.3-sdk\renpy\display\core.py", line 582, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\renpy-8.0.3-sdk\renpy\display\core.py", line 582, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\renpy-8.0.3-sdk\renpy\display\core.py", line 582, in visit_all
+    d.visit_all(callback, seen)
+  [Previous line repeated 1 more time]
+  File "C:\renpy-8.0.3-sdk\renpy\display\screen.py", line 451, in visit_all
+    callback(self)
+  File "C:\renpy-8.0.3-sdk\renpy\display\core.py", line 3810, in <lambda>
+    root_widget.visit_all(lambda i : i.per_interact())
+  File "C:\renpy-8.0.3-sdk\renpy\display\screen.py", line 462, in per_interact
+    self.update()
+  File "C:\renpy-8.0.3-sdk\renpy\display\screen.py", line 653, in update
+    self.screen.function(**self.scope)
+  File "game/screens.rpy", line 584, in execute
+    screen save():
+  File "game/screens.rpy", line 584, in execute
+    screen save():
+  File "game/screens.rpy", line 588, in execute
+    use file_slots(_(""))
+  File "game/screens.rpy", line 598, in execute
+    screen file_slots(title):
+  File "game/screens.rpy", line 598, in execute
+    screen file_slots(title):
+  File "game/screens.rpy", line 602, in execute
+    use main_menu(title):
+  File "C:\renpy-8.0.3-sdk\renpy\ast.py", line 156, in apply
+    raise TypeError("Too many arguments in call (expected 0, got %d)." % len(args))
+TypeError: Too many arguments in call (expected 0, got 1).
 
 Windows-10-10.0.22000 AMD64
 Ren'Py 8.0.3.22090809
-DGame 1.0
-Mon Dec 26 02:39:00 2022
+VI:zero 1.0
+Mon Dec 26 23:40:26 2022

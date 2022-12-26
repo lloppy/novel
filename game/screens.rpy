@@ -305,14 +305,14 @@ screen navigation():
             # textbutton _("История") action ShowMenu("history")
 
             imagebutton:
+                auto "gui/newstyle/continue_%s.png"
+                action Return()
+
+            imagebutton:
                 auto "gui/newstyle/save_%s.png"
                 action ShowMenu("save")
 
         
-        imagebutton:
-            auto "gui/newstyle/continue_%s.png"
-            action Return()
-
         imagebutton:
             auto "gui/newstyle/setting_%s.png"
             action ShowMenu("preferences")
