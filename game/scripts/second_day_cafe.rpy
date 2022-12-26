@@ -5,12 +5,13 @@ label second_day_elevator:
     scene elevator inside
     with fade
 
-    stop sound fadeout 2.0
+    stop music fadeout fadeout
+    pause fadeout
 
-    play sound "music/elevator.mp3" fadein fadein volume volume
-
+    play music "music/elevator.mp3" fadein fadein volume volume
 
     show kai
+    with OffsetRightToCenterSide
     
     kai "{cps=43}Я, конечно, обещал тебе отвлеченный от работы диалог, но пойми меня правильно, 
     мне нужно еще кое-что тебе рассказать, и лучше это сделать прямо сейчас.{/cps}"
@@ -32,8 +33,6 @@ label second_day_elevator:
 
     "Почему он упомянул это именно сейчас? Вдруг…"
 
-    stop sound fadeout 2.0
-
 
     show kai smile
     "{cps=43}Прибыли. Наше прекрасное кафе с видом на весь город.{/cps}"
@@ -43,10 +42,15 @@ label second_day_elevator:
     
     
 label second_day_cafe:
+    stop music fadeout fadeout
+    pause fadeout
+    play music "music/music good.mp3" fadein fadein volume volume
+    
     scene scenes cafee
     with dissolve   
 
     show kai
+    with dissolve
 
     "{cps=43}Кай, а я буду как-то взаимодействовать с другими работниками компании?{/cps}"
 

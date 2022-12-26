@@ -6,7 +6,10 @@ label second_day_office:
     scene office2 
     with dissolve
 
+    play sound "music/keyboard.mp3" fadein fadein volume volume
+
     show kai
+    with dissolve
     kai "{cps=43}Как по мне, самые неприятные из запланированных на сегодня тем уже позади. 
     Теперь давай обсудим некоторые термины, я продемонстрирую обещанный сюрприз и отпущу тебя домой.{/cps}"
 
@@ -54,19 +57,22 @@ label second_day_office:
 
     kai "{cps=43}Наконец сюрприз. Встань и пройди к соседнему столу.{/cps}"
 
-    scene office
-    with dissolve
-    play sound "music/keyboard.mp3" fadein fadein volume volume
+    scene office kai smile
+    with fade
 
-    show kai smile_with_disbelief at leftCoordinates
     kai "{cps=43}Теперь он твой. Конечно, все еще недалеко от меня, но теперь у тебя немного больше личного пространства. Неплохо, правда?{/cps}"
 
     "{cps=43}Кай, я так рад! Жду не дождусь завтра, чтобы поработать за ним. Надеюсь, будет что-то посложнее, чем обсуждение профессий и обучение терминам.{/cps}"
 
-    show kai smile
+    scene office kai smile_ce
+    with dissolve
     kai "{cps=43}Успеешь еще наработаться… А теперь иди к Карэн и ответь на все ее вопросы. 
     Увидимся завтра, удачи.{/cps}"
-    stop sound fadeout 2.0
+
+    scene office kai smile
+    with dissolve
+
+    stop sound fadeout fadeout
 
     jump second_day_office_continue2
 
@@ -76,6 +82,8 @@ label second_day_office_continue2:
     with dissolve
 
     show karen smile
+    with OffsetRightToCenterSide
+
     k "{cps=43}Значит уже закончили? Как тебе рабочее место? Все устраивает?{/cps}"
 
     "{cps=43}Да, спасибо большое. Ощущение, что наконец становлюсь частью команды.{/cps}"
@@ -89,16 +97,16 @@ label second_day_office_continue2:
     k "{cps=43}Тогда скажи мне, как называют заданный отрезок времени, за который нужно выполнить 
     запланированный объем работы, чтобы в конце этого отрезка был ожидаемый результат?{/cps}"
 
-    $ ans1 = renpy.input("Как называют заданный отрезок времени, за который нужно выполнить запланированный объем работы?")
+    $ ans1 = renpy.input("Как называют заданный отрезок времени, за который нужно выполнить запланированный объем работы?").strip().lower()
 
     k "{cps=43}Следующий вопрос: этот термин еще называют стендапом. Что же это?{/cps}"
 
-    $ ans2 = renpy.input("Этот термин еще называют стендапом. Что же это?")
+    $ ans2 = renpy.input("Этот термин еще называют стендапом. Что же это?").strip().lower()
 
     k "{cps=43}Наконец, последний вопрос. Как называют еще не запланированный объем работы, 
     который требуется выполнить команде?{/cps}"
 
-    $ ans3 = renpy.input("Как называют еще не запланированный объем работы, который требуется выполнить команде?")
+    $ ans3 = renpy.input("Как называют еще не запланированный объем работы, который требуется выполнить команде?").strip().lower()
 
     "{cps=43}Ну, как я справился? Ты почему-то никак не реагировала на мои ответы.{/cps}"
 
@@ -107,11 +115,11 @@ label second_day_office_continue2:
     show karen
 
     $ counter_true_answers = 0 
-    if ans1.casefold() == "спринт" or ans1.casefold() == "Спринт":
+    if ans1 == "спринт":
         $ counter_true_answers += 1
-    if ans2.casefold() == "дейли" or ans2.casefold() == "Дейли" or ans2.casefold() == "Дэйли":
+    if ans2 == "дейли" or ans2 == "дэйли":
         $ counter_true_answers += 1
-    if ans3.casefold() == "бэклог" or ans3.casefold() == "Бэклог" or ans3.casefold() == "Беклог":
+    if ans3 == "бэклог" or ans3 == "беклог":
         $ counter_true_answers += 1
 
     if counter_true_answers == 3:
@@ -131,11 +139,12 @@ label second_day_office_continue2:
     show karen smile
     k "{cps=43}А теперь можешь идти домой. Увидимся завтра.{/cps}"
 
-    show cafee dark
+    show street way home evening
     with dissolve
     
     if watch_kai:
-        play sound "music/music good.mp3" fadein fadein volume volume
+        stop music fadeout fadeout
+        play music "music/music bad.mp3" fadein fadein
 
         "{cps=43}То, что Кай сказал в лифте… Связано ли оно с тем, что я проследил за ним? 
         Мог ли он меня заметить? Мне кажется, я никак не мог себя выдать. 
@@ -145,18 +154,17 @@ label second_day_office_continue2:
         "{cps=43}Ситуация в компании обрастает слоем загадок, 
         а ответы никак не приходят. Возможно, я должен продолжать изучать этот вопрос. 
         Но что, если я узнаю слишком много?{/cps}"
-        stop sound fadeout 3.0
+        stop music fadeout long_fadeout
+        pause long_fadeout
 
     else:
-        play sound "music/music good.mp3" fadein fadein volume volume
-
         "{cps=43}Хотя Кай и Карэн бывают строги, все-таки они действительно пытаются сделать из меня специалиста, 
         при этом заботясь о том, чтобы я не переусердствовал и постигал основы не в совсем уж скучной 
         обстановке. Если буду продолжать стараться, у меня действительно появится шанс попасть в компанию.{/cps}" 
         
         "{cps=43}А ведь еще пару дней назад я боялся, что буду казаться всем ничтожным из-за отсутствия опыта 
         создания игр. Я рад, что попал именно в эту команду, поскорее бы узнать еще больше людей в корпорации.{/cps}"
-        stop sound fadeout 3.0
+
     jump third_day
 
     return

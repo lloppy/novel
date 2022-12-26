@@ -1,9 +1,8 @@
 label third_day_second_task:
-    scene office computer
-    with fade
-
     show computer second_task
-    with dissolve    
+    with dissolve
+
+    pause 1.2    
 
     show computer _screen second_task
     with dissolve  
@@ -33,7 +32,7 @@ label third_day_second_task_wrong:
     $ computerWrongAnsSecond += 1
     if computerWrongAnsSecond == 2:
         "Я правда не знаю правильный ответ… Остается только пропустить это задание и перейти к следующему."
-        jump third_day_third_task
+        jump third_day_third_task 
         
     "Неверно!"
 
@@ -41,15 +40,16 @@ label third_day_second_task_wrong:
 
     scene office2
     with fade
-    play sound "music/keyboard.mp3" fadein fadein volume volume
 
     "Кай, ты не мог бы мне помочь?"
-    show kai serious
-    stop sound fadeout 2.0
+    show kai serious at left
+    with OffsetLeftToLeftSide
 
     if soleCompany >= 1:
         kai "Ну, сказать ответ я тебе не могу, ты уж извини. Но могу дать подсказку: обрати внимание на то, с чем взаимодействует данная птица. Уверен, ты догадаешься, какой цвет стоит применить."
         "Кажется, я понял, о чем ты."
+        show computer _screen second_task
+        with dissolve  
         call screen button_second_game
 
     else:

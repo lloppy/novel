@@ -56,19 +56,9 @@ label developer_root_plus:
     with dissolve
 
     "Вживить чип… Под полным контролем… А эта судьба точно хоть чем-то лучше смерти? Больно…"
-
-    scene testing department
-    with dissolve
-    pause 1.0
-
-    scene elevator outside 
-    with dissolve
-    pause 1.0
-
-    scene elevator inside
-    with dissolve
     
-    show guard at right
+    show guard 
+    with dissolve
 
     "Совсем не так я представлял конец своей жизни…" 
     
@@ -83,10 +73,6 @@ label developer_root_plus:
         zoom 2.0
     with dissolve
 
-    pause 2.0
-
-    scene black:
-        zoom 2.0
-    pause 2.0
+    jump end
     
     return

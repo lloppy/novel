@@ -106,7 +106,11 @@ label first_day_survey_continue:
 
     "{cps=47}Извините, что потратил ваше время. {w}Ну, тогда до завтра? Было приятно побеседовать с тобой.{/cps}"
     show karen at right
+    with move
+
     show kai smile at left
+    with OffsetLeftToLeftSide
+    
     kai "{cps=47}Пока-пока. Увидимся.{/cps}"
 
 

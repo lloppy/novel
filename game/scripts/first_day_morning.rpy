@@ -1,11 +1,12 @@
-label first_day_moring:
+label first_day_morning:
     play music "music/music good.mp3" fadein fadein volume volume
     scene street
     with fade
 
     """{cps=43}Такое здание ни с чем не перепутаешь. Значит, мне сюда…{/cps}"""
 
-    show kai smile
+    show kai at center
+    with OffsetLeftToCenterSide
 
     kai "Утречка, всем своим видом ты даешь понять, что спрашивать нет смысла, но все же: это ты наш стажер?"
 
@@ -36,7 +37,8 @@ label first_day_moring:
     pause fadeout
     play music "music/elevator.mp3" fadein fadein volume volume
 
-    show kai smile
+    show kai smile 
+    with OffsetRightToCenterSide
 
     kai "Наш офис на 102-ом этаже, так что несколько минут каждого своего дня нам приходится тратить на поездку в тесном лифте."
     kai "Но зато, по слухам, иногда тут можно столкнуться даже с {i}высочайшим руководством{/i} компании. Мне пока не удавалось, но я и работаю тут всего ничего."
@@ -63,8 +65,13 @@ label first_day_moring:
     play music "music/music good.mp3" fadein fadein volume volume
     play sound "music/keyboard.mp3" fadein fadein volume volume
     
-    show karen at right
     show kai at left
+    with OffsetLeftToLeftSide
+    pause 0.5
+
+    show karen at right
+    with OffsetRightToRightSide
+    
     k "Кай, [nameM], я уже собиралась начать ваши поиски. В самом деле, где вы пропадали?"
     kai "Ну Карэн, ты же знаешь, сколько всего нужно спросить новичку у опытного наставника"
     "{cps=50}Но я не спраш…{/cps}{nw}"
@@ -76,8 +83,11 @@ label first_day_moring:
     show kai smile_wide_ce 
     kai "Слушаюсь!"
     hide kai
+    with OffsetRightToRightSide
     
     show karen at center
+    with move
+
     k "Я Карэн, руководитель этого отдела разработки. Как ты уже знаешь, тебя отправили к нам на стажировку. Ты получишь начальные знания о работе разработчиком игр, а после мы решим, что с тобой делать."
     show karen smile
     k "Этот парень - твой наставник. Пусть он сам только-только стал частью коллектива, да и шуточки его могут порой раздражать, но у него здорово получается налаживать взаимодействие между людьми, потому он должен стать подходящим человеком, чтобы ввести тебя в курс корпоративной жизни."
@@ -86,7 +96,6 @@ label first_day_moring:
 
     scene office2
     with fade
-    #play sound "music/keyboard.mp3" fadein fadein volume volume
 
     show kai
     "Ты, кажется, говорил что-то про дружелюбную атмосферу. Как-то мне не показалось, что Карэн к нам дружелюбна."
@@ -201,14 +210,20 @@ label first_day_moring:
     "Фух… сколько же всего ты мне рассказал. Кажется, ты настолько увлекся разговором, что забыл про обед. Смотри, сколько уже времени."
     show kai
     kai "Обед… А ты прав… Ну ничего, мне еще столькому нужно тебя научить, тут некогда расслабляться."
+
     show kai smile at left
+    with move
+
     show karen smile at right
+    with OffsetRightToRightSide
     "Кай, мне кажется, что парень достаточно выслушал от тебя за сегодня. Может, отпустим его домой, а свой рассказ о всех прелестях нашей работы ты продолжишь завтра?"
     show kai sad
     kai "Как скажешь… Значит, до завтра, [nameM]. Буду ждать тебя, не опаздывай!"
     hide kai
+    with OffsetLeftToLeftSide
 
     show karen at center
+    with move
     k "Но перед тем, как ты уйдешь, я бы хотела немного побеседовать с тобой о том, что ты за сегодня успел усвоить. Не волнуйся, это не зачет и не контрольная, просто небольшой опрос для того, чтобы я понимала, как идет твое обучение."
     "Хорошо..."
 

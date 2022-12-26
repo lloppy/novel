@@ -5,43 +5,33 @@ label fourth_day:
 
     scene home morning
     with fade
-    play sound "music/music good.mp3" fadein fadein volume volume
 
-
-    show blog one
+    scene blog one
     with dissolve
     pause 5.0
 
-    show blog two
+    scene blog two
     with dissolve
     pause 5.0
 
-    show blog three
+    scene blog three
     with dissolve
+    pause 5.0
 
-
-    # "Уже месяц прошел с того момента, как я побывал на стажировке в <>. 
-    # Как вы знаете, в последнее время я сконцентрировался на создании небольшого проекта в RPG-maker, 
-    # но сегодня рад сообщить вам о релизе этой игры. Вы уже можете найти первую версию в моем гитхабе, 
-    # я буду очень благодарен вам за обратную связь. Работа над новым патчем уже начата, 
-    # поэтому ждите новых сообщений в моем маленьком дневнике разработчика!"
-
-    # "Я так рад, что всего за месяц проделал такую работу и наконец создал свой собственный проект, 
-    # пусть пока и на чужом движке."
-
-
-    show home pc _screen desktop
+    scene home pc _screen desktop
     with dissolve
     pause 2.5
 
-    show home pc _screen search
+    scene home pc _screen search
     with dissolve
     pause 2.5
 
-    show home pc _screen cityzen
+    scene home pc _screen cityzen
     with dissolve
     pause 2.5
+
     "Эх, все еще не вышла…"
+
     hide home pc _screen cityzen
     stop sound fadeout 2.5
 
@@ -65,13 +55,13 @@ label fourth_day:
     scene elevator inside
     with dissolve
     pause 1.0
-    play sound "music/elevator.mp3" fadein fadein volume volume
 
-    
-    
+    stop music fadeout fadeout
+    pause fadeout
+    play music "music/elevator.mp3" fadein fadein volume volume
+
     scene elly smile box
     with dissolve
-
 
     if score[4] == True:
         "И снова она. Кажется, мне невероятно везет встречать ее именно тогда, когда я очень спешу. 
@@ -91,7 +81,6 @@ label fourth_day:
         что помощь ей не нужна, но мне кажется, что одна из коробок вот-вот упадет."
         "Стоит ли мне рисковать упустить время и помогать этой хрупкой девушке, или стоит закрыть на нее глаза, 
         раз все равно сама о помощи она не просит?"
-        stop sound fadeout 4.0
 
         menu:
             "Помочь девушке":
@@ -109,12 +98,16 @@ label help_girl:
 
     "Ладно, я больше не могу смотреть, как ты прячешься за этими коробками."
 
-    g "А я не прячусь! Просто они немного больше меня… Но спасибо тебе большое."
+    girl "А я не прячусь! Просто они немного больше меня… Но спасибо тебе большое."
+
+    stop music fadeout fadeout
+    pause fadeout
+    play music "music/music good.mp3" fadein fadein volume volume
     scene elevator outside
     with dissolve
     
     show elly smile
-    g "Знаешь, а я ведь все забываю представиться… Меня зовут Элли."
+    girl "Знаешь, а я ведь все забываю представиться… Меня зовут Элли."
 
     "Приятно познакомиться, а я [nameM]. Далеко ты с этим багажом?"
 
@@ -140,6 +133,7 @@ label help_girl:
     with fade
 
     show elly smile 
+    with dissolve
 
     "Слушай, Элли, а я могу немного пройтись тут? Все-таки нечасто бываешь в таких местах, а на счет тайны можешь не беспокоиться: тут все равно все двери на замках."
 
@@ -148,6 +142,7 @@ label help_girl:
     "Договорились!"
 
     hide elly
+    with OffsetRightToCenterSide
 
     "Закрытые двери, замки, подземный отдел… Мне кажется, или даже для места разработки очень дорогих игр это перебор? 
     Неужели во всем небоскребе места не нашлось? О, а вот и кабинеты с какими-то табличками…"
@@ -155,17 +150,13 @@ label help_girl:
     $ detective += 1
     $ loveLine += 1
 
-    # rewrite (две соседние двери, на одной имя Алана, на другой имя Грейс)
-
     "И кто бы это мог быть… Ладно, не похоже, что я сегодня что-то смогу разузнать, пора возвращаться, хоть я уже и опоздал…"
-
 
     scene office
     with fade
 
-    show alan at left:
-        linear 0.0 xzoom -1.0 yzoom 1.0
-    with dissolve
+    show alan at left
+    with OffsetLeftToLeftSide
 
     show karen at right
     with dissolve
@@ -208,7 +199,7 @@ label help_girl:
     k "Пожалуйста, подумай немного о корпоративной этике сегодня, а завтра возвращайся полный сил и правильного настроя. 
     И пойми, я не давлю на тебя, я просто желаю тебе лучшего."
 
-    scene cafee dark
+    scene street way home evening
     with fade
 
     "Пусть слова Алана задели меня, сегодня произошло достаточно хороших вещей: я продолжу стажировку, 
@@ -230,27 +221,31 @@ label girl_ignore:
     чтобы подтвердить свою готовность продолжить стажировку, поэтому никак не могу отвлекаться."
 
     scene elly angry box
-    g "Ладно, прости, что отвлекла…"
+    girl "Ладно, прости, что отвлекла…"
 
     "Нет, нельзя опаздывать на встречу, у меня и без этого репутация человека, не способного приходить вовремя. 
     А на счет коробок… Думаю, как-нибудь она справится, в конце-концов, никто не заставлял ее брать сразу все."
 
+    stop music fadeout fadeout
+    pause fadeout
+    play music "music/music good.mp3" fadein fadein volume volume
     scene elevator outside
     with dissolve
     pause 1.5
 
-    scene hall
+    play sound "music/keyboard.mp3" volume volume
+    scene office
     with dissolve
 
     show alan smile at right
-    with dissolve
+    with OffsetRightToRightSide
 
     m "Ну надо же! Не ожидал видеть тебя тут так рано. Понимаешь ли, сообщение к тебе было написано еще вчера, 
     но в отделе что-то снова перепутали, и кто-то получил приглашение вчера за тебя, а ты получил сегодня за… 
     Впрочем, ты наверное уже и сам догадался."
 
     show karen smile at left
-    with dissolve
+    with OffsetLeftToLeftSide
 
     k "А уж меня то ты как удивил, [nameM]. Зная тебя… Кстати, познакомься с Аланом. Он нам начальник и, можно сказать, правая рука Грейс, генерального директора корпорации."
 
@@ -300,14 +295,12 @@ label girl_ignore:
 
     scene street way home evening
     with fade
-    play sound "music/music good.mp3" fadein fadein volume volume
 
     "Кажется, я хоть немного понравился Алану. А он достаточно важный человек, чтобы понравиться ему было не просто. 
     Его слова о специальном отделе… К чему он это сказал? Чтобы я не лез не в свои дела - что-то вроде предупреждения? 
     Или все-таки он хочет видеть меня его частью? Что-то вроде создания у меня цели попасть туда?" 
     
     "А что, может быть и стоит постараться…"
-    stop sound fadeout 3.0
 
     jump fourth_day_morning
     return

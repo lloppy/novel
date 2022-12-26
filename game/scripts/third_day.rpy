@@ -1,66 +1,78 @@
 label third_day:
     scene home morning
     with fade
-    
-    play sound "music/music good.mp3" fadein fadein volume volume
+    stop music fadeout fadeout
+    pause fadeout
+    play sound "music/alarm.mp3" fadein fadein volume volume
 
     "Черт. Я снова отключил будильник…"
-
-    # rewrite scene wakeup clock      СЦЕНА С БУДИЛЬНИКОМ
 
     "Чего?! Да я же опаздываю! Только получил свое место, а уже испытываю терпение начальства… 
     Если потороплюсь, возможно Карэн не сильно разозлится. Я же сам просил у Кая больше ответственности,
     и сам же всем своим видом показываю, что не готов к ней…"
 
-    stop sound fadeout 3.0
+    stop sound fadeout fadeout
+    pause fadeout
 
-    show bg ofis
-    with dissolve
+    show hall
+    with fade
+
+    play music "music/music good.mp3" fadein fadein volume volume
 
     "Ну разумеется, как всегда никого… Видимо, только я так безответственно отношусь к 
     предоставляемым компанией возможностям."
+
+    play sound "music/heels.mp3" fadein fadein volume volume
     
     "Что, я все-таки не один?"
+    pause long_fadeout
+    stop sound fadeout fadeout
+
     show elly smile
+    with dissolve
     show elly surprised
 
-    g "Вы чего вы стоите? Забыли, где лифт? Бежим скорее!"
+    girl "Вы чего вы стоите? Забыли, где лифт? Бежим скорее!"
     show elly smile
 
     "Как скажете…"
 
+    stop music fadeout fadeout
+    pause fadeout
 
     scene elevator outside
     with fade
-    play sound "music/elevator.mp3" fadein fadein volume volume
+    play music "music/elevator.mp3" fadein fadein volume volume
 
-    
-
-    "Значит, в этом мире идеальных сотрудников все же есть такие как я, не способные просыпаться вовремя?"
     show elevator inside
     with dissolve
-
+    "Значит, в этом мире идеальных сотрудников все же есть такие как я, не способные просыпаться вовремя?"
+    
     show elly smile
-    g "Ну почему же… Я очень даже способна проснуться вовремя, но я хватаюсь за столько утренних дел, что выйти вовремя не всегда получается… Извините, но мне пора бежать, хорошего вам дня!"
+    girl "Ну почему же… Я очень даже способна проснуться вовремя, но я хватаюсь за столько утренних дел, что выйти вовремя не всегда получается… Извините, но мне пора бежать, хорошего вам дня!"
     show elly smile_ce
+
     hide elly
     with dissolve
-    
-    stop sound fadeout 4.0
 
     "Какая милая девушка, а я даже имя ее не спросил… Правда, сейчас беспокоить меня должно совсем не это, а реакция Карэн на мое опоздание."
+    stop music fadeout fadeout
+    pause fadeout
 
     scene office
-    with dissolve
+    with fade
+    play music "music/music good.mp3" fadein fadein volume volume
     play sound "music/keyboard.mp3" fadein fadein volume volume
 
     show karen
+    with OffsetRightToCenterSide
     "Привет, Карэн…"
     "Я все могу объяснить!"    
     
     show karen angry
     k "Ну попробуй."
-    stop sound fadeout 2.0
+
+    stop music fadeout fadeout
 
     menu:
         "Признаться":
@@ -73,6 +85,7 @@ label third_day:
             return
 
 label third_day_say_true:
+    play music "music/music good.mp3" fadein fadein volume volume
     scene office
 
     show karen angry
@@ -90,9 +103,10 @@ label third_day_say_true:
 
     scene office2
     with dissolve
-    play sound "music/keyboard.mp3" fadein fadein volume volume
 
     show kai
+    with OffsetLeftToCenterSide
+
     kai "Да нет же, отдел тестирования ничего нам не присылал! Да, мы отправили свежую сборку вчера, 
     но они бы ничего и не сделали за день. А теперь вы звоните мне и требуете протестированный продукт, 
     когда заранее были совершенно другие сроки."
@@ -105,8 +119,6 @@ label third_day_say_true:
 
     show kai serious
     kai "Доброе утро? Я бы сказал “добрый день”. Ты где пропадал?"
-    stop sound fadeout 2.0
-
 
     "Извини, не спрашивай как, но я иногда отключаю по утрам будильники, и получаются такие вот ситуации. 
     Я уже поговорил с Карэн, так что пожалуйста, не нужно нравоучений еще и от тебя."
@@ -145,11 +157,10 @@ label third_day_say_true:
 
     scene office
     with dissolve
-    play sound "music/keyboard.mp3" fadein fadein volume volume
 
     show karen
+    with dissolve
 
-    # rewrite  add choise at start        ТУТ ДОЛЖНО БЫТЬ ИМЯ ИГРОКА?
     k "О, [nameM], это снова ты."
     show karen say
     k "Я тебя заждалась. Уверена, ты, как первокурсник, уже знаком с основами программирования, 
@@ -162,7 +173,6 @@ label third_day_say_true:
     k "В процессе создания любой игры разработчик использует константы. 
     Это значения, которые устанавливаются во время компиляции программы и не меняются. 
     Будем говорить о реализации на языке C#, так как именно его тебе нужно будет использовать в проекте."
-    stop sound fadeout 2.0
 
     show karen
     k "Чтобы создать на этом языке константу, тебе нужно написать const, а затем указать тип данной переменной. 
@@ -188,6 +198,7 @@ label third_day_say_true:
     k "Конечно, пройди к моему компьютеру."
 
     show karen at right
+    with move
 
     show karen:
         zoom 1.25
@@ -269,6 +280,7 @@ label third_day_say_true:
     with dissolve
 
     show kai smile
+    with dissolve
 
     kai "Ну, значит пришло время дать тебе последнюю часть информации перед проектом. Волнуешься?"
 
@@ -317,6 +329,7 @@ label third_day_say_true:
 
 
 label third_day_say_false:
+    play music "music/music good.mp3" fadein fadein volume volume
     scene office
 
     show karen angry
@@ -342,22 +355,22 @@ label third_day_say_false:
     with fade
 
     scene elevator inside
-    with dissolve
+    with fade
 
     "Может, не стоило ей врать? Выглядела она так, будто насквозь меня видела вместе со всем моим враньем. 
     А теперь вообще в другой  отдел отправила, неужели правда так занята, 
     что и нескольких минут на меня не выделить? Или все-таки зла из-за опоздания и лжи?"
 
-    scene bg office
+    scene secret office empty screen_on
     with fade
-    "Сколько же тут дверей. А Карэн говорила, что сам разберусь. И как же я это должен сделать?"
+    "Сколько же тут кабинетов. А Карэн говорила, что сам разберусь. И как же я это должен сделать?"
 
-    "Кажется, у меня три варианта. Я заметил один незакрытый кабинет, в котором совсем никого нет. 
+    "Кажется, у меня три варианта. Я заметил один невыключенный компьютер, у которого никого нет. 
     Немного дальше по коридору девушка из лифта пытается что-то сделать с блоком своего компьютера, 
     ну а в конце коридора, видимо, то самое место, куда меня отправила Карэн."
 
     menu:
-        "Зайти в пустой кабинет":
+        "Подойти к рабочему компьютеру":
             $ detective += 1
             jump first_option_empty_office
         "Зайти в кабинет к девушке из лифта":
@@ -370,8 +383,8 @@ label third_day_say_false:
     return
 
 label first_option_empty_office:
-    scene secret office empty
-    with fade
+    scene secret office empty screen_on
+    with dissolve
 
     "В самом деле, это неплохая возможность узнать побольше скрытой информации о компании и ее проектах."
 
@@ -385,12 +398,14 @@ label first_option_empty_office:
     "Что это? Какой-то шифр? Как они вообще работают с зашифрованными файлами? 
     Что это за кабинет то такой…"
 
+    play sound "music/shoes.mp3" volume volume
     scene secret office empty screen_on
     with dissolve
 
     "Кто-то идет. При чем со стороны кабинета, куда меня отправила Карэн. 
     Вдруг он зайдет прямо сюда? Иного выхода нет, нужно бежать обратно в свой отдел."
 
+    stop sound fadeout fadeout
     $ detective += 1
 
     scene elevator outside
@@ -409,71 +424,70 @@ label first_option_empty_office:
     return
 
 label second_options_romantic_branch:
-    scene bg office
+    scene secret office empty screen_on
     $ score[4] = True
     
     "Раз уж утром мне не удалось познакомиться с этой милой девушкой, то хотя бы сейчас я сделаю это. 
     К тому же, у меня есть чувство, что ей требуется моя помощь."
 
-    scene elles office day:
-        zoom 2.0
+    scene office elly
     with fade
     
     "Извини, что так без предупреждения, просто проходил по коридору и увидел, 
     что ты пытаешься что-то сделать с компьютером. Может тебе помочь?"
 
-    show elly 
+    scene office elly surprise
     with dissolve
 
-    show elly angry
+    pause fadein
 
-    g "Спасибо за беспокойство, конечно. Но я и сама как-нибудь могу…"
+    scene office elly angry
+    with dissolve
 
-    show elly
-    g "А впрочем, я потратила на это кучу времени и все равно ничего не получилось, 
+    girl "Спасибо за беспокойство, конечно. Но я и сама как-нибудь могу…"
+
+    scene office elly
+    with dissolve
+    girl "А впрочем, я потратила на это кучу времени и все равно ничего не получилось, 
     так что раз уж ты все равно тут, то попробуй что-то сделать с этим компьютером. 
     Сегодня утром он просто перестал работать."
 
     "Кажется, у видеокарты отошел разъем. Сейчас я вставлю его обратно, и все должно заработать."
-    scene comp1:
-        zoom 2.0
-    with dissolve
 
     "Все как я и сказал, ничего серьезного."
-    scene comp2:
-        zoom 2.0
-    with dissolve
 
-    $ renpy.pause(1.5)
-
-    scene elly office
+    scene office elly smash
     with dissolve
-    g "Спасибо большое, сама я бы возилась еще неизвестно сколько. 
+    girl "Спасибо большое, сама я бы возилась еще неизвестно сколько. 
     Знаешь, я ведь довольно неплохой специалист, возможно скоро я даже получу повышение и отправлюсь в более серьезный отдел, 
     но я почти не разбираюсь в компьютерах и их внутренностях." 
 
-    scene elly office angry
-    g "Родители постоянно спрашивают, 
+    scene office elly angry
+    with dissolve
+    girl "Родители постоянно спрашивают, 
     как же я программирую то, устройство чего толком не знаю, а я отвечаю, 
     что сегодня совсем не обязательно знать все о компьютерах, чтобы создавать игры."
 
     "Кстати, получила выговор за утро? Моя тимлид оказалась весьма расстроена моим опозданием, 
     а я еще и умудрился наврать ей…"
 
-    scene elly office smash
-    g "Да нет, как я уже сказала, я на довольно хорошем счету в отделе, так что все давно привыкли к небольшим моим изъянам. 
+    scene office elly smash
+    with dissolve
+    girl "Да нет, как я уже сказала, я на довольно хорошем счету в отделе, так что все давно привыкли к небольшим моим изъянам. 
     В конце концов, моя ценность для компании определяется объемом и качеством выполненной мною работы, 
     а я в конечном счете всегда со всем справляюсь." 
     
-    scene elly office
-    g "Возможно, если заслужишь доверие твоего тимлида, то она тоже станет более лояльна к тебе."
- 
-    scene elly office surprise
+    scene office elly
     with dissolve
-    g "Как я могла забыть?! У меня же созвон прямо сейчас. Как вовремя включился компьютер! 
+    girl "Возможно, если заслужишь доверие твоего тимлида, то она тоже станет более лояльна к тебе."
+ 
+    scene office elly surprise
+    with dissolve
+    girl "Как я могла забыть?! У меня же созвон прямо сейчас. Как вовремя включился компьютер! 
     Пожалуйста, оставь меня, я просто обязана присоединиться. Еще увидимся…"
 
-    scene elly office smash
+    scene office elly smash
+    with dissolve
     "Ну, тогда удачной работы…"
 
     scene hall
@@ -503,10 +517,9 @@ label third_option_no_action:
 
     scene project office
     with fade
-    # Большой кабинет наполняют несколько стажеров, собравшиеся у интерактивной доски.
 
     "Всем добрый день."
-    $ renpy.pause(2.0)
+    pause 2.0
     ". . ."
 
     "Ну ладно… Раз все тут такие…"
@@ -517,7 +530,7 @@ label third_option_no_action:
     show text "Ну, все наконец тут. Начнем. \nВсе, что нужно, чтобы справиться с сегодняшним проектом, я сейчас вам расскажу. \nСтарайтесь запомнить хоть что-то, и успешное выполнение вам практически гарантировано. В процессе создания любой игры разработчик использует константы.\nЭто значения, которые устанавливаются во время компиляции программы и не меняются. " at truecenter
     with dissolve
     pause 40.0
-   
+
     show text text_desk_first at truecenter:
         zoom 0.93
     with dissolve
