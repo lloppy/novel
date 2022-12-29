@@ -183,7 +183,7 @@ label fifth_day:
 
     "Что это с ним вообще? Это совсем другой человек! Где тот грубый человек, что готов был в драку полезть на пустом месте?"
 
-    if (soleCompany %  7 <= loveLine % 4):
+    if (soleCompany % 7 <= loveLine % 4):
         "У меня есть кое-какая догадка, связанная с новым проектом и тайной деятельностью корпорации. Напишу Элли, чтобы пришла в отдел тестирования после окончания рабочего дня"
 
         scene black
@@ -747,7 +747,7 @@ label results_label:
     else:   # soleCompany = 5 6 7    loveLine = 3 4  
 
     # (рут Элли)  soleCompany = 6 7    loveLine = 3 4  
-        if (soleCompany % 7 +  <= loveLine % 4):
+        if (soleCompany % 7 <= loveLine % 4):
             jump fifth_day_root_love
             return
 

@@ -1,5 +1,5 @@
 # Определение персонажей игры.
-define kai = Character('Кай', color="#BCAB7F", who_outlines=[ (2, "#4A4642")])
+define kai = Character('Кай', color="#BCAB7F", who_outlines=[ (1, "#4A4642")])
 define e = Character('Элли', color="#FAF9D1", image = "elly", who_outlines=[ (1, "#4A4642")])
 define girl = Character('Девушка', color="#FAF9D1", image = "elly", who_outlines=[ (1, "#4A4642")])
 define l = Character('Ллойд', color="#6E9AA2", image = "lloyd", who_outlines=[ (1, "#4A4642")])
