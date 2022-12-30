@@ -419,7 +419,7 @@ style main_menu_version:
 ## экран предназначается для использования с более чем одним дочерним экраном,
 ## включённым в него.
 
-screen game_menu(title, scroll=None, yinitial=0.0):
+screen game_menu(title, scroll=None, yinitial=0.0, isAddScreen=False):
 
     style_prefix "game_menu"
 
@@ -427,6 +427,9 @@ screen game_menu(title, scroll=None, yinitial=0.0):
         add gui.main_menu_background
     else:
         add gui.game_menu_background
+
+    if isAddScreen:
+        add "gui/preference_background.png"
 
     frame:
         style "game_menu_outer_frame"
@@ -599,7 +602,7 @@ screen file_slots(title, isSave=True):
 
     default page_name_value = FilePageNameInputValue(pattern=_(title+"\n {} страница"), auto=_(title+"\nАвтосохранения"), quick=_(title+"\nБыстрые сохранения"))
 
-    use game_menu(""):
+    use game_menu("", isAddScreen = True):
 
         fixed:
 
@@ -713,20 +716,11 @@ style slot_button_text:
 ##
 ## https://www.renpy.org/doc/html/screen_special.html#preferences
 
-style preferences:
-    xsize 1.0
-    ysize 1.0
-    yfill True
-
 screen preferences():
 
     tag menu
 
-    style_prefix "preferences"
-
-    add "gui/preference_background.png"
-
-    use game_menu(_(""), scroll="viewport"):
+    use game_menu(_(""), scroll="viewport", isAddScreen = True):
 
         vbox:
             hbox:
