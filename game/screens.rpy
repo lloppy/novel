@@ -298,28 +298,40 @@ screen navigation():
         # revrive safe button
         if main_menu:
             imagebutton:
+                auto "gui/newstyle/continue_%s.png"
+                action FileLoad(1, confirm=False, page="auto", newest=True)
+
+            imagebutton:
                 auto "gui/newstyle/start_%s.png"
                 action Start()
+
         else:
-
-            # textbutton _("История") action ShowMenu("history")
-
             imagebutton:
                 auto "gui/newstyle/continue_%s.png"
                 action Return()
 
+        imagebutton:
+                auto "gui/newstyle/load_%s.png"
+                action ShowMenu("load")
+
+        if not main_menu:
             imagebutton:
                 auto "gui/newstyle/save_%s.png"
                 action ShowMenu("save")
-
         
         imagebutton:
             auto "gui/newstyle/setting_%s.png"
             action ShowMenu("preferences")
 
-        imagebutton:
+        if main_menu:
+            imagebutton:
                 auto "gui/newstyle/out_%s.png"
-                action Quit(confirm=not main_menu )
+                action Quit(confirm=False)
+        else:
+            imagebutton:
+                auto "gui/newstyle/out_%s.png"
+                action Confirm("out_menu", MainMenu(confirm=False), None)
+                
         if _in_replay:
 
             textbutton _("Завершить повтор") action EndReplay(confirm=True)
@@ -368,17 +380,6 @@ screen main_menu():
     ## содержание главного меню находится на экране навигации.
     use navigation
 
-    if gui.show_name:
-
-        vbox:
-            style "main_menu_vbox"
-
-            text "[config.name!t]":
-                style "main_menu_title"
-
-            text "[config.version]":
-                style "main_menu_version"
-
 
 style main_menu_frame is empty
 style main_menu_vbox is vbox
@@ -418,7 +419,7 @@ style main_menu_version:
 ## экран предназначается для использования с более чем одним дочерним экраном,
 ## включённым в него.
 
-screen game_menu(title, scroll=None, yinitial=0.0):
+screen game_menu(title, scroll=None, yinitial=0.0, isAddScreen=False):
 
     style_prefix "game_menu"
 
@@ -426,6 +427,9 @@ screen game_menu(title, scroll=None, yinitial=0.0):
         add gui.main_menu_background
     else:
         add gui.game_menu_background
+
+    if isAddScreen:
+        add "gui/preference_background.png"
 
     frame:
         style "game_menu_outer_frame"
@@ -585,21 +589,20 @@ screen save():
 
     tag menu
 
-    use file_slots(_(""))
+    use file_slots(_("Сохранить"))
 
 
 screen load():
 
     tag menu
 
-    use file_slots(_("Загрузить"))
+    use file_slots(_("Загрузить"), False)
 
+screen file_slots(title, isSave=True):
 
-screen file_slots(title):
+    default page_name_value = FilePageNameInputValue(pattern=_(title+"\n {} страница"), auto=_(title+"\nАвтосохранения"), quick=_(title+"\nБыстрые сохранения"))
 
-    default page_name_value = FilePageNameInputValue(pattern=_("{} страница"), auto=_("Автосохранения"), quick=_("Быстрые сохранения"))
-
-    use game_menu(title):
+    use game_menu("", isAddScreen = True):
 
         fixed:
 
@@ -634,7 +637,10 @@ screen file_slots(title):
                     $ slot = i + 1
 
                     button:
-                        action FileAction(slot)
+                        if isSave:
+                            action Confirm("save", FileSave(slot, confirm=False),None)
+                        else:
+                            action Confirm("load", FileLoad(slot, confirm=False), None)
 
                         has vbox
 
@@ -714,10 +720,9 @@ screen preferences():
 
     tag menu
 
-    use game_menu(_(""), scroll="viewport"):
+    use game_menu(_(""), scroll="viewport", isAddScreen = True):
 
         vbox:
-
             hbox:
                 box_wrap True
 
@@ -1128,6 +1133,10 @@ style help_label_text:
 ##
 ## https://www.renpy.org/doc/html/screen_special.html#confirm
 
+transform hello_t:
+    align (0.5, 0.45) alpha 0.0
+    linear 0.5 alpha 1.0
+
 screen confirm(message, yes_action, no_action):
 
     ## Гарантирует, что другие экраны будут недоступны, пока показан этот экран.
@@ -1137,11 +1146,9 @@ screen confirm(message, yes_action, no_action):
 
     style_prefix "confirm"
 
-    add "gui/overlay/confirm.png"
-
     frame:
-        background "gui/game_menu2.png"
-                   
+        background "gui/confirm/confirm_" + message + ".png"
+        
         imagebutton:
             idle "tools/yesno/yes.webp"
             hover "tools/yesno/yes_hover.webp"
