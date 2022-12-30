@@ -44,11 +44,13 @@ label third_day:
     with fade
     play music "music/elevator.mp3" fadein fadein volume volume
 
-    show elevator inside
+    scene elevator inside
     with dissolve
+
+    show elly smile
+        
     "Значит, в этом мире идеальных сотрудников все же есть такие как я, не способные просыпаться вовремя?"
     
-    show elly smile
     girl "Ну почему же… Я очень даже способна проснуться вовремя, но я хватаюсь за столько утренних дел, что выйти вовремя не всегда получается… Извините, но мне пора бежать, хорошего вам дня!"
     show elly smile_ce
 

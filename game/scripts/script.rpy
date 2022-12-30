@@ -119,6 +119,7 @@ label succeeded:
     image loader9 = "intro/loader (9).png"
     image loader10 = "intro/loader (10).png"
     image loader11 = "intro/loader (11).png"
+    image skiptab = "intro/skip tab.jpg"
 
     show loader0 at right
     pause 0.3
@@ -144,6 +145,11 @@ label succeeded:
     pause 0.3
     show loader11 at right
     pause 4.0
+
+    show skiptab
+    with dissolve
+    pause 2.5
+
     return
 
 
