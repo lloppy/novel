@@ -22,6 +22,6 @@ Nowadays, information technology is becoming more and more popular. People inter
 
 
 
-🎮🎮🎮
+
+# 🎮🎮🎮
 ### We hope you will enjoy the game!
-🎮🎮🎮
