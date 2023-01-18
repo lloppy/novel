@@ -1,16 +1,18 @@
-# Game Dev Educational Novel
-## Team Lira
+# Game Dev Educational Novel. Team Lira
+
 
 ## Team composition
 
-Tumanova Irina Borisovna - Timlid, designer
-Polina Ankudinova - Developer
-Timur Kvashin - Writer
-Bogdan Bikaev - Analyst
-Nasibov Fariz Writer, Analyst
+- Tumanova Irina Borisovna - Timlid, designer
+- Polina Ankudinova - Developer
+- Timur Kvashin - Writer
+- Bogdan Bikaev - Analyst
+- Nasibov Fariz Writer, Analyst
+
 
 
 ![Иллюстрация к проекту](https://github.com/lloppy/novel/blob/main/main.png)
+
 
 
 ## Project idea
