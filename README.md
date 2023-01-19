@@ -7,7 +7,7 @@
 - Polina Ankudinova - Developer
 - Timur Kvashin - Writer
 - Bogdan Bikaev - Analyst
-- Nasibov Fariz Writer, Analyst
+- Nasibov Fariz - Writer, Analyst
 
 
 
